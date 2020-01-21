@@ -36,6 +36,7 @@ public class Main extends ApplicationAdapter {
 		camera.setToOrtho(false, WIDTH,HEIGHT); //Establecemos la cámara, y le decimos cuanto tiene que ocupar.
 		Gdx.app.log("camera x",Float.toString(camera.position.x));
 		Gdx.app.log("camera x",Float.toString(camera.position.y));
+		camera.position.y = Math.max(camera.position.y -15,0);
 		camera.update(); //Colocamos la Cámara.
 
 	}
