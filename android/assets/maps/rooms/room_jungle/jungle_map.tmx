@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="80" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="19">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="80" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="19">
  <tileset firstgid="1" source="../../atlas/atlas_jungle/jungle.tsx"/>
  <layer id="1" name="background" width="80" height="40">
   <data encoding="csv">
@@ -221,16 +221,16 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="9" name="leftCollider">
+ <objectgroup color="#ff0000" id="9" name="leftCollider">
   <object id="4" x="159" y="224" width="63.5" height="255"/>
  </objectgroup>
- <objectgroup id="10" name="floorCollider">
-  <object id="11" x="223.5" y="464.5" width="1056.5" height="14"/>
+ <objectgroup color="#0055ff" id="10" name="floorCollider">
+  <object id="11" x="223.5" y="464.5" width="1056.5" height="100.667"/>
  </objectgroup>
- <objectgroup id="12" name="nextStageCollider">
-  <object id="17" x="1263.58" y="332.576" width="16.1212" height="130.667"/>
+ <objectgroup color="#00ff33" id="12" name="nextStageCollider">
+  <object id="17" x="1263.58" y="223.243" width="16.1212" height="240"/>
  </objectgroup>
- <objectgroup id="11" name="boxCollider">
-  <object id="15" x="1024" y="248" width="63.5" height="215.5"/>
+ <objectgroup color="#ff00ff" id="11" name="boxCollider">
+  <object id="15" x="1024" y="225.333" width="63.5" height="238.167"/>
  </objectgroup>
 </map>
