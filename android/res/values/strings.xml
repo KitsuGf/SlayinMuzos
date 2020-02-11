@@ -2,5 +2,17 @@
 <resources>
 
     <string name="app_name">SlayinMuzos</string>
+    <string name="name">Nombre</string>
+    <string name="last_name">Apellidos</string>
+    <string name="password">Contraseña</string>
+    <string name="play">Jugar</string>
+    <string name="login">Iniciar Sesion</string>
+    <string name="register">Registrar</string>
+    <string name="email">Correo</string>
+    <string name="confirm">Confirmar</string>
+    <string name="Back">Volver</string>
+    <string name="user">Usuario</string>
+
+
 
 </resources>

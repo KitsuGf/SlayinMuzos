@@ -20,4 +20,12 @@ public class MainMenu extends AppCompatActivity {
 
 
     }
+
+    public void goReg(View view) {
+        Intent i = new Intent(
+                this,
+                Register.class);
+        this.startActivity(i);
+
+    }
 }
