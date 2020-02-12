@@ -1,21 +1,27 @@
 package Scenes;
 
+/**
+ *
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
+ *
+ */
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
 
-
-public class Hud {
+public class Hud implements Disposable {
     public Stage stage;
     public Viewport viewport;
     private Integer countEnemy;
@@ -30,7 +36,7 @@ public class Hud {
     Label lbTxCoins;
 
 
-    public Hud(SpriteBatch sb){
+    public Hud(SpriteBatch sb) {
 
         countEnemy = 20;
         countCombo = 0;
@@ -59,5 +65,10 @@ public class Hud {
         tb.add(lbCombo).expandX().padTop(0);
 
         stage.addActor(tb);
+    }
+
+    @Override
+    public void dispose() {
+        stage.dispose();
     }
 }
