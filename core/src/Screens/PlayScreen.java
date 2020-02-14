@@ -13,19 +13,26 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import Scenes.Hud;
+import Sprites.EnemyOne;
 import Sprites.HeroSword;
+import Tools.WorldContact;
 import Tools.WorldCreator;
 
 public class PlayScreen implements Screen {
@@ -39,9 +46,25 @@ public class PlayScreen implements Screen {
     private Viewport gamePort;
     private Hud hud;
     private HeroSword player;
+    private HeroSword player2;
+    private HeroSword player3;
+    private HeroSword player4;
+    private HeroSword player5;
+    private EnemyOne enemy;
+    private EnemyOne enemy2;
+    private EnemyOne enemy3;
+    private EnemyOne enemy4;
+    private EnemyOne enemy5;
+    private EnemyOne enemy6;
+    private EnemyOne enemy7;
+    private EnemyOne enemy8;
     private TmxMapLoader mapLoader;
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
+    private Timer tm;
+    private ArrayList<HeroSword> heroRandom;
+
+
 
 
     public PlayScreen(Main game) {
@@ -50,7 +73,6 @@ public class PlayScreen implements Screen {
         //Declare the orthographic camera.
         gamecam = new OrthographicCamera();
         //Declare a New viewPort with calcs in meters
-        gamePort = new StretchViewport(Main.V_WIDTH / Main.ppm, Main.V_HEIGHT / Main.ppm, gamecam);
         //Call hud class
         hud = new Hud(game.batch);
         //Load the tmxMap
@@ -58,6 +80,7 @@ public class PlayScreen implements Screen {
         map = mapLoader.load("maps/rooms/room_castle/castle_room.tmx");
         //Renderer render the tmxMap and use unitScale to define the scale in meters
         renderer = new OrthogonalTiledMapRenderer(map, 1/Main.ppm);
+        gamePort = new StretchViewport(Main.V_WIDTH / Main.ppm, Main.V_HEIGHT / Main.ppm, gamecam);
         //Set the positions of the viewport
         gamecam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
         //Call world and make it a object with parameters
@@ -68,8 +91,40 @@ public class PlayScreen implements Screen {
         //Call class WorldCreator to create collisions and etc.
         new WorldCreator(world, map);
 
-        //Call class player to create a HeroSprite in the stage.
         player = new HeroSword(world);
+
+
+
+        enemy = new EnemyOne(world);
+        enemy2 = new EnemyOne(world);
+        enemy3 = new EnemyOne(world);
+        enemy4 = new EnemyOne(world);
+        enemy5 = new EnemyOne(world);
+        enemy6 = new EnemyOne(world);
+        enemy7 = new EnemyOne(world);
+        enemy8 = new EnemyOne(world);
+
+        world.setContactListener(new WorldContact());
+
+
+
+
+
+        /*int limite = 10;
+
+        for (int i = 0; i < limite ; i++) {
+            heroRandom.add(new HeroSword(world));
+        }*/
+
+
+
+
+        //player.b2body.setTransform(200/Main.ppm, 300/Main.ppm , 0);
+       //player2.b2body.setTransform();
+
+
+
+
 
     }
 
@@ -105,7 +160,7 @@ public class PlayScreen implements Screen {
     public void update(float dt) {
         handleInput(dt);
         world.step(1/60f, 6, 2);
-        gamecam.position.x = player.b2body.getPosition().x;
+        //gamecam.position.x = player.b2body.getPosition().x;
         gamecam.update();
         renderer.setView(gamecam);
     }
@@ -124,6 +179,7 @@ public class PlayScreen implements Screen {
 
         b2dr.render(world, gamecam.combined);
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
+
         hud.stage.draw();
         game.batch.begin();
         game.batch.end();
