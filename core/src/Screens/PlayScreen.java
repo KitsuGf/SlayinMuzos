@@ -24,6 +24,7 @@ import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class PlayScreen implements Screen {
     private OrthogonalTiledMapRenderer renderer;
     private Timer tm;
     private ArrayList<HeroSword> heroRandom;
+    public Boolean isRight;
 
 
 
@@ -107,9 +109,6 @@ public class PlayScreen implements Screen {
         world.setContactListener(new WorldContact());
 
 
-
-
-
         /*int limite = 10;
 
         for (int i = 0; i < limite ; i++) {
@@ -123,10 +122,8 @@ public class PlayScreen implements Screen {
        //player2.b2body.setTransform();
 
 
-
-
-
     }
+
 
     @Override
     public void show() {
@@ -147,20 +144,28 @@ public class PlayScreen implements Screen {
        }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2) {
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
+            isRight = true;
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2) {
             player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
+            isRight = false;
 
         }
 
+
+
     }
+
+
 
     //This method is for encapsule all updates.
     public void update(float dt) {
         handleInput(dt);
         world.step(1/60f, 6, 2);
+        //Gamecam.position follow the player.
         //gamecam.position.x = player.b2body.getPosition().x;
+        //gamecam.position.y = player.b2body.getPosition().y;
         gamecam.update();
         renderer.setView(gamecam);
     }
