@@ -6,6 +6,7 @@ package Sprites;
  *
  * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
  *
+ *
  */
 
 import com.badlogic.gdx.Game;
@@ -27,6 +28,8 @@ public class HeroSword extends Sprite {
     protected Sprite sprite;
     public World world;
     public Body b2body;
+    private PlayScreen ps;
+    private Boolean b;
 
 
 
@@ -50,18 +53,30 @@ public class HeroSword extends Sprite {
         b2body.createFixture(fdef);
         EdgeShape cab = new EdgeShape();
 
+        ps = new PlayScreen(b); //TODO PREGUNTALE A MIGUEL ANDA
+
+
         cab.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(15 / Main.ppm, 0 / Main.ppm));
         fdef.shape = cab;
         fdef.isSensor = true;
         b2body.createFixture(fdef).setUserData("Cabeza");
 
-        /*
-        cab.set(new Vector2(15 / Main.ppm, 0 / Main.ppm), new Vector2(0 / Main.ppm, 0 / Main.ppm));
-        fdef.shape = cab;
-        fdef.isSensor = true;
-        b2body.createFixture(fdef).setUserData("Cabeza");
 
-        */
+        //TODO RECUERDA ARREGLAR ESTO
+        /*
+        if (ps.getDerecha() == b){
+            cab.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(15 / Main.ppm, 0 / Main.ppm));
+            fdef.shape = cab;
+            fdef.isSensor = true;
+            b2body.createFixture(fdef).setUserData("Cabeza");
+
+        }else{
+            cab.set(new Vector2(15 / Main.ppm, 0 / Main.ppm), new Vector2(0 / Main.ppm, 0 / Main.ppm));
+            fdef.shape = cab;
+            fdef.isSensor = true;
+            b2body.createFixture(fdef).setUserData("Cabeza");
+        }*/
+
 
 
     }

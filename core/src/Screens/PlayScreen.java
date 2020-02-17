@@ -64,7 +64,7 @@ public class PlayScreen implements Screen {
     private OrthogonalTiledMapRenderer renderer;
     private Timer tm;
     private ArrayList<HeroSword> heroRandom;
-    public Boolean isRight;
+    private Boolean isDerecha;
 
 
 
@@ -95,8 +95,6 @@ public class PlayScreen implements Screen {
 
         player = new HeroSword(world);
 
-
-
         enemy = new EnemyOne(world);
         enemy2 = new EnemyOne(world);
         enemy3 = new EnemyOne(world);
@@ -115,15 +113,25 @@ public class PlayScreen implements Screen {
             heroRandom.add(new HeroSword(world));
         }*/
 
-
-
-
         //player.b2body.setTransform(200/Main.ppm, 300/Main.ppm , 0);
-       //player2.b2body.setTransform();
+        //player2.b2body.setTransform();
 
 
     }
 
+
+    public PlayScreen(Boolean isDerecha) {
+        this.isDerecha = isDerecha;
+    }
+
+
+    public Boolean getDerecha() {
+        return isDerecha;
+    }
+
+    public void setDerecha(Boolean derecha) {
+        isDerecha = derecha;
+    }
 
     @Override
     public void show() {
@@ -134,7 +142,7 @@ public class PlayScreen implements Screen {
      *
      * This Class is maded to get the keySwitch from keyboard.
      *
-     * //TODO: Jump need be fixed.
+     * //TODO ARREGLA EL PUTO SALTO
      *
      * @param dt is DeltaTime
      */
@@ -144,12 +152,12 @@ public class PlayScreen implements Screen {
        }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2) {
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
-            isRight = true;
+            isDerecha = true;
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2) {
             player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
-            isRight = false;
+            isDerecha = false;
 
         }
 
