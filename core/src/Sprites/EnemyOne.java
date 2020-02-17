@@ -17,7 +17,7 @@ public class EnemyOne extends Sprite{
     public Body b2body;
     Random r = new Random();
     int low = 10;
-    int high = 400;
+    int high = 500;
     int random = r.nextInt(high-low) + low;
 
 
