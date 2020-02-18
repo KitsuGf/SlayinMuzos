@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Scenes.Hud;
+import Scenes.HudControllers;
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
 import Tools.WorldContact;
@@ -41,12 +42,23 @@ public class PlayScreen implements Screen {
 
     //Private Vars
 
+    private HeroSword hs;
+
+    public HeroSword getHs() {
+        return hs;
+    }
+
+    public void setHs(HeroSword hs) {
+        this.hs = hs;
+    }
+
     private World world;
     private Box2DDebugRenderer b2dr;
     private OrthographicCamera gamecam;
     private Main game;
     private Viewport gamePort;
     private Hud hud;
+    private HudControllers hudc;
     private HeroSword player;
     private HeroSword player2;
     private HeroSword player3;
@@ -78,6 +90,7 @@ public class PlayScreen implements Screen {
         //Declare a New viewPort with calcs in meters
         //Call hud class
         hud = new Hud(game.batch);
+        hudc = new HudControllers(game.batch);
         //Load the tmxMap
         mapLoader = new TmxMapLoader();
         map = mapLoader.load("maps/rooms/room_castle/castle_room.tmx");
@@ -149,24 +162,19 @@ public class PlayScreen implements Screen {
      */
     public void handleInput(float dt) {
        if (Gdx.input.isKeyJustPressed(Input.Keys.UP)){
-           player.b2body.applyLinearImpulse(new Vector2(0,4f), player.b2body.getWorldCenter(), true);
+           player.b2body.applyLinearImpulse(new Vector2(0,3f), player.b2body.getWorldCenter(), true);
        }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2) {
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
-            isDerecha = true;
+            hs.changeDirection(true);
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >= -2) {
             player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
-            isDerecha = false;
-
+            hs.changeDirection(false);
         }
 
-
-
     }
-
-
 
     //This method is for encapsule all updates.
     public void update(float dt) {
@@ -195,6 +203,7 @@ public class PlayScreen implements Screen {
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 
         hud.stage.draw();
+        hudc.stage.draw();
         game.batch.begin();
         game.batch.end();
 

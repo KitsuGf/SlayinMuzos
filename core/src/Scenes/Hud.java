@@ -51,16 +51,13 @@ public class Hud implements Disposable {
         countCoins = 0;
 
 
-
-
-
         viewport = new StretchViewport(Main.V_WIDTH, Main.V_HEIGHT, new OrthographicCamera());
         stage = new Stage(viewport, sb);
 
         //TODO ARREGLAR BACKGROUND HUD
-        texture = new Texture("sprites/hud/hud_controllers/test_hud.png");
-        textR = new TextureRegion(texture);
-        textRd = new TextureRegionDrawable(textR);
+        //texture = new Texture("sprites/hud/hud_controllers/test_hud.png");
+        //textR = new TextureRegion(texture);
+       // textRd = new TextureRegionDrawable(textR);
 
 
         img = new Image();
