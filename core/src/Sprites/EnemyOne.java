@@ -25,10 +25,10 @@ public class EnemyOne extends Sprite{
 
     public EnemyOne(World world) {
         this.world = world;
-        defineHero();
+        defineEnemy();
     }
 
-    public void defineHero(){
+    public void defineEnemy(){
 
         BodyDef bdef = new BodyDef();
         bdef.position.set(32 / Main.ppm, 32 / Main.ppm);

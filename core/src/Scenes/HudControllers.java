@@ -1,12 +1,14 @@
 package Scenes;
 
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -17,6 +19,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
+import Screens.PlayScreen;
 
 
 public class HudControllers implements Disposable {
@@ -25,9 +28,6 @@ public class HudControllers implements Disposable {
     private ImageButton btIzq;
     private ImageButton btDer;
     private ImageButton btJump;
-
-
-
 
 
     public HudControllers(SpriteBatch sb) {
@@ -55,7 +55,6 @@ public class HudControllers implements Disposable {
         btDer = new ImageButton(btnStyle2);
         btJump = new ImageButton(btnStyle3);
 
-
         viewport = new StretchViewport(Main.V_WIDTH, Main.V_HEIGHT, new OrthographicCamera());
         stage = new Stage(viewport, sb);
 
@@ -65,15 +64,17 @@ public class HudControllers implements Disposable {
      //   textRd = new TextureRegionDrawable(textR);
 
 
-
         Table tb = new Table();
         tb.bottom();
         tb.debug();
         tb.setFillParent(true);
 
-        tb.add(btIzq).height(55).width(121).padRight(30);
-        tb.add(btDer).height(55).width(121).padRight(60);
-        tb.add(btJump).height(55).width(121).padLeft(50);
+        tb.add(btIzq);
+
+        tb.add(btDer);
+
+        tb.add(btJump);
+
 
         stage.addActor(tb);
     }
