@@ -1,0 +1,72 @@
+
+buttons.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jump_green
+  rotate: false
+  xy: 1, 1
+  size: 860, 895
+  orig: 860, 895
+  offset: 0, 0
+  index: -1
+
+buttons2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jump_red
+  rotate: false
+  xy: 1, 1
+  size: 860, 895
+  orig: 860, 895
+  offset: 0, 0
+  index: -1
+
+buttons3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+left_green
+  rotate: false
+  xy: 1, 1
+  size: 860, 895
+  orig: 860, 895
+  offset: 0, 0
+  index: -1
+
+buttons4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+left_red
+  rotate: false
+  xy: 1, 1
+  size: 860, 895
+  orig: 860, 895
+  offset: 0, 0
+  index: -1
+
+buttons5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+right_green
+  rotate: false
+  xy: 1, 1
+  size: 860, 895
+  orig: 860, 895
+  offset: 0, 0
+  index: -1
+
+buttons6.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+right_red
+  rotate: false
+  xy: 1, 1
+  size: 860, 895
+  orig: 860, 895
+  offset: 0, 0
+  index: -1

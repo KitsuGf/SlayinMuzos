@@ -10,6 +10,7 @@ package Sprites;
  */
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -19,6 +20,10 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
 
+import javax.xml.soap.Text;
+
+import Screens.PlayScreen;
+
 
 public class HeroSword extends Sprite {
     protected Sprite sprite;
@@ -27,6 +32,7 @@ public class HeroSword extends Sprite {
     private static EdgeShape cab;
     private static FixtureDef fdef;
     private static BodyDef bdef;
+
 
 
     public HeroSword(World world) {
@@ -43,13 +49,18 @@ public class HeroSword extends Sprite {
 
         fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(6 / Main.ppm);
+        shape.setRadius(5 / Main.ppm);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);
         cab = new EdgeShape();
 
 
+    }
+
+
+    public void update(float dt){
+        setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);
     }
 
     public static void changeDirection(boolean bool){

@@ -13,7 +13,9 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -28,6 +30,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
@@ -76,8 +79,6 @@ public class PlayScreen implements Screen {
     private float time = 0;
     private MotionState motionState=MotionState.NONE;
     private Stage stage;
-    public Stage stageBt;
-    public Viewport vpBt;
     private static int jumps = 0;
     private static int maxJumps = 1;
     private ImageButton rightButton;
@@ -85,22 +86,32 @@ public class PlayScreen implements Screen {
     private ImageButton jumpButton;
     private Texture img;
     private SpriteBatch b;
+    private TextureAtlas tAtlasButtons;
+    private TextureAtlas heroSwordAtlas;
+
 
 //endregion
 
     public PlayScreen(Main game) {
+        //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
-        Skin mySkin = new Skin(Gdx.files.internal("skin/glassy-ui.json"));
-        Skin mySkinDos = new Skin(Gdx.files.internal("skin/glassy-ui.json"));
+
+        //Skins and atlas.
+        tAtlasButtons = new TextureAtlas("hud_buttons/buttons.atlas");
+        Skin btSkin = new Skin();
+        btSkin.addRegions(tAtlasButtons);
+
+        //TODO BACKGROUND
         img = new Texture(Gdx.files.internal("skin/bg_ui.png"));
 
         //region button right
-        rightButton = new ImageButton(mySkin);
-        rightButton.getStyle().imageUp = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("flecha_roja/right_red.png"))));
-        rightButton.getStyle().imageDown = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("flecha_verde/right_green.png"))));
+        ImageButton.ImageButtonStyle rightStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
+        rightStyle.up = btSkin.getDrawable("right_red");
+        rightStyle.down = btSkin.getDrawable("right_green");
+        rightButton = new ImageButton(rightStyle);
         rightButton.addListener(new InputListener(){
             @Override
             public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
@@ -117,9 +128,10 @@ public class PlayScreen implements Screen {
         //endregion button left;
 
         //region button left
-        leftButton = new ImageButton(mySkinDos);
-        leftButton.getStyle().imageUp = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("flecha_roja/left_red.png"))));
-        leftButton.getStyle().imageDown = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("flecha_verde/left_green.png"))));
+        ImageButton.ImageButtonStyle leftStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
+        leftStyle.up = btSkin.getDrawable("left_red");
+        leftStyle.down = btSkin.getDrawable("left_green");
+        leftButton = new ImageButton(leftStyle);
         leftButton.addListener(new InputListener(){
             @Override
             public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
@@ -136,9 +148,10 @@ public class PlayScreen implements Screen {
         //endregion button left
 
         //region button jump
-        jumpButton = new ImageButton(mySkin);
-        jumpButton.getStyle().imageUp = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("flecha_roja/left_red.png"))));
-        jumpButton.getStyle().imageDown = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("flecha_verde/left_green.png"))));
+        ImageButton.ImageButtonStyle jumpStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
+        jumpStyle.up = btSkin.getDrawable("jump_red");
+        jumpStyle.down = btSkin.getDrawable("jump_green");
+        jumpButton = new ImageButton(jumpStyle);
         jumpButton.addListener(new InputListener(){
             @Override
             public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
@@ -154,13 +167,7 @@ public class PlayScreen implements Screen {
         });
         //endregion button jump
 
-
-        //Declare the orthographic camera.
-        gamecam = new OrthographicCamera();
-        //Declare a New viewPort with calcs in meters
-        //Call hud class
-        hud = new Hud(game.batch);
-
+        //region Table for buttons
         Table tb = new Table();
         tb.bottom();
         tb.debug();
@@ -171,6 +178,18 @@ public class PlayScreen implements Screen {
         tb.add(jumpButton).height(Gdx.graphics.getHeight()/4).width(Gdx.graphics.getWidth()/4);
 
         stage.addActor(tb);
+        //endregion
+
+
+        //Declare the orthographic camera.
+        gamecam = new OrthographicCamera();
+        //Declare a New viewPort with calcs in meters
+        //Call hud class
+        hud = new Hud(game.batch);
+
+
+
+
 
         //Load the tmxMap
         mapLoader = new TmxMapLoader();
@@ -194,6 +213,7 @@ public class PlayScreen implements Screen {
         world.setContactListener(new WorldContact());
 
     }
+
 
     // TODO INTENTAR QUE ESTO SEA UNA CLASE EXTERNA.
     //region ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
@@ -272,9 +292,10 @@ public class PlayScreen implements Screen {
 
     }
 
-
     //This method is for encapsule all updates.
     public void update(float dt) {
+
+        player.update(dt);
         //region Use TIME variable to add this and delta time.
         time += Gdx.graphics.getDeltaTime();
         //Now if time is higher than time_out spawn enemy, if not, stop.
@@ -288,6 +309,7 @@ public class PlayScreen implements Screen {
         //endregion
 
         world.step(1 / 60f, 6, 2);
+
         //Gamecam.position follow the player.
         //gamecam.position.x = player.b2body.getPosition().x;
         //gamecam.position.y = player.b2body.getPosition().y;
@@ -314,6 +336,8 @@ public class PlayScreen implements Screen {
             jumps = 0;
         //endregion
 
+
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -322,9 +346,10 @@ public class PlayScreen implements Screen {
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 
 
-        b.begin();
+        //TODO FIX THE BACKGROUND OF TABLE.
+        /*b.begin();
         b.draw(img, 0, 0);
-        b.end();
+        b.end();*/
 
 
         stage.act();
@@ -334,7 +359,7 @@ public class PlayScreen implements Screen {
         hud.stage.draw();
 
         game.batch.begin();
-
+        player.draw(game.batch);
         game.batch.end();
 
     }
