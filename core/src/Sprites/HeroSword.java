@@ -32,12 +32,16 @@ public class HeroSword extends Sprite {
     private static EdgeShape cab;
     private static FixtureDef fdef;
     private static BodyDef bdef;
+    private TextureRegion heroStand;
 
 
-
-    public HeroSword(World world) {
+    public HeroSword(World world, PlayScreen screen) {
+        super(screen.getHeroSwordAtlas().findRegion("little_mario"));
         this.world = world;
         defineHero();
+        heroStand = new TextureRegion(getTexture(), 1,11,16,16);
+        setBounds(0,0,16 /Main.ppm, 16/Main.ppm);
+        setRegion(heroStand);
     }
 
     public void defineHero(){

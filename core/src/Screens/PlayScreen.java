@@ -52,10 +52,7 @@ public class PlayScreen implements Screen {
     //region Private Vars
 
     private static HeroSword hs;
-
-    public PlayScreen() {
-
-    }
+    public PlayScreen() {}
 
     public HeroSword getHs() {
         return hs;
@@ -93,6 +90,7 @@ public class PlayScreen implements Screen {
 //endregion
 
     public PlayScreen(Main game) {
+        heroSwordAtlas =  new TextureAtlas("sprites/hero_sword/Mario_and_Enemies.pack");
         //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
@@ -207,13 +205,16 @@ public class PlayScreen implements Screen {
         //Call class WorldCreator to create collisions and etc.
         new WorldCreator(world, map);
 
-        player = new HeroSword(world);
+        player = new HeroSword(world, this);
 
         //Setter from contactListneer in worldContact.
         world.setContactListener(new WorldContact());
 
     }
 
+
+
+    public TextureAtlas getHeroSwordAtlas(){return heroSwordAtlas;}
 
     // TODO INTENTAR QUE ESTO SEA UNA CLASE EXTERNA.
     //region ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
@@ -343,7 +344,7 @@ public class PlayScreen implements Screen {
 
         renderer.render();
         b2dr.render(world, gamecam.combined);
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
+        //game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 
 
         //TODO FIX THE BACKGROUND OF TABLE.
@@ -356,11 +357,14 @@ public class PlayScreen implements Screen {
         stage.draw();
 
 
-        hud.stage.draw();
 
+        game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player.draw(game.batch);
         game.batch.end();
+
+        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
+        hud.stage.draw();
 
     }
 
