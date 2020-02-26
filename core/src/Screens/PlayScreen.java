@@ -296,7 +296,7 @@ public class PlayScreen implements Screen {
     //This method is for encapsule all updates.
     public void update(float dt) {
 
-        player.update(dt);
+
         //region Use TIME variable to add this and delta time.
         time += Gdx.graphics.getDeltaTime();
         //Now if time is higher than time_out spawn enemy, if not, stop.
@@ -310,7 +310,7 @@ public class PlayScreen implements Screen {
         //endregion
 
         world.step(1 / 60f, 6, 2);
-
+        player.update(dt);
         //Gamecam.position follow the player.
         //gamecam.position.x = player.b2body.getPosition().x;
         //gamecam.position.y = player.b2body.getPosition().y;
@@ -356,7 +356,7 @@ public class PlayScreen implements Screen {
         stage.act();
         stage.draw();
 
-        
+
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player.draw(game.batch);
