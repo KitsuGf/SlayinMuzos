@@ -44,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldContact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="144">
               <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -55,19 +55,19 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
               <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
             </state>
           </provider>
-          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+            <state relative-caret-position="1458">
+              <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -84,15 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="346" column="73" lean-forward="true" selection-start-line="346" selection-start-column="73" selection-end-line="346" selection-end-column="73" />
-              <folding>
-                <element signature="e#3366#3387#0" />
-                <element signature="e#4225#4245#0" />
-                <element signature="e#5075#5095#0" />
-                <element signature="e#5916#5942#0" />
-                <element signature="e#7650#9174#0" />
-              </folding>
+            <state relative-caret-position="513">
+              <caret line="358" column="8" selection-start-line="358" selection-start-column="8" selection-end-line="358" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -156,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -166,14 +159,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="SlayinMuzos" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-            </path>
             <path>
               <item name="SlayinMuzos" type="1abcf292:AndroidViewProjectNode" />
               <item name="core" type="e9137016:NonAndroidModuleNode" />
@@ -217,6 +205,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
@@ -343,10 +332,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50073636" side_tool="true" weight="0.118336886" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.48425624" visible="true" weight="0.17270789" />
-      <window_info id="Structure" order="2" sideWeight="0.51574373" side_tool="true" visible="true" weight="0.17270789" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4807198" visible="true" weight="0.08635394" />
+      <window_info id="Structure" order="2" sideWeight="0.5192802" side_tool="true" visible="true" weight="0.08635394" />
       <window_info id="Favorites" order="3" sideWeight="0.50073636" side_tool="true" weight="0.118336886" />
       <window_info id="Build Variants" order="4" sideWeight="0.50073636" side_tool="true" weight="0.118336886" />
       <window_info id="Image Layers" order="5" />
@@ -358,12 +348,12 @@
       <window_info anchor="bottom" id="TODO" order="2" weight="0.23995657" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" weight="0.15526602" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.15526602" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.33876222" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3279743" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3290461" />
-      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5005359" side_tool="true" visible="true" weight="0.13539445" />
+      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5005359" side_tool="true" weight="0.27789935" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -412,12 +402,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/res/layout/activity_register.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
           <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/salyin/muzos/Register.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -427,16 +417,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/res/layout-land/activity_main_menu.xml">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android/res/layout/activity_main_menu.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.10/37e7ec91522313dabc753c72196dd665ea4a9332/gdx-1.9.10-sources.jar!/com/badlogic/gdx/graphics/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -521,17 +511,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldContact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="144">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -539,10 +521,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Sprites/ObjectInteract.java">
+    <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="468">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -553,24 +543,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
+    <entry file="file://$PROJECT_DIR$/core/src/Sprites/ObjectInteract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+        <state relative-caret-position="72">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="346" column="73" lean-forward="true" selection-start-line="346" selection-start-column="73" selection-end-line="346" selection-end-column="73" />
-          <folding>
-            <element signature="e#3366#3387#0" />
-            <element signature="e#4225#4245#0" />
-            <element signature="e#5075#5095#0" />
-            <element signature="e#5916#5942#0" />
-            <element signature="e#7650#9174#0" />
-          </folding>
+        <state relative-caret-position="513">
+          <caret line="358" column="8" selection-start-line="358" selection-start-column="8" selection-end-line="358" selection-end-column="8" />
         </state>
       </provider>
     </entry>

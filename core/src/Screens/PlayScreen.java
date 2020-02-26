@@ -356,8 +356,7 @@ public class PlayScreen implements Screen {
         stage.act();
         stage.draw();
 
-
-
+        
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player.draw(game.batch);
