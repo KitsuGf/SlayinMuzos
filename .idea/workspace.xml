@@ -19,7 +19,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_24" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_24_2" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -35,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Scenes/Hud.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
+            <state>
               <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="66" selection-end-column="31" />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldContact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="128">
               <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -54,20 +54,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
+        <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state relative-caret-position="2212">
+              <caret line="279" column="82" selection-start-line="279" selection-start-column="82" selection-end-line="279" selection-end-column="82" />
+              <folding>
+                <element signature="e#7834#7835#0" expanded="true" />
+                <element signature="e#7871#7872#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher_foreground.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+            <state relative-caret-position="404">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -75,29 +93,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Sprites/EnemyOne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="304">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
+        <entry file="file://$PROJECT_DIR$/core/src/com/salyin/muzos/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="92" column="80" selection-start-line="92" selection-start-column="80" selection-end-line="92" selection-end-column="80" />
+            <state relative-caret-position="416">
+              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding>
-                <element signature="e#7868#7916#0" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/Sprites/ObjectInteract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -116,6 +125,8 @@
       <find>handleInput</find>
       <find>skin</find>
       <find>isdere</find>
+      <find>CircleShape</find>
+      <find>b2dr</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -130,7 +141,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
         <option value="$PROJECT_DIR$/android/src/com/salyin/muzos/AndroidLauncher.java" />
-        <option value="$PROJECT_DIR$/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/android/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/android/src/com/salyin/muzos/MainMenu.java" />
         <option value="$PROJECT_DIR$/android/res/layout/activity_main_menu.xml" />
@@ -147,25 +157,36 @@
         <option value="$PROJECT_DIR$/core/src/Scenes/Hud.java" />
         <option value="$PROJECT_DIR$/core/src/Sprites/EnemyOne.java" />
         <option value="$PROJECT_DIR$/core/src/Scenes/HudControllers.java" />
-        <option value="$PROJECT_DIR$/core/src/Screens/PlayScreen.java" />
         <option value="$PROJECT_DIR$/core/src/Sprites/HeroSword.java" />
+        <option value="$PROJECT_DIR$/core/src/Screens/PlayScreen.java" />
+        <option value="$PROJECT_DIR$/android/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+    <option name="x" value="126" />
+    <option name="y" value="279" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
+            <path>
+              <item name="SlayinMuzos" type="1abcf292:AndroidViewProjectNode" />
+              <item name="android" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="SlayinMuzos" type="1abcf292:AndroidViewProjectNode" />
+              <item name="android" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
             <path>
               <item name="SlayinMuzos" type="1abcf292:AndroidViewProjectNode" />
               <item name="core" type="e9137016:NonAndroidModuleNode" />
@@ -205,21 +226,24 @@
               <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
               <item name="Tools" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SlayinMuzos" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_24" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-02-26T12:33:50.875Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_24_2" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-02-22T18:54:33.991Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EjemplosJuegosLibGdx/PruebasTema5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -240,7 +264,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Android App.android">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -265,6 +289,8 @@
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
@@ -335,12 +361,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50073636" side_tool="true" weight="0.118336886" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4811166" visible="true" weight="0.08635394" />
-      <window_info id="Structure" order="2" sideWeight="0.5188834" side_tool="true" visible="true" weight="0.08635394" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.48350254" visible="true" weight="0.17270789" />
+      <window_info id="Structure" order="2" sideWeight="0.51649743" side_tool="true" visible="true" weight="0.17270789" />
       <window_info id="Favorites" order="3" sideWeight="0.50073636" side_tool="true" weight="0.118336886" />
       <window_info id="Build Variants" order="4" sideWeight="0.50073636" side_tool="true" weight="0.118336886" />
       <window_info id="Image Layers" order="5" />
@@ -349,28 +375,25 @@
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.3290461" />
-      <window_info anchor="bottom" id="TODO" order="2" weight="0.23995657" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.24008575" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" weight="0.15526602" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.33876222" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.15541264" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.1607717" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3279743" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3290461" />
-      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5005359" side_tool="true" weight="0.27789935" />
+      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.50126904" side_tool="true" visible="true" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Preview" order="5" sideWeight="0.4994641" weight="0.32995737" />
+      <window_info anchor="right" id="Preview" order="5" sideWeight="0.49873096" weight="0.32995737" />
     </layout>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/android/assets/maps/rooms/room_air/air_map.tmx" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties" />
-    <entry file="file://$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher_foreground.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1061" />
@@ -406,12 +429,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/res/layout/activity_register.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
           <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/salyin/muzos/Register.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -421,16 +444,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/res/layout-land/activity_main_menu.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android/res/layout/activity_main_menu.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.10/37e7ec91522313dabc753c72196dd665ea4a9332/gdx-1.9.10-sources.jar!/com/badlogic/gdx/graphics/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -470,6 +493,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Sprites/ObjectInteract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Scenes/HudControllers.java" />
     <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldCreator.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -478,39 +508,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.10/37e7ec91522313dabc753c72196dd665ea4a9332/gdx-1.9.10-sources.jar!/com/badlogic/gdx/Game.java">
+    <entry file="file://$PROJECT_DIR$/core/src/Scenes/Hud.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-          <folding>
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/salyin/muzos/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.10/37e7ec91522313dabc753c72196dd665ea4a9332/gdx-1.9.10-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="959" selection-start-line="959" selection-end-line="959" />
+        <state>
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="66" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldContact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="128">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -518,51 +525,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/salyin/muzos/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        <state relative-caret-position="416">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Sprites/EnemyOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Sprites/ObjectInteract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Scenes/Hud.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="66" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="92" column="80" selection-start-line="92" selection-start-column="80" selection-end-line="92" selection-end-column="80" />
-          <folding>
-            <element signature="e#7868#7916#0" />
-          </folding>
+        <state relative-caret-position="304">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+        <state relative-caret-position="404">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2212">
+          <caret line="279" column="82" selection-start-line="279" selection-start-column="82" selection-end-line="279" selection-end-column="82" />
+          <folding>
+            <element signature="e#7834#7835#0" expanded="true" />
+            <element signature="e#7871#7872#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/res/drawable-hdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher_foreground.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
   </component>
   <component name="masterDetails">

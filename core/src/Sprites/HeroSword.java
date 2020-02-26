@@ -9,6 +9,7 @@ package Sprites;
  *
  */
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
@@ -26,22 +27,28 @@ import Screens.PlayScreen;
 
 
 public class HeroSword extends Sprite {
-    protected Sprite sprite;
+
+    public enum State{RUN, STAND};
     public World world;
     public static Body b2body;
-    private static EdgeShape cab;
+    private static EdgeShape sword;
     private static FixtureDef fdef;
     private static BodyDef bdef;
     private TextureRegion heroStand;
+    private boolean isRight;
+
 
 
     public HeroSword(World world, PlayScreen screen) {
-        super(screen.getHeroSwordAtlas().findRegion("little_mario"));
+        super(screen.getHeroSwordAtlas().findRegion("viking"));
         this.world = world;
         defineHero();
-        heroStand = new TextureRegion(getTexture(), 1,11,16,16);
-        setBounds(0,0,16 /Main.ppm, 16/Main.ppm);
+        isRight = true;
+        heroStand = new TextureRegion(getTexture(), -19,31,128,128);
+        setBounds(0,0,70/Main.ppm, 64/Main.ppm);
         setRegion(heroStand);
+
+
     }
 
     public void defineHero(){
@@ -53,24 +60,29 @@ public class HeroSword extends Sprite {
 
         fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(5 / Main.ppm);
+        shape.setRadius(8 / Main.ppm);
 
+        //Sword
         fdef.shape = shape;
         b2body.createFixture(fdef);
-        cab = new EdgeShape();
+        sword = new EdgeShape();
+
 
 
     }
 
-
+    //Update with deltatime the position of the sprite.
     public void update(float dt){
         setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);
+
     }
 
-    public static void changeDirection(boolean bool){
+
+    public static boolean changeDirection(boolean bool){
+
         if (bool){
-            cab.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(20 / Main.ppm, 0 / Main.ppm));
-            fdef.shape = cab;
+            sword.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(22 / Main.ppm, 0 / Main.ppm));
+            fdef.shape = sword;
             fdef.isSensor = true;
 
             for (int i = 1; i < b2body.getFixtureList().size; i++){
@@ -78,9 +90,11 @@ public class HeroSword extends Sprite {
             }
             b2body.createFixture(fdef).setUserData("Sword");
 
+
+
         } else {
-            cab.set(new Vector2(-20 / Main.ppm, 0 / Main.ppm), new Vector2(0 / Main.ppm, 0 / Main.ppm));
-            fdef.shape = cab;
+            sword.set(new Vector2(-22 / Main.ppm, 0 / Main.ppm), new Vector2(0 / Main.ppm, 0 / Main.ppm));
+            fdef.shape = sword;
             fdef.isSensor = true;
 
             for (int i = 1; i < b2body.getFixtureList().size; i++){
@@ -88,8 +102,7 @@ public class HeroSword extends Sprite {
             }
                 b2body.createFixture(fdef).setUserData("Sword");
             }
-        }
-
-
+        return bool;
+    }
 
 }

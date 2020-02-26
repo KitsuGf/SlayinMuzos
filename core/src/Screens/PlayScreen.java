@@ -52,14 +52,18 @@ public class PlayScreen implements Screen {
     //region Private Vars
 
     private static HeroSword hs;
-    public PlayScreen() {}
+
+    public PlayScreen() {
+    }
 
     public HeroSword getHs() {
         return hs;
     }
+
     public void setHs(HeroSword hs) {
         this.hs = hs;
     }
+
     private World world;
     private Box2DDebugRenderer b2dr;
     private OrthographicCamera gamecam;
@@ -74,7 +78,7 @@ public class PlayScreen implements Screen {
     private Boolean isDerecha;
     private final static float timeOut = 2;
     private float time = 0;
-    private MotionState motionState=MotionState.NONE;
+    private MotionState motionState = MotionState.NONE;
     private Stage stage;
     private static int jumps = 0;
     private static int maxJumps = 1;
@@ -85,12 +89,13 @@ public class PlayScreen implements Screen {
     private SpriteBatch b;
     private TextureAtlas tAtlasButtons;
     private TextureAtlas heroSwordAtlas;
+    private boolean changeDir;
 
 
 //endregion
 
     public PlayScreen(Main game) {
-        heroSwordAtlas =  new TextureAtlas("sprites/hero_sword/Mario_and_Enemies.pack");
+        heroSwordAtlas = new TextureAtlas("sprites/hero_sword/viking.pack");
         //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
@@ -110,16 +115,17 @@ public class PlayScreen implements Screen {
         rightStyle.up = btSkin.getDrawable("right_red");
         rightStyle.down = btSkin.getDrawable("right_green");
         rightButton = new ImageButton(rightStyle);
-        rightButton.addListener(new InputListener(){
+        rightButton.addListener(new InputListener() {
             @Override
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-                motionState=MotionState.NONE;
+                motionState = MotionState.NONE;
             }
+
             @Override
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Gdx.app.log("Me muevo a:", "Derecha");
-                motionState=MotionState.RIGHT;
+                motionState = MotionState.RIGHT;
                 return true;
             }
         });
@@ -130,16 +136,17 @@ public class PlayScreen implements Screen {
         leftStyle.up = btSkin.getDrawable("left_red");
         leftStyle.down = btSkin.getDrawable("left_green");
         leftButton = new ImageButton(leftStyle);
-        leftButton.addListener(new InputListener(){
+        leftButton.addListener(new InputListener() {
             @Override
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-                motionState=MotionState.NONE;
+                motionState = MotionState.NONE;
             }
+
             @Override
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Gdx.app.log("Me muevo a:", "Izquierda");
-                motionState=MotionState.LEFT;
+                motionState = MotionState.LEFT;
                 return true;
             }
         });
@@ -150,16 +157,17 @@ public class PlayScreen implements Screen {
         jumpStyle.up = btSkin.getDrawable("jump_red");
         jumpStyle.down = btSkin.getDrawable("jump_green");
         jumpButton = new ImageButton(jumpStyle);
-        jumpButton.addListener(new InputListener(){
+        jumpButton.addListener(new InputListener() {
             @Override
-            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-                motionState=MotionState.NONE;
+                motionState = MotionState.NONE;
             }
+
             @Override
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Gdx.app.log("Accion:", "Salto!");
-                motionState=MotionState.UP;
+                motionState = MotionState.UP;
                 return true;
             }
         });
@@ -171,9 +179,9 @@ public class PlayScreen implements Screen {
         tb.debug();
         tb.setFillParent(true);
 
-        tb.add(leftButton).height(Gdx.graphics.getHeight()/4).width(Gdx.graphics.getWidth()/4);
-        tb.add(rightButton).height(Gdx.graphics.getHeight()/4).width(Gdx.graphics.getWidth()/4).padRight(Gdx.graphics.getWidth()/4);
-        tb.add(jumpButton).height(Gdx.graphics.getHeight()/4).width(Gdx.graphics.getWidth()/4);
+        tb.add(leftButton).height(Gdx.graphics.getHeight() / 4).width(Gdx.graphics.getWidth() / 4);
+        tb.add(rightButton).height(Gdx.graphics.getHeight() / 4).width(Gdx.graphics.getWidth() / 4).padRight(Gdx.graphics.getWidth() / 4);
+        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 4).width(Gdx.graphics.getWidth() / 4);
 
         stage.addActor(tb);
         //endregion
@@ -181,12 +189,9 @@ public class PlayScreen implements Screen {
 
         //Declare the orthographic camera.
         gamecam = new OrthographicCamera();
-        //Declare a New viewPort with calcs in meters
+        //Declare a New viewPort with calcs in ppm
         //Call hud class
         hud = new Hud(game.batch);
-
-
-
 
 
         //Load the tmxMap
@@ -213,8 +218,9 @@ public class PlayScreen implements Screen {
     }
 
 
-
-    public TextureAtlas getHeroSwordAtlas(){return heroSwordAtlas;}
+    public TextureAtlas getHeroSwordAtlas() {
+        return heroSwordAtlas;
+    }
 
     // TODO INTENTAR QUE ESTO SEA UNA CLASE EXTERNA.
     //region ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
@@ -234,7 +240,7 @@ public class PlayScreen implements Screen {
 
 
                 // the limit is reached
-                if(jumps == maxJumps)
+                if (jumps == maxJumps)
                     return true;
 
                 player.b2body.applyLinearImpulse(new Vector2(0, 2.5f), player.b2body.getWorldCenter(), true);
@@ -245,25 +251,34 @@ public class PlayScreen implements Screen {
         },
 
 
-        LEFT{
+        LEFT {
             @Override
-            public boolean update(HeroSword  player)  {
+            public boolean update(HeroSword player) {
                 if (player.b2body.getLinearVelocity().x >= -2) {
                     player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
                     hs.changeDirection(false);
+                }
+                //method to flip sprite
+                if (player.b2body.getLinearVelocity().x <= 0 && !player.isFlipX()) {
+                    player.flip(true, false);
                 }
                 return false;
             }
         },
 
-        RIGHT{
+        RIGHT {
             @Override
             public boolean update(HeroSword player) {
+
 
                 if (player.b2body.getLinearVelocity().x <= 2) {
                     player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
                     hs.changeDirection(true);
 
+                }
+                //method to flip sprite
+                if (player.b2body.getLinearVelocity().x >= 0 && player.isFlipX()) {
+                    player.flip(true, false);
                 }
 
                 return false;
@@ -287,6 +302,7 @@ public class PlayScreen implements Screen {
     public void setDerecha(Boolean derecha) {
         isDerecha = derecha;
     }
+
     //endregion
     @Override
     public void show() {
@@ -300,9 +316,9 @@ public class PlayScreen implements Screen {
         //region Use TIME variable to add this and delta time.
         time += Gdx.graphics.getDeltaTime();
         //Now if time is higher than time_out spawn enemy, if not, stop.
-        if (time > timeOut){
+        if (time > timeOut) {
             //condition to add enemies until 10 enemies.
-            if (enemies.size() != 10){
+            if (enemies.size() != 10) {
                 enemies.add(new EnemyOne(world));
                 time = 0; // or set to 0 to repeat the process
             }
@@ -325,18 +341,17 @@ public class PlayScreen implements Screen {
         update(delta);
 
         //region inputs for motionState
-        if(Gdx.input.isKeyPressed(Input.Keys.UP)) motionState=MotionState.UP;
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) motionState=MotionState.LEFT;
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) motionState=MotionState.RIGHT;
+        if (Gdx.input.isKeyPressed(Input.Keys.UP)) motionState = MotionState.UP;
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) motionState = MotionState.LEFT;
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) motionState = MotionState.RIGHT;
 
-        if(motionState.update(player)) motionState=MotionState.NONE;
+        if (motionState.update(player)) motionState = MotionState.NONE;
         //endregion
 
         //region method to limit jump.
-        if(player.b2body.getLinearVelocity().y == 0)
+        if (player.b2body.getLinearVelocity().y == 0)
             jumps = 0;
         //endregion
-
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -344,7 +359,6 @@ public class PlayScreen implements Screen {
 
         renderer.render();
         b2dr.render(world, gamecam.combined);
-        //game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 
 
         //TODO FIX THE BACKGROUND OF TABLE.
