@@ -89,7 +89,6 @@ public class PlayScreen implements Screen {
     private SpriteBatch b;
     private TextureAtlas tAtlasButtons;
     private TextureAtlas heroSwordAtlas;
-    private boolean changeDir;
 
 
 //endregion
@@ -103,17 +102,18 @@ public class PlayScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
 
         //Skins and atlas.
-        tAtlasButtons = new TextureAtlas("hud_buttons/buttons.atlas");
+        tAtlasButtons = new TextureAtlas("hud_buttons/buttons.pack");
         Skin btSkin = new Skin();
         btSkin.addRegions(tAtlasButtons);
 
         //TODO BACKGROUND
-        img = new Texture(Gdx.files.internal("skin/bg_ui.png"));
+        img = new Texture(Gdx.files.internal("skin/back_ui.png"));
+
 
         //region button right
         ImageButton.ImageButtonStyle rightStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
-        rightStyle.up = btSkin.getDrawable("right_red");
-        rightStyle.down = btSkin.getDrawable("right_green");
+        rightStyle.up = btSkin.getDrawable("right_off");
+        rightStyle.down = btSkin.getDrawable("right_on");
         rightButton = new ImageButton(rightStyle);
         rightButton.addListener(new InputListener() {
             @Override
@@ -133,8 +133,8 @@ public class PlayScreen implements Screen {
 
         //region button left
         ImageButton.ImageButtonStyle leftStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
-        leftStyle.up = btSkin.getDrawable("left_red");
-        leftStyle.down = btSkin.getDrawable("left_green");
+        leftStyle.up = btSkin.getDrawable("left_off");
+        leftStyle.down = btSkin.getDrawable("left_on");
         leftButton = new ImageButton(leftStyle);
         leftButton.addListener(new InputListener() {
             @Override
@@ -154,8 +154,8 @@ public class PlayScreen implements Screen {
 
         //region button jump
         ImageButton.ImageButtonStyle jumpStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
-        jumpStyle.up = btSkin.getDrawable("jump_red");
-        jumpStyle.down = btSkin.getDrawable("jump_green");
+        jumpStyle.up = btSkin.getDrawable("jump_off");
+        jumpStyle.down = btSkin.getDrawable("jump_on");
         jumpButton = new ImageButton(jumpStyle);
         jumpButton.addListener(new InputListener() {
             @Override
@@ -176,12 +176,12 @@ public class PlayScreen implements Screen {
         //region Table for buttons
         Table tb = new Table();
         tb.bottom();
-        tb.debug();
+        //tb.debug();
         tb.setFillParent(true);
 
-        tb.add(leftButton).height(Gdx.graphics.getHeight() / 4).width(Gdx.graphics.getWidth() / 4);
-        tb.add(rightButton).height(Gdx.graphics.getHeight() / 4).width(Gdx.graphics.getWidth() / 4).padRight(Gdx.graphics.getWidth() / 4);
-        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 4).width(Gdx.graphics.getWidth() / 4);
+        tb.add(leftButton).height(Gdx.graphics.getHeight() / 7.5f).width(Gdx.graphics.getWidth() / 7.5f).padBottom(Gdx.graphics.getWidth() / 24);
+        tb.add(rightButton).height(Gdx.graphics.getHeight() / 7.5f).width(Gdx.graphics.getWidth() / 7.5f).padBottom(Gdx.graphics.getWidth() / 24).padRight(Gdx.graphics.getWidth() / 2.7f);
+        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 7.5f).width(Gdx.graphics.getWidth() / 7.5f).padBottom(Gdx.graphics.getWidth() / 24).padRight(Gdx.graphics.getWidth() / 10);
 
         stage.addActor(tb);
         //endregion
@@ -362,9 +362,9 @@ public class PlayScreen implements Screen {
 
 
         //TODO FIX THE BACKGROUND OF TABLE.
-        /*b.begin();
-        b.draw(img, 0, 0);
-        b.end();*/
+        b.begin();
+        b.draw(img,0,0,  Gdx.graphics.getWidth() , Gdx.graphics.getHeight() / 4);
+        b.end();
 
 
         stage.act();

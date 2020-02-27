@@ -11,8 +11,7 @@ public class WorldContact implements ContactListener {
     @Override
     public void beginContact(Contact contact) {
         Gdx.app.log("Esta colisionando?", "si");
-        //TODO ESTO ES PARA EL DOBLE SALTO
-        //player.setTocasuelo(true);
+
 
     }
 
