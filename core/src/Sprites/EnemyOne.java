@@ -1,6 +1,7 @@
 package Sprites;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
@@ -9,6 +10,8 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
 
 import java.util.Random;
+
+import Screens.PlayScreen;
 
 public class EnemyOne extends Sprite{
 
@@ -19,13 +22,25 @@ public class EnemyOne extends Sprite{
     int low = 10;
     int high = 500;
     int random = r.nextInt(high-low) + low;
+    private TextureRegion enemyStand;
 
 
 
 
-    public EnemyOne(World world) {
+    public EnemyOne(World world, PlayScreen screen) {
+        super(screen.getEnemyOneAtlas().findRegion("sl"));
+        enemyStand = new TextureRegion(getTexture(), 0,6,32,25);
+        setBounds(0,0,42/Main.ppm, 35/Main.ppm);
+        setRegion(enemyStand);
         this.world = world;
         defineEnemy();
+    }
+
+
+    //Update with deltatime the position of the sprite.
+    public void update(float dt){
+        setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);
+
     }
 
     public void defineEnemy(){
@@ -37,7 +52,7 @@ public class EnemyOne extends Sprite{
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(10 / Main.ppm);
+        shape.setRadius(8 / Main.ppm);
 
 
         fdef.shape = shape;

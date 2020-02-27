@@ -5,13 +5,13 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="14"
+8        android:minSdkVersion="17"
 8-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
 9-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:5:5-25:19
+11-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:5:5-26:19
 12        android:allowBackup="true"
 12-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:6:9-35
 13        android:appCategory="game"
@@ -28,33 +28,35 @@
 19        android:testOnly="true"
 20        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
 20-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:11:9-68
-21        <activity android:name="com.salyin.muzos.Register" />
-21-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:9-55
-21-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:19-43
-22        <activity android:name="com.salyin.muzos.MainMenu" >
-22-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:13:9-19:20
-22-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:13:19-43
-23            <intent-filter>
-23-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:14:13-18:29
-24                <action android:name="android.intent.action.MAIN" />
-24-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:15:17-69
-24-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:15:25-66
-25
-26                <category android:name="android.intent.category.LAUNCHER" />
-26-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:17:17-77
-26-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:17:27-74
-27            </intent-filter>
-28        </activity>
-29        <activity
-29-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:20:9-24:62
-30            android:name="com.salyin.muzos.AndroidLauncher"
-30-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:21:13-44
-31            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
-31-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:13-107
-32            android:label="@string/app_name"
-32-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:23:13-45
-33            android:screenOrientation="landscape" />
-33-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:24:13-50
-34    </application>
-35
-36</manifest>
+21        <activity
+21-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:9-20:20
+22            android:name="com.salyin.muzos.MainMenu"
+22-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:19-43
+23            android:screenOrientation="landscape"
+23-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:13:19-56
+24            android:theme="@style/Theme.AppCompat.NoActionBar" >
+24-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:14:19-69
+25            <intent-filter>
+25-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:15:13-19:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:16:17-69
+26-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:16:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:18:17-77
+28-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:18:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity
+31-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:21:9-25:62
+32            android:name="com.salyin.muzos.AndroidLauncher"
+32-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:13-44
+33            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
+33-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:23:13-107
+34            android:label="@string/app_name"
+34-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:24:13-45
+35            android:screenOrientation="landscape" />
+35-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:25:13-50
+36    </application>
+37
+38</manifest>

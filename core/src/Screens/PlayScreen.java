@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -37,6 +38,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import javax.imageio.ImageTranscoder;
@@ -71,6 +73,11 @@ public class PlayScreen implements Screen {
     private Viewport gamePort;
     private Hud hud;
     private HeroSword player;
+    private EnemyOne enemy;
+    private EnemyOne enemy2;
+    private EnemyOne enemy3;
+    private EnemyOne enemy4;
+    private EnemyOne enemy5;
     private TmxMapLoader mapLoader;
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
@@ -89,12 +96,15 @@ public class PlayScreen implements Screen {
     private SpriteBatch b;
     private TextureAtlas tAtlasButtons;
     private TextureAtlas heroSwordAtlas;
+    private TextureAtlas enemyOneAtlas;
+    private Iterator it;
 
 
 //endregion
 
     public PlayScreen(Main game) {
         heroSwordAtlas = new TextureAtlas("sprites/hero_sword/viking.pack");
+        enemyOneAtlas = new TextureAtlas("sprites/enemy_one/enemyOne.pack");
         //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
@@ -107,7 +117,7 @@ public class PlayScreen implements Screen {
         btSkin.addRegions(tAtlasButtons);
 
         //TODO BACKGROUND
-        img = new Texture(Gdx.files.internal("skin/back_ui.png"));
+        img = new Texture(Gdx.files.internal("skin/back_ui_2.png"));
 
 
         //region button right
@@ -179,9 +189,9 @@ public class PlayScreen implements Screen {
         //tb.debug();
         tb.setFillParent(true);
 
-        tb.add(leftButton).height(Gdx.graphics.getHeight() / 7.5f).width(Gdx.graphics.getWidth() / 7.5f).padBottom(Gdx.graphics.getWidth() / 24);
-        tb.add(rightButton).height(Gdx.graphics.getHeight() / 7.5f).width(Gdx.graphics.getWidth() / 7.5f).padBottom(Gdx.graphics.getWidth() / 24).padRight(Gdx.graphics.getWidth() / 2.7f);
-        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 7.5f).width(Gdx.graphics.getWidth() / 7.5f).padBottom(Gdx.graphics.getWidth() / 24).padRight(Gdx.graphics.getWidth() / 10);
+        tb.add(leftButton).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7).padBottom(Gdx.graphics.getWidth() / 44);
+        tb.add(rightButton).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7).padBottom(Gdx.graphics.getWidth() / 44).padRight(Gdx.graphics.getWidth() / 2.7f);
+        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7).padBottom(Gdx.graphics.getWidth() / 38).padRight(Gdx.graphics.getWidth() / 10);
 
         stage.addActor(tb);
         //endregion
@@ -212,6 +222,15 @@ public class PlayScreen implements Screen {
 
         player = new HeroSword(world, this);
 
+
+
+        //enemy = new EnemyOne(world, this);
+        /*enemy2 = new EnemyOne(world, this);
+        enemy3 = new EnemyOne(world, this);
+        enemy4 = new EnemyOne(world, this);
+        enemy5 = new EnemyOne(world, this);*/
+
+
         //Setter from contactListneer in worldContact.
         world.setContactListener(new WorldContact());
 
@@ -221,6 +240,13 @@ public class PlayScreen implements Screen {
     public TextureAtlas getHeroSwordAtlas() {
         return heroSwordAtlas;
     }
+
+    public TextureAtlas getEnemyOneAtlas() {
+        return enemyOneAtlas;
+    }
+
+
+
 
     // TODO INTENTAR QUE ESTO SEA UNA CLASE EXTERNA.
     //region ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
@@ -319,14 +345,19 @@ public class PlayScreen implements Screen {
         if (time > timeOut) {
             //condition to add enemies until 10 enemies.
             if (enemies.size() != 10) {
-                enemies.add(new EnemyOne(world));
-                time = 0; // or set to 0 to repeat the process
+                enemies.add(new EnemyOne(world, this));
+                time = 0;
             }
         }
         //endregion
 
         world.step(1 / 60f, 6, 2);
         player.update(dt);
+        //enemy.update(dt);
+        /*enemy2.update(dt);
+        enemy3.update(dt);
+        enemy4.update(dt);
+        enemy5.update(dt);*/
         //Gamecam.position follow the player.
         //gamecam.position.x = player.b2body.getPosition().x;
         //gamecam.position.y = player.b2body.getPosition().y;
@@ -339,7 +370,7 @@ public class PlayScreen implements Screen {
     @Override
     public void render(float delta) {
         update(delta);
-
+        time += Gdx.graphics.getDeltaTime();
         //region inputs for motionState
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) motionState = MotionState.UP;
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) motionState = MotionState.LEFT;
@@ -374,8 +405,12 @@ public class PlayScreen implements Screen {
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player.draw(game.batch);
+        //enemy.draw(game.batch);
+       /*enemy2.draw(game.batch);
+        enemy3.draw(game.batch);
+        enemy4.draw(game.batch);
+        enemy5.draw(game.batch);*/
         game.batch.end();
-
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         hud.stage.draw();
 
@@ -411,4 +446,7 @@ public class PlayScreen implements Screen {
         img.dispose();
         hud.dispose();
     }
+
+
+
 }

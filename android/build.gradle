@@ -18,7 +18,7 @@ android {
     }
     defaultConfig {
         applicationId "com.salyin.muzos"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -91,4 +91,5 @@ task run(type: Exec) {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 }
