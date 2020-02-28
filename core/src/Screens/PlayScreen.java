@@ -13,6 +13,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -38,6 +39,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -73,11 +75,6 @@ public class PlayScreen implements Screen {
     private Viewport gamePort;
     private Hud hud;
     private HeroSword player;
-    private EnemyOne enemy;
-    private EnemyOne enemy2;
-    private EnemyOne enemy3;
-    private EnemyOne enemy4;
-    private EnemyOne enemy5;
     private TmxMapLoader mapLoader;
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
@@ -93,11 +90,15 @@ public class PlayScreen implements Screen {
     private ImageButton leftButton;
     private ImageButton jumpButton;
     private Texture img;
+    private Texture imgDos;
     private SpriteBatch b;
+    private SpriteBatch bDos;
     private TextureAtlas tAtlasButtons;
     private TextureAtlas heroSwordAtlas;
     private TextureAtlas enemyOneAtlas;
-    private Iterator it;
+    private int enemyNo = 0;
+    private boolean prueba = false;
+    ArrayList<EnemyOne> en2= new ArrayList<EnemyOne>();
 
 
 //endregion
@@ -108,6 +109,7 @@ public class PlayScreen implements Screen {
         //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
+        bDos = new SpriteBatch();
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
 
@@ -116,12 +118,13 @@ public class PlayScreen implements Screen {
         Skin btSkin = new Skin();
         btSkin.addRegions(tAtlasButtons);
 
-        //TODO BACKGROUND
+        //Skin buttons ui
         img = new Texture(Gdx.files.internal("skin/back_ui_2.png"));
+        imgDos = new Texture(Gdx.files.internal("skin/back_ui_top.png"));
 
 
         //region button right
-        ImageButton.ImageButtonStyle rightStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
+        ImageButton.ImageButtonStyle rightStyle = new ImageButton.ImageButtonStyle();
         rightStyle.up = btSkin.getDrawable("right_off");
         rightStyle.down = btSkin.getDrawable("right_on");
         rightButton = new ImageButton(rightStyle);
@@ -136,6 +139,8 @@ public class PlayScreen implements Screen {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Gdx.app.log("Me muevo a:", "Derecha");
                 motionState = MotionState.RIGHT;
+                prueba = true;
+
                 return true;
             }
         });
@@ -157,6 +162,7 @@ public class PlayScreen implements Screen {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Gdx.app.log("Me muevo a:", "Izquierda");
                 motionState = MotionState.LEFT;
+
                 return true;
             }
         });
@@ -215,20 +221,12 @@ public class PlayScreen implements Screen {
         //Call world and make it a object with parameters
         world = new World(new Vector2(0, -10), true);
         //Box2Debugger its call to see the collisions in MapObjects.
-        b2dr = new Box2DDebugRenderer();
+        //b2dr = new Box2DDebugRenderer();
 
         //Call class WorldCreator to create collisions and etc.
         new WorldCreator(world, map);
 
         player = new HeroSword(world, this);
-
-
-
-        //enemy = new EnemyOne(world, this);
-        /*enemy2 = new EnemyOne(world, this);
-        enemy3 = new EnemyOne(world, this);
-        enemy4 = new EnemyOne(world, this);
-        enemy5 = new EnemyOne(world, this);*/
 
 
         //Setter from contactListneer in worldContact.
@@ -353,11 +351,6 @@ public class PlayScreen implements Screen {
 
         world.step(1 / 60f, 6, 2);
         player.update(dt);
-        //enemy.update(dt);
-        /*enemy2.update(dt);
-        enemy3.update(dt);
-        enemy4.update(dt);
-        enemy5.update(dt);*/
         //Gamecam.position follow the player.
         //gamecam.position.x = player.b2body.getPosition().x;
         //gamecam.position.y = player.b2body.getPosition().y;
@@ -389,10 +382,9 @@ public class PlayScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         renderer.render();
-        b2dr.render(world, gamecam.combined);
+        //b2dr.render(world, gamecam.combined);
 
 
-        //TODO FIX THE BACKGROUND OF TABLE.
         b.begin();
         b.draw(img,0,0,  Gdx.graphics.getWidth() , Gdx.graphics.getHeight() / 4);
         b.end();
@@ -405,11 +397,22 @@ public class PlayScreen implements Screen {
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player.draw(game.batch);
-        //enemy.draw(game.batch);
-       /*enemy2.draw(game.batch);
-        enemy3.draw(game.batch);
-        enemy4.draw(game.batch);
-        enemy5.draw(game.batch);*/
+
+
+        try {
+           if (enemyNo <= enemies.size()){
+               for (int i = 0; i < enemies.size(); i ++) {
+                   EnemyOne currentEnemy = enemies.get(i);
+                   currentEnemy.draw(game.batch);
+                   currentEnemy.update(delta);
+               }
+           }
+
+       } catch (IndexOutOfBoundsException e){
+
+        }
+
+
         game.batch.end();
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         hud.stage.draw();

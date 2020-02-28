@@ -17,7 +17,7 @@
 13        android:appCategory="game"
 13-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:7:9-35
 14        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-14-->[com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\b73d0db3c489aeab8b531c92b0313ef9\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+14-->[com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:18-91
 15        android:debuggable="true"
 16        android:icon="@drawable/logo_slayin"
 16-->C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:8:9-45

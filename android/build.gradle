@@ -92,4 +92,10 @@ task run(type: Exec) {
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+repositories {
+    mavenCentral()
 }

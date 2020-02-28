@@ -59,7 +59,7 @@ public class EnemyOne extends Sprite{
         b2body.createFixture(fdef);
         b2body.setTransform(random/Main.ppm, 300/Main.ppm , 0);
 
-
+        b2body.createFixture(fdef).setUserData("Enemy");
     }
 
 

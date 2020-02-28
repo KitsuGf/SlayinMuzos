@@ -5,12 +5,20 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
+
+import Sprites.EnemyOne;
 
 public class WorldContact implements ContactListener {
     @Override
     public void beginContact(Contact contact) {
-        Gdx.app.log("Esta colisionando?", "si");
+        Fixture fixA = contact.getFixtureA();
+        Fixture fixB = contact.getFixtureB();
+
+        fixA.getUserData();
+
+        //if (fixA.getUserData())
 
 
     }

@@ -62,14 +62,17 @@ public class HeroSword extends Sprite {
         CircleShape shape = new CircleShape();
         shape.setRadius(8 / Main.ppm);
 
+
         //Sword
         fdef.shape = shape;
         b2body.createFixture(fdef);
         sword = new EdgeShape();
 
-
-
     }
+
+
+
+
 
     //Update with deltatime the position of the sprite.
     public void update(float dt){
@@ -104,5 +107,7 @@ public class HeroSword extends Sprite {
             }
         return bool;
     }
+
+
 
 }

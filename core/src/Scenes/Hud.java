@@ -8,8 +8,10 @@ package Scenes;
  *
  */
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -30,11 +32,8 @@ public class Hud implements Disposable {
     public Viewport viewport;
     private Integer countEnemy;
     private Integer countCombo;
-    private Image img;
     private Integer countCoins;
-    private Texture texture;
-    private TextureRegion textR;
-    private TextureRegionDrawable textRd;
+
 
     Label lbCombo;
     Label lbEnemy;
@@ -60,10 +59,11 @@ public class Hud implements Disposable {
        // textRd = new TextureRegionDrawable(textR);
 
 
-        img = new Image();
+
         Table tb = new Table();
         tb.top();
-        tb.debug();
+        //tb.debug();
+
         tb.setFillParent(true);
 
         lbTxEnemy = new Label(String.format("Enemies:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
@@ -74,12 +74,12 @@ public class Hud implements Disposable {
         lbCombo = new Label(String.format("%03d", countCombo), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
 
 
-        tb.add(lbTxEnemy).expandX().padTop(0);
-        tb.add(lbEnemy).expandX().padTop(0);
-        tb.add(lbTxCoins).expandX().padTop(0);
-        tb.add(lbCoins).expandX().padTop(0);
-        tb.add(lbTxComb).expandX().padTop(0);
-        tb.add(lbCombo).expandX().padTop(0);
+        tb.add(lbTxEnemy).expandX();
+        tb.add(lbEnemy).expandX();
+        tb.add(lbTxCoins).expandX();
+        tb.add(lbCoins).expandX();
+        tb.add(lbTxComb).expandX();
+        tb.add(lbCombo).expandX();
 
         stage.addActor(tb);
     }

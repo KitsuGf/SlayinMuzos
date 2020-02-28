@@ -773,8 +773,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable slimemuzo
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable vikimove
+drawable vikimove_arrows
+drawable vikimove_jump
 id ALT
 id CTRL
 id FUNCTION
@@ -824,6 +828,8 @@ id blocking
 id bottom
 id bounce
 id bt_log
+id bt_tuto
+id button
 id buttonPanel
 id center
 id center_horizontal
@@ -864,6 +870,15 @@ id fill_horizontal
 id fill_vertical
 id flip
 id forever
+id frame1
+id frame2
+id frame3
+id frame4
+id frameMenuTuto
+id gifImageView
+id gifImageView3
+id gifImageView4
+id gifImageView5
 id gone
 id graph
 id graph_wrap
@@ -965,6 +980,11 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
+id textView2
+id textView3
+id textView4
+id textView5
 id time
 id title
 id titleDividerNoCustom
@@ -1016,6 +1036,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main_menu
+layout menu_tutorial
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
