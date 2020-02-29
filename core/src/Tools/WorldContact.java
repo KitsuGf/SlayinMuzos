@@ -13,6 +13,7 @@ import Sprites.EnemyOne;
 public class WorldContact implements ContactListener {
     @Override
     public void beginContact(Contact contact) {
+        Gdx.app.log("Esta colisionando?" , "no");
         Fixture fixA = contact.getFixtureA();
         Fixture fixB = contact.getFixtureB();
 

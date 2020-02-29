@@ -854,6 +854,10 @@ id deltaRelative
 id dimensions
 id direct
 id disableHome
+id divider
+id divider2
+id divider3
+id divider4
 id dragDown
 id dragLeft
 id dragRight

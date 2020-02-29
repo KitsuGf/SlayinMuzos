@@ -13,6 +13,8 @@ class MainMenu : AppCompatActivity() {
     private val manager : FragmentManager by lazy {this.supportFragmentManager}
     private val menuTu : MenuTutorial by lazy { MenuTutorial()}
     private var closeFrag : Boolean = false
+    private var nSlimes : Int = 20
+    private var nSlimesMadness : Int = 5000000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +23,20 @@ class MainMenu : AppCompatActivity() {
 
     fun goPlay(view: View?) {
         val i = Intent(this, AndroidLauncher::class.java)
+        var bundle: Bundle = Bundle()
+        bundle.putInt("nSlime", nSlimes)
+        i.putExtras(bundle)
         this.startActivity(i)
     }
+
+    fun goPlayMadness(view: View?) {
+        val i = Intent(this, AndroidLauncher::class.java)
+        var bundle: Bundle = Bundle()
+        bundle.putInt("nSlime", nSlimesMadness)
+        i.putExtras(bundle)
+        this.startActivity(i)
+    }
+
 
     override fun onBackPressed() { //TODO CAMBIAR LOS STRINGS POR RESOURCES
         val builder = AlertDialog.Builder(this)

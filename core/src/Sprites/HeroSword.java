@@ -72,8 +72,6 @@ public class HeroSword extends Sprite {
 
 
 
-
-
     //Update with deltatime the position of the sprite.
     public void update(float dt){
         setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);

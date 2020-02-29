@@ -58,6 +58,7 @@ public class PlayScreen implements Screen {
     private static HeroSword hs;
 
     public PlayScreen() {
+
     }
 
     public HeroSword getHs() {
@@ -98,12 +99,14 @@ public class PlayScreen implements Screen {
     private TextureAtlas enemyOneAtlas;
     private int enemyNo = 0;
     private boolean prueba = false;
+    private int slimeMode;
     ArrayList<EnemyOne> en2= new ArrayList<EnemyOne>();
 
 
 //endregion
 
-    public PlayScreen(Main game) {
+    public PlayScreen(Main game, int nSlimes) {
+        slimeMode = nSlimes;
         heroSwordAtlas = new TextureAtlas("sprites/hero_sword/viking.pack");
         enemyOneAtlas = new TextureAtlas("sprites/enemy_one/enemyOne.pack");
         //Screen and stages.
@@ -232,6 +235,7 @@ public class PlayScreen implements Screen {
         //Setter from contactListneer in worldContact.
         world.setContactListener(new WorldContact());
 
+
     }
 
 
@@ -336,13 +340,12 @@ public class PlayScreen implements Screen {
     //This method is for encapsule all updates.
     public void update(float dt) {
 
-
         //region Use TIME variable to add this and delta time.
         time += Gdx.graphics.getDeltaTime();
         //Now if time is higher than time_out spawn enemy, if not, stop.
         if (time > timeOut) {
             //condition to add enemies until 10 enemies.
-            if (enemies.size() != 10) {
+            if (enemies.size() != slimeMode) {
                 enemies.add(new EnemyOne(world, this));
                 time = 0;
             }
@@ -407,11 +410,9 @@ public class PlayScreen implements Screen {
                    currentEnemy.update(delta);
                }
            }
-
        } catch (IndexOutOfBoundsException e){
 
         }
-
 
         game.batch.end();
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
