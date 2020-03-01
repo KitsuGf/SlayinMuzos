@@ -9,10 +9,16 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
+import android.widget.FrameLayout
+import com.badlogic.gdx.Game
+import kotlinx.android.synthetic.main.activity_main_menu.*
 
 class MainMenu : AppCompatActivity() {
     private val manager : FragmentManager by lazy {this.supportFragmentManager}
     private val menuTu : MenuTutorial by lazy { MenuTutorial()}
+    private val menuGame : GameMode by lazy { GameMode()}
+
+
     private var closeFrag : Boolean = false
     private var nSlimes : Int = 20
     private var nSlimesMadness : Int = 5000000
@@ -26,21 +32,29 @@ class MainMenu : AppCompatActivity() {
     //This Method is a button function,
     //what send the user to game normal mode
     fun goPlay(view: View?) {
-        val i = Intent(this, AndroidLauncher::class.java)
-        var bundle: Bundle = Bundle()
-        bundle.putInt("nSlime", nSlimes)
-        i.putExtras(bundle)
-        this.startActivity(i)
+
+
+
+        var transaction: FragmentTransaction =manager.beginTransaction()
+        //Method with if to open and close the tutorial with the same button.
+        //If closeFrag is flase remove the Fragment.
+        if (closeFrag){
+            transaction.remove(menuGame) // Remove the frag
+
+
+        }else{
+            //if closeFrag is true, create fragment again.
+            transaction.replace(R.id.frameGameMode,menuGame,"menu_game")
+            transaction.addToBackStack("menu_game")
+        }
+        //set the boolean again false to clear the boolean and
+        // always get false at the start of the click
+        closeFrag = !closeFrag
+        //Commit the transaction of the fragment to show it
+        transaction.commit()
     }
     //This Method is a button function,
     //what send the user to game madness mode
-    fun goPlayMadness(view: View?) {
-        val i = Intent(this, AndroidLauncher::class.java)
-        var bundle: Bundle = Bundle()
-        bundle.putInt("nSlime", nSlimesMadness)
-        i.putExtras(bundle)
-        this.startActivity(i)
-    }
 
 
     override fun onBackPressed() {
@@ -73,6 +87,7 @@ class MainMenu : AppCompatActivity() {
         //TutorialButton is clicked.
         btGame.visibility = View.GONE
 
+
         var transaction: FragmentTransaction =manager.beginTransaction()
         //Method with if to open and close the tutorial with the same button.
         //If closeFrag is flase remove the Fragment.
@@ -89,9 +104,25 @@ class MainMenu : AppCompatActivity() {
         closeFrag = !closeFrag
         //Commit the transaction of the fragment to show it
         transaction.commit()
+    }
 
+    fun normalMode(view: View) {
 
+        val i = Intent(this, AndroidLauncher::class.java)
+        var bundle: Bundle = Bundle()
+        bundle.putInt("nSlime", nSlimes)
+        i.putExtras(bundle)
+        this.startActivity(i)
+    }
+    fun madnessMode(view: View) {
 
+        val i = Intent(this, AndroidLauncher::class.java)
+        var bundle: Bundle = Bundle()
+        bundle.putInt("nSlime", nSlimesMadness)
+        i.putExtras(bundle)
+        this.startActivity(i)
 
     }
+
+
 }

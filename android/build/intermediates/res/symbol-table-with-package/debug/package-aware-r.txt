@@ -829,9 +829,9 @@ id bottom
 id bounce
 id btGameMode
 id btTuto
-id bt_log
-id bt_tuto
 id button
+id button2
+id button3
 id buttonPanel
 id center
 id center_horizontal
@@ -880,6 +880,7 @@ id frame1
 id frame2
 id frame3
 id frame4
+id frameGameMode
 id frameMenuTuto
 id gifImageView
 id gifImageView3
@@ -1042,6 +1043,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main_menu
+layout game_mode
 layout menu_tutorial
 layout notification_action
 layout notification_action_tombstone
@@ -1098,7 +1100,9 @@ string app_name
 string gameMode
 string jumpTutorial
 string leftRightTutorial
+string madnessMode
 string no
+string normalMode
 string search_menu_title
 string slimeTutorial
 string status_bar_notification_info_overflow

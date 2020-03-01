@@ -34,7 +34,7 @@
         android:layout_marginTop="64dp"
         android:onClick="goPlay"
         android:text="@string/gameMode"
-        app:layout_constraintBottom_toTopOf="@+id/bt_tuto"
+        app:layout_constraintBottom_toTopOf="@+id/btTuto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameMenuTuto"
@@ -48,8 +48,8 @@
         android:onClick="goTutorial"
         android:text="@string/tutorial"
         app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
-        app:layout_constraintEnd_toEndOf="@+id/bt_log"
+        app:layout_constraintEnd_toEndOf="@+id/btGameMode"
         app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="@+id/bt_log" />
+        app:layout_constraintStart_toStartOf="@+id/btGameMode" />
 
 </android.support.constraint.ConstraintLayout>

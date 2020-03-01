@@ -11,4 +11,6 @@
     <string name= "alertMsg">Are you sure to quit the game?</string>
     <string name= "yes">Yes</string>
     <string name= "no">No</string>
+    <string name= "normalMode">Normal</string>
+    <string name= "madnessMode">Madness</string>
 </resources>
