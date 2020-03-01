@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Button
 
 class MainMenu : AppCompatActivity() {
     private val manager : FragmentManager by lazy {this.supportFragmentManager}
@@ -15,12 +16,15 @@ class MainMenu : AppCompatActivity() {
     private var closeFrag : Boolean = false
     private var nSlimes : Int = 20
     private var nSlimesMadness : Int = 5000000
+    private lateinit var btGame : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
     }
 
+    //This Method is a button function,
+    //what send the user to game normal mode
     fun goPlay(view: View?) {
         val i = Intent(this, AndroidLauncher::class.java)
         var bundle: Bundle = Bundle()
@@ -28,7 +32,8 @@ class MainMenu : AppCompatActivity() {
         i.putExtras(bundle)
         this.startActivity(i)
     }
-
+    //This Method is a button function,
+    //what send the user to game madness mode
     fun goPlayMadness(view: View?) {
         val i = Intent(this, AndroidLauncher::class.java)
         var bundle: Bundle = Bundle()
@@ -38,33 +43,55 @@ class MainMenu : AppCompatActivity() {
     }
 
 
-    override fun onBackPressed() { //TODO CAMBIAR LOS STRINGS POR RESOURCES
+    override fun onBackPressed() {
+        //Variables to get string from resfile.
+        var title : String = this.getString(R.string.alertTitle)
+        var msg : String = this.getString(R.string.alertMsg)
+        var yes : String = this.getString(R.string.yes)
+        var no : String = this.getString(R.string.no)
+
+        //Create Alert
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Salir del juego")
-        builder.setMessage("¿Estás seguro de que quieres salir del juego?").setPositiveButton("Si") { dialog, id ->
-            Process.killProcess(Process.myPid())
+        builder.setTitle(title) //Make the Title of the alert
+        //Make the message from the alert create two options
+        //Option yes is an exit of the app
+        builder.setMessage(msg).setPositiveButton(yes) {
+            dialog, id -> Process.killProcess(Process.myPid())
             System.exit(1)
-        }.setNegativeButton("No") { dialog, id ->
-            // User cancelled the dialog
-        }
+        //Set the negative option making nothing, this just clear the alert.
+        }.setNegativeButton(no) { dialog, id -> }
+        //Create the alert finally
         builder.create()
+        //Show the alert
         builder.show()
     }
 
     fun goTutorial(view: View?) {
+        //res to GameModeButton
+        btGame = findViewById(R.id.btGameMode)
+        //This make the GameModeButton GONE when
+        //TutorialButton is clicked.
+        btGame.visibility = View.GONE
 
         var transaction: FragmentTransaction =manager.beginTransaction()
         //Method with if to open and close the tutorial with the same button.
         //If closeFrag is flase remove the Fragment.
         if (closeFrag){
-            transaction.remove(menuTu)
+            transaction.remove(menuTu) // Remove the frag
+            btGame.visibility = View.VISIBLE // Make the GameModeButton visible again.
         }else{
             //if closeFrag is true, create fragment again.
             transaction.replace(R.id.frameMenuTuto,menuTu,"menu_tutorial")
             transaction.addToBackStack("menu_tutorial")
         }
+        //set the boolean again false to clear the boolean and
+        // always get false at the start of the click
         closeFrag = !closeFrag
+        //Commit the transaction of the fragment to show it
         transaction.commit()
+
+
+
 
     }
 }

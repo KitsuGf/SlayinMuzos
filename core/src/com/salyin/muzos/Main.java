@@ -12,6 +12,8 @@ package com.salyin.muzos;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+import Scenes.Hud;
 import Screens.PlayScreen;
 
 
@@ -21,9 +23,10 @@ public class Main extends Game {
     public static final float ppm = 100;
     public SpriteBatch batch;
     public int nSlimes;
+    public Hud hud;
 
-    public Main(int pepe) {
-        this.nSlimes = pepe;
+    public Main(int slimesMode) {
+        this.nSlimes = slimesMode;
     }
 
 
@@ -31,6 +34,7 @@ public class Main extends Game {
     public void create() {
         batch = new SpriteBatch();
         setScreen(new PlayScreen(this, nSlimes));
+        hud = new Hud(batch, nSlimes);
     }
 
     @Override

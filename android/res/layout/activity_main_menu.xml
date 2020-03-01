@@ -28,12 +28,12 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <Button
-        android:id="@+id/bt_log"
+        android:id="@+id/btGameMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:onClick="goPlay"
-        android:text="@string/start"
+        android:text="@string/gameMode"
         app:layout_constraintBottom_toTopOf="@+id/bt_tuto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,15 +41,15 @@
         app:layout_constraintVertical_bias="0.07" />
 
     <Button
-        android:id="@+id/bt_tuto"
+        android:id="@+id/btTuto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="252dp"
         android:onClick="goTutorial"
-        android:text="tutorial"
+        android:text="@string/tutorial"
         app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
         app:layout_constraintEnd_toEndOf="@+id/bt_log"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="@+id/bt_log" />
 
 </android.support.constraint.ConstraintLayout>

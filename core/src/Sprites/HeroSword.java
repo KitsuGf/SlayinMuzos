@@ -35,7 +35,7 @@ public class HeroSword extends Sprite {
     private static FixtureDef fdef;
     private static BodyDef bdef;
     private TextureRegion heroStand;
-    private boolean isRight;
+
 
 
 
@@ -43,7 +43,6 @@ public class HeroSword extends Sprite {
         super(screen.getHeroSwordAtlas().findRegion("viking"));
         this.world = world;
         defineHero();
-        isRight = true;
         heroStand = new TextureRegion(getTexture(), -19,31,128,128);
         setBounds(0,0,70/Main.ppm, 64/Main.ppm);
         setRegion(heroStand);

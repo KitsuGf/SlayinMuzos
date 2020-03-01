@@ -18,33 +18,35 @@
 
 
     <Button
-        android:id="@+id/bt_log"
+        android:id="@+id/btGameMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:onClick="goPlay"
-        android:text="@string/start"
-        app:layout_constraintBottom_toBottomOf="@+id/bt_tuto"
-        app:layout_constraintEnd_toStartOf="@+id/bt_tuto"
-        app:layout_constraintHorizontal_bias="0.049"
+        android:text="@string/gameMode"
+        app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bt_tuto"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
 
     <Button
-        android:id="@+id/bt_tuto"
+        android:id="@+id/btTuto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
         android:onClick="goTutorial"
-        android:text="tutorial"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="@string/tutorial"
+        app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameMenuTuto"
+        app:layout_constraintVertical_bias="0.878" />
 
     <FrameLayout
         android:id="@+id/frameMenuTuto"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

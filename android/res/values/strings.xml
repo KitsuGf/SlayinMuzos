@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">SlayinMuzos</string>
-    <string name= "start">Iniciar</string>
-
-
+    <string name= "gameMode">Game Mode</string>
+    <string name= "tutorial">Tutorial</string>
+    <string name= "vikingTutorial">Recursive, the Viking</string>
+    <string name= "slimeTutorial">SliMuzos, the Slimes Monsters</string>
+    <string name= "leftRightTutorial">Left and Right</string>
+    <string name= "jumpTutorial">Jump to Dodge</string>
+    <string name= "alertTitle">Exit the game</string>
+    <string name= "alertMsg">Are you sure to quit the game?</string>
+    <string name= "yes">Yes</string>
+    <string name= "no">No</string>
 </resources>
