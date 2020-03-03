@@ -1,7 +1,9 @@
 package Sprites;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
@@ -9,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
 
+import java.util.Iterator;
 import java.util.Random;
 
 import Screens.PlayScreen;
@@ -23,6 +26,7 @@ public class EnemyOne extends Sprite{
     int high = 500;
     int random = r.nextInt(high-low) + low;
     private TextureRegion enemyStand;
+    private float direction = -0.1f;
 
 
 
@@ -58,9 +62,18 @@ public class EnemyOne extends Sprite{
         fdef.shape = shape;
         b2body.createFixture(fdef);
         b2body.setTransform(random/Main.ppm, 300/Main.ppm , 0);
-
-        b2body.createFixture(fdef).setUserData("Enemy");
+        b2body.createFixture(fdef).setUserData(this);
     }
 
+    public void enemyHitted(){
+        Gdx.app.log("Enemigo", "Me has dado");
+    }
+    public void enemyFly(){
+        this.flip(true,false);
+        if (isFlipX()){
+            //b2body.applyLinearImpulse(new Vector2(0.1f, 0), b2body.getWorldCenter(), true);
+            this.direction = 0.1f;
+        }
+    }
 
 }

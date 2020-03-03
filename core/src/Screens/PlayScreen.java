@@ -39,6 +39,8 @@ import Sprites.EnemyOne;
 import Sprites.HeroSword;
 import Tools.WorldContact;
 import Tools.WorldCreator;
+import Tools.WorldSensorLeft;
+import Tools.WorldSensorRight;
 
 public class PlayScreen implements Screen {
 
@@ -81,8 +83,9 @@ public class PlayScreen implements Screen {
     private TextureAtlas enemyOneAtlas;
     private int enemyNo = 0;
     private int slimeMode;
-
-
+    private WorldSensorLeft sensorLeft;
+    private WorldSensorRight sensorRight;
+    private WorldContact isLeftSlime;
 
 //endregion
 
@@ -213,12 +216,15 @@ public class PlayScreen implements Screen {
         //Call world and make it a object with parameters
         world = new World(new Vector2(0, -10), true);
         //Box2Debugger its call to see the collisions in MapObjects.
-        //b2dr = new Box2DDebugRenderer();
+        b2dr = new Box2DDebugRenderer();
 
         //Call class WorldCreator to create collisions and etc.
         new WorldCreator(world, map);
 
-        player = new HeroSword(world, this);
+        //player = new HeroSword(world, this);
+        sensorLeft = new WorldSensorLeft(world, this);
+        sensorRight = new WorldSensorRight(world, this);
+        isLeftSlime = new WorldContact();
 
 
         //Setter from contactListneer in worldContact.
@@ -235,8 +241,6 @@ public class PlayScreen implements Screen {
     public TextureAtlas getEnemyOneAtlas() {
         return enemyOneAtlas;
     }
-
-
 
 
     //
@@ -323,7 +327,7 @@ public class PlayScreen implements Screen {
         //Tells the physics engine that 1/60th of a second has passed every time you call it
         world.step(1 / 60f, 6, 2);
         //Update the player
-        player.update(dt);
+        //player.update(dt);
 
         //region gamecam follow
         //Gamecam.position follow the player.
@@ -354,18 +358,18 @@ public class PlayScreen implements Screen {
 
         if (motionState.update(player)) motionState = MotionState.NONE;
         //endregion
-
+        /*
         //region method to limit jump.
         if (player.b2body.getLinearVelocity().y == 0)
             jumps = 0;
         //endregion
-
+        */
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         renderer.render();
-        //b2dr.render(world, gamecam.combined); <- Uncomment to get the debugger collider.
+        b2dr.render(world, gamecam.combined); //<- Uncomment to get the debugger collider.
 
         //Draw IMG interface
         b.begin();
@@ -379,21 +383,25 @@ public class PlayScreen implements Screen {
 
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
-
-        //Draw the player
-        player.draw(game.batch);
+        //player.draw(game.batch);
 
         try {
            if (enemyNo <= enemies.size()){
                for (int i = 0; i < enemies.size(); i ++) {
                    EnemyOne currentEnemy = enemies.get(i);
                    currentEnemy.draw(game.batch);
+                   if (currentEnemy.b2body.getLinearVelocity().x >= -1){
+                       currentEnemy.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), currentEnemy.b2body.getWorldCenter(), true);
+                   }
+
                    currentEnemy.update(delta);
                }
            }
        } catch (IndexOutOfBoundsException e){
 
         }
+        //Draw the player
+
 
         game.batch.end();
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);

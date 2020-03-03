@@ -60,11 +60,11 @@ public class HeroSword extends Sprite {
         fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
         shape.setRadius(8 / Main.ppm);
+        fdef.shape = shape;
+        b2body.createFixture(fdef).setUserData(this);
 
 
         //Sword
-        fdef.shape = shape;
-        b2body.createFixture(fdef);
         sword = new EdgeShape();
 
     }
@@ -76,7 +76,6 @@ public class HeroSword extends Sprite {
         setPosition(b2body.getPosition().x - getWidth() / 2, b2body.getPosition().y - getHeight() / 2);
 
     }
-
 
     public static boolean changeDirection(boolean bool){
 
@@ -105,6 +104,7 @@ public class HeroSword extends Sprite {
         return bool;
     }
 
-
-
+    public void heroHitted(){
+        Gdx.app.log("Hero" , "me han dado");
+    }
 }

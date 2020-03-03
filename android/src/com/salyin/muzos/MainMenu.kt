@@ -33,15 +33,11 @@ class MainMenu : AppCompatActivity() {
     //what send the user to game normal mode
     fun goPlay(view: View?) {
 
-
-
         var transaction: FragmentTransaction =manager.beginTransaction()
         //Method with if to open and close the tutorial with the same button.
         //If closeFrag is flase remove the Fragment.
         if (closeFrag){
             transaction.remove(menuGame) // Remove the frag
-
-
         }else{
             //if closeFrag is true, create fragment again.
             transaction.replace(R.id.frameGameMode,menuGame,"menu_game")
@@ -70,7 +66,7 @@ class MainMenu : AppCompatActivity() {
         //Make the message from the alert create two options
         //Option yes is an exit of the app
         builder.setMessage(msg).setPositiveButton(yes) {
-            dialog, id -> Process.killProcess(Process.myPid())
+            dialog, id -> finish()  //Process.killProcess(Process.myPid()) <- This is one method i want to ask my teacher.
             System.exit(1)
         //Set the negative option making nothing, this just clear the alert.
         }.setNegativeButton(no) { dialog, id -> }
@@ -106,6 +102,7 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
     }
 
+    //Method what send the nSlimes normal as 20 to the game.
     fun normalMode(view: View) {
 
         val i = Intent(this, AndroidLauncher::class.java)
@@ -114,6 +111,8 @@ class MainMenu : AppCompatActivity() {
         i.putExtras(bundle)
         this.startActivity(i)
     }
+
+    //Method what send the nSlimes normal as  5000000 to the game.
     fun madnessMode(view: View) {
 
         val i = Intent(this, AndroidLauncher::class.java)

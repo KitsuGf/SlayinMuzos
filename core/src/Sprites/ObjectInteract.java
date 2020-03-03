@@ -5,6 +5,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
@@ -16,6 +17,7 @@ public abstract class ObjectInteract {
     protected TiledMapTile tile;
     protected Rectangle bounds;
     protected Body body;
+    protected Fixture fixture;
 
     public ObjectInteract(World world, TiledMap map, Rectangle bounds){
 
@@ -34,8 +36,9 @@ public abstract class ObjectInteract {
 
         shape.setAsBox(bounds.getWidth() /2 /Main.ppm, bounds.getHeight() / 2 /Main.ppm);
         fdef.shape = shape;
-        body.createFixture(fdef);
-
+        fixture = body.createFixture(fdef);
 
     }
+
+    public abstract void swordHit();
 }
