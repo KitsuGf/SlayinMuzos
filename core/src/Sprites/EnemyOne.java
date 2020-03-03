@@ -1,6 +1,7 @@
 package Sprites;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
@@ -26,17 +27,19 @@ public class EnemyOne extends Sprite{
     int high = 500;
     int random = r.nextInt(high-low) + low;
     private TextureRegion enemyStand;
-    private float direction = -0.1f;
+    public boolean direction = false;
+    public int enemyIndex;
 
 
 
 
-    public EnemyOne(World world, PlayScreen screen) {
+    public EnemyOne(World world, PlayScreen screen, int index) {
         super(screen.getEnemyOneAtlas().findRegion("sl"));
         enemyStand = new TextureRegion(getTexture(), 0,6,32,25);
         setBounds(0,0,42/Main.ppm, 35/Main.ppm);
         setRegion(enemyStand);
         this.world = world;
+        this.enemyIndex = index;
         defineEnemy();
     }
 
@@ -66,13 +69,23 @@ public class EnemyOne extends Sprite{
     }
 
     public void enemyHitted(){
-        Gdx.app.log("Enemigo", "Me has dado");
+
     }
-    public void enemyFly(){
-        this.flip(true,false);
+    public void enemyLeftCollide(){
+        flip(true,false);
+        b2body.applyLinearImpulse(1,1,1,1,false);
+        b2body.setLinearVelocity(0, b2body.getLinearVelocity().y);
         if (isFlipX()){
-            //b2body.applyLinearImpulse(new Vector2(0.1f, 0), b2body.getWorldCenter(), true);
-            this.direction = 0.1f;
+            direction = true;
+        }
+    }
+
+    public void enemyRightCollide(){
+        flip(true,false);
+        b2body.applyLinearImpulse(1,1,1,1,false);
+        b2body.setLinearVelocity(0, b2body.getLinearVelocity().y);
+        if (isFlipX()){
+            direction = false;
         }
     }
 

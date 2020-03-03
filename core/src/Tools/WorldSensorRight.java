@@ -33,9 +33,9 @@ public class WorldSensorRight {
 
         fdef = new FixtureDef();
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(64/Main.ppm / 2, 64 / Main.ppm /2 );
+        shape.setAsBox(64/Main.ppm / 2, 500/ Main.ppm /2 );
         fdef.shape = shape;
-        b2body.setTransform(510/Main.ppm, 20/Main.ppm , 0);
+        b2body.setTransform(510/Main.ppm, 100/Main.ppm , 0);
         b2body.createFixture(fdef).setUserData(this);
 
     }

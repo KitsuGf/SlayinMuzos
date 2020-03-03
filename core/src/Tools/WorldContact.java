@@ -10,7 +10,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
-import Sprites.ObjectInteract;
+
 
 public class WorldContact implements ContactListener {
     private int count = 0;
@@ -30,15 +30,20 @@ public class WorldContact implements ContactListener {
         Fixture fixA = contact.getFixtureA();
         Fixture fixB = contact.getFixtureB();
 
+        //Just a make sure if null return.
         if (fixA == null || fixB == null) return;
         if (fixA.getUserData() == null || fixB.getUserData() == null) return;
 
 
-
+        //Detect collide Player and Slime on favour to player.
         if (isSlimeContact(fixA,fixB)){
+            //Declare a new Hero and Enemy
             HeroSword a;
             EnemyOne b;
 
+            //Instanciate fixture to enemyOne
+            //Test if the enemyOne is fixture A or B and get the
+            //Fixture user data from it to EnemyOne and Player.
             if (fixA.getUserData() instanceof EnemyOne){
                 b = (EnemyOne) fixA.getUserData();
                 a = (HeroSword) fixB.getUserData();
@@ -47,17 +52,21 @@ public class WorldContact implements ContactListener {
                 a = (HeroSword) fixA.getUserData();
             }
 
+            //Method in Enemy when the enemy is hitted.
             b.enemyHitted();
-            b.enemyFly();
+
 
 
         }
 
-
+        //Detect collide between slime and wall left
         if (isSlimeLeftt(fixA,fixB)){
             WorldSensorLeft a;
             EnemyOne b;
 
+            //Instanciate fixture to enemyOne
+            //Test if the enemyOne is fixture A or B and get the
+            //Fixture user data from it to EnemyOne and WorldSensorLeft.
             if (fixA.getUserData() instanceof EnemyOne){
                 b = (EnemyOne) fixA.getUserData();
                 a = (WorldSensorLeft) fixB.getUserData();
@@ -66,8 +75,55 @@ public class WorldContact implements ContactListener {
                 a = (WorldSensorLeft) fixA.getUserData();
             }
 
-            b.enemyFly();
+            b.enemyLeftCollide();
 
+
+        }
+
+        //Detect collide between slime and wall right
+        if (isSlimeRight(fixA,fixB)){
+            WorldSensorRight a;
+            EnemyOne b;
+
+            //Instanciate fixture to enemyOne
+            //Test if the enemyOne is fixture A or B and get the
+            //Fixture user data from it to EnemyOne and WorldSensorRight.
+            if (fixA.getUserData() instanceof EnemyOne){
+                b = (EnemyOne) fixA.getUserData();
+                a = (WorldSensorRight) fixB.getUserData();
+            }else{
+                b = (EnemyOne) fixB.getUserData();
+                a = (WorldSensorRight) fixA.getUserData();
+            }
+
+            b.enemyRightCollide();
+
+        }
+
+
+
+        //Detect collide between Slimes
+        if (isSlimeCollisionSlime(fixA,fixB)){
+            EnemyOne a;
+            EnemyOne b;
+
+            //Instanciate fixture to enemyOne
+            //Test if the enemyOne is fixture A or B and get the
+            //Fixture user data from it to all Enemies.
+            if (fixA.getUserData() instanceof EnemyOne){
+                b = (EnemyOne) fixA.getUserData();
+                a = (EnemyOne) fixB.getUserData();
+            }else{
+                b = (EnemyOne) fixB.getUserData();
+                a = (EnemyOne) fixA.getUserData();
+            }
+            //Method to change the direction of the slime when is running to left or
+            //right, this make a flip the texture too.
+            a.direction = !a.direction;
+            a.flip(true, false);
+            a.b2body.applyLinearImpulse(1,1,1,1,false);
+            b.direction = !b.direction;
+            b.flip(true, false);
 
         }
 
@@ -90,6 +146,7 @@ public class WorldContact implements ContactListener {
 
     }
 
+
     private Boolean isSlimeContact(Fixture a, Fixture b){
 
         if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
@@ -107,6 +164,27 @@ public class WorldContact implements ContactListener {
             if (a.getUserData() instanceof WorldSensorLeft || b.getUserData() instanceof WorldSensorLeft){
                 return true;
             }
+        }
+
+        return false;
+    }
+
+
+    private Boolean isSlimeRight(Fixture a, Fixture b){
+
+        if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
+            if (a.getUserData() instanceof WorldSensorRight || b.getUserData() instanceof WorldSensorRight){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private Boolean isSlimeCollisionSlime(Fixture a, Fixture b){
+
+        if(a.getUserData() instanceof EnemyOne && b.getUserData() instanceof EnemyOne){
+            return true;
         }
 
         return false;

@@ -15,6 +15,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
@@ -67,7 +68,7 @@ public class PlayScreen implements Screen {
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
     private LinkedList<EnemyOne> enemies = new LinkedList<EnemyOne>();
-    private final static float timeOut = 2;
+    private final static float timeOut = 3;
     private float time = 0;
     private MotionState motionState = MotionState.NONE;
     private Stage stage;
@@ -216,12 +217,12 @@ public class PlayScreen implements Screen {
         //Call world and make it a object with parameters
         world = new World(new Vector2(0, -10), true);
         //Box2Debugger its call to see the collisions in MapObjects.
-        b2dr = new Box2DDebugRenderer();
+        //b2dr = new Box2DDebugRenderer();
 
         //Call class WorldCreator to create collisions and etc.
         new WorldCreator(world, map);
 
-        //player = new HeroSword(world, this);
+        player = new HeroSword(world, this);
         sensorLeft = new WorldSensorLeft(world, this);
         sensorRight = new WorldSensorRight(world, this);
         isLeftSlime = new WorldContact();
@@ -318,7 +319,7 @@ public class PlayScreen implements Screen {
         if (time > timeOut) {
             //condition to add enemies until 10 enemies.
             if (enemies.size() != slimeMode) {
-                enemies.add(new EnemyOne(world, this));
+                enemies.add(new EnemyOne(world, this, enemies.size()));
                 time = 0;
             }
         }
@@ -327,7 +328,7 @@ public class PlayScreen implements Screen {
         //Tells the physics engine that 1/60th of a second has passed every time you call it
         world.step(1 / 60f, 6, 2);
         //Update the player
-        //player.update(dt);
+        player.update(dt);
 
         //region gamecam follow
         //Gamecam.position follow the player.
@@ -358,18 +359,18 @@ public class PlayScreen implements Screen {
 
         if (motionState.update(player)) motionState = MotionState.NONE;
         //endregion
-        /*
+
         //region method to limit jump.
         if (player.b2body.getLinearVelocity().y == 0)
             jumps = 0;
         //endregion
-        */
+
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         renderer.render();
-        b2dr.render(world, gamecam.combined); //<- Uncomment to get the debugger collider.
+        //b2dr.render(world, gamecam.combined); //<- Uncomment to get the debugger collider.
 
         //Draw IMG interface
         b.begin();
@@ -383,26 +384,30 @@ public class PlayScreen implements Screen {
 
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
-        //player.draw(game.batch);
+        player.draw(game.batch);
 
         try {
            if (enemyNo <= enemies.size()){
                for (int i = 0; i < enemies.size(); i ++) {
                    EnemyOne currentEnemy = enemies.get(i);
                    currentEnemy.draw(game.batch);
-                   if (currentEnemy.b2body.getLinearVelocity().x >= -1){
-                       currentEnemy.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), currentEnemy.b2body.getWorldCenter(), true);
+                   if (currentEnemy.direction) {
+                       if (currentEnemy.b2body.getLinearVelocity().x <= 1) {
+                           currentEnemy.b2body.applyLinearImpulse(new Vector2(0.1f, 0), currentEnemy.b2body.getWorldCenter(), true);
+                       }
+                   } else {
+                       if (currentEnemy.b2body.getLinearVelocity().x >= -1) {
+                           currentEnemy.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), currentEnemy.b2body.getWorldCenter(), true);
+                       }
                    }
 
                    currentEnemy.update(delta);
                }
-           }
+           } // I'm a teapot
        } catch (IndexOutOfBoundsException e){
 
         }
-        //Draw the player
-
-
+        //Draw the game sprites.
         game.batch.end();
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 

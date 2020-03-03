@@ -44,9 +44,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldContact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+            <state relative-caret-position="2533">
+              <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#516#517#0" expanded="true" />
                 <element signature="e#542#543#0" expanded="true" />
                 <element signature="e#581#582#0" expanded="true" />
@@ -59,8 +60,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="389" column="58" lean-forward="true" selection-start-line="389" selection-start-column="58" selection-end-line="389" selection-end-column="58" />
+            <state relative-caret-position="753">
+              <caret line="429" column="26" lean-forward="true" selection-start-line="429" selection-start-column="26" selection-end-line="429" selection-end-column="26" />
+              <folding>
+                <element signature="e#11031#11054#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,9 +72,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/salyin/muzos/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="480">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
               <folding>
+                <element signature="e#784#785#0" expanded="true" />
                 <element signature="e#814#815#0" expanded="true" />
               </folding>
             </state>
@@ -80,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldSensorRight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="224">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="368">
+              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -101,8 +106,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldSensorLeft.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="544">
+              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="69" column="5" selection-start-line="29" selection-end-line="69" selection-end-column="5" />
+            <state relative-caret-position="-11">
+              <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
               <folding>
                 <element signature="e#2885#2886#0" expanded="true" />
                 <element signature="e#2904#2905#0" expanded="true" />
@@ -123,12 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Sprites/EnemyOne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-              <folding>
-                <element signature="e#1823#1824#0" expanded="true" />
-                <element signature="e#1862#1863#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-43">
+              <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -162,6 +166,8 @@
       <find>CircleShape</find>
       <find>b2dr</find>
       <find>enemyOneAtlas</find>
+      <find>step</find>
+      <find>enemies</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -390,7 +396,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" visible="true" weight="0.15245202" />
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.15245202" />
       <window_info id="Structure" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Build Variants" side_tool="true" />
@@ -402,10 +408,10 @@
       <window_info anchor="bottom" id="Logcat" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Debug" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.20042872" />
+      <window_info anchor="bottom" id="Build" weight="0.20042872" />
       <window_info anchor="bottom" id="Find" weight="0.13504823" />
       <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" weight="0.18603411" />
@@ -502,6 +508,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-715" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Sprites/ObjectInteract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -509,50 +520,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldSensorLeft.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/salyin/muzos/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#814#815#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-715" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldSensorRight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="544">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="e#2885#2886#0" expanded="true" />
+            <element signature="e#2904#2905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldSensorRight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Tools/WorldContact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+        <state relative-caret-position="2533">
+          <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#516#517#0" expanded="true" />
             <element signature="e#542#543#0" expanded="true" />
             <element signature="e#581#582#0" expanded="true" />
@@ -561,32 +572,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Sprites/HeroSword.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/salyin/muzos/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="69" column="5" selection-start-line="29" selection-end-line="69" selection-end-column="5" />
+        <state relative-caret-position="480">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
           <folding>
-            <element signature="e#2885#2886#0" expanded="true" />
-            <element signature="e#2904#2905#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Sprites/EnemyOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-          <folding>
-            <element signature="e#1823#1824#0" expanded="true" />
-            <element signature="e#1862#1863#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-43">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Screens/PlayScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="389" column="58" lean-forward="true" selection-start-line="389" selection-start-column="58" selection-end-line="389" selection-end-column="58" />
+        <state relative-caret-position="753">
+          <caret line="429" column="26" lean-forward="true" selection-start-line="429" selection-start-column="26" selection-end-line="429" selection-end-column="26" />
+          <folding>
+            <element signature="e#11031#11054#0" />
+          </folding>
         </state>
       </provider>
     </entry>
