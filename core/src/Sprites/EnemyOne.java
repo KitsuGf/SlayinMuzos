@@ -28,18 +28,14 @@ public class EnemyOne extends Sprite{
     int random = r.nextInt(high-low) + low;
     private TextureRegion enemyStand;
     public boolean direction = false;
-    public int enemyIndex;
+    
 
-
-
-
-    public EnemyOne(World world, PlayScreen screen, int index) {
+    public EnemyOne(World world, PlayScreen screen) {
         super(screen.getEnemyOneAtlas().findRegion("sl"));
         enemyStand = new TextureRegion(getTexture(), 0,6,32,25);
-        setBounds(0,0,42/Main.ppm, 35/Main.ppm);
+        setBounds(-2,0,42/Main.ppm, 35/Main.ppm);
         setRegion(enemyStand);
         this.world = world;
-        this.enemyIndex = index;
         defineEnemy();
     }
 
@@ -68,9 +64,37 @@ public class EnemyOne extends Sprite{
         b2body.createFixture(fdef).setUserData(this);
     }
 
-    public void enemyHitted(){
+    public void enemyHitted(int cont){
 
+        Gdx.app.postRunnable(new Runnable(){
+            public void run(){
+                if (!world.isLocked()){
+
+                    world.destroyBody(b2body);
+
+                    BodyDef bdef = new BodyDef();
+                    bdef.position.set(32 / Main.ppm, 32 / Main.ppm);
+                    bdef.type = BodyDef.BodyType.DynamicBody;
+                    b2body = world.createBody(bdef);
+
+                    FixtureDef fdef = new FixtureDef();
+                    CircleShape shape = new CircleShape();
+                    shape.setRadius(8 / Main.ppm);
+
+
+                    fdef.shape = shape;
+                    b2body.createFixture(fdef);
+                    b2body.setTransform(0, 0/Main.ppm , 0);
+                    b2body.createFixture(fdef).setUserData(this);
+
+                }
+
+            }
+        });
+
+        Gdx.app.log("Cuenta",""+cont);
     }
+
     public void enemyLeftCollide(){
         flip(true,false);
         b2body.applyLinearImpulse(1,1,1,1,false);

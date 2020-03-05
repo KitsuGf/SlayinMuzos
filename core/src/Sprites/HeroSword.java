@@ -105,6 +105,7 @@ public class HeroSword extends Sprite {
     }
 
     public void heroHitted(){
-        Gdx.app.log("Hero" , "me han dado");
+
+
     }
 }

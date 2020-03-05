@@ -12,6 +12,7 @@ package Scenes;
  *
  */
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -24,29 +25,35 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
+import Tools.WorldContact;
+
 public class Hud implements Disposable {
 
     public Stage stage;
     public Viewport viewport;
     private Integer countEnemy;
     private Integer countCombo;
-    private Integer countCoins;
+    private static Integer countCoins;
+    private static WorldContact wrd;
 
-    Label lbCombo;
-    Label lbEnemy;
-    Label lbCoins;
-    Label lbTxComb;
-    Label lbTxEnemy;
-    Label lbTxCoins;
+    private Label lbCombo;
+    private Label lbEnemy;
+    private static Label lbCoins;
+    private Label lbTxComb;
+    private Label lbTxEnemy;
+    private Label lbTxCoins;
 
-
+    public Hud() {
+    }
 
     public Hud(SpriteBatch sb, int nSlimes) {
 
+        wrd = new WorldContact();
         //Declare countEnemy as parameter nSlime from MainMenu. //TODO PONLE CONTADOR CUANDO CONSIGAS COMPLETRA LAS COLISIONES
         countEnemy = nSlimes;
         countCombo = 0;
         countCoins = 0;
+
 
         //Declare new StretchViewport to fit in the screen with the PPM and the new OCamera.
         viewport = new StretchViewport(Main.V_WIDTH, Main.V_HEIGHT, new OrthographicCamera());
@@ -83,6 +90,12 @@ public class Hud implements Disposable {
     public void dispose() {
         //Dispose the stage to show the table in PlayScreen.
         stage.dispose();
+    }
+
+    public void update(int cuenta){
+
+        lbCoins.setText(String.format("%06d", cuenta));
+
     }
 
 }

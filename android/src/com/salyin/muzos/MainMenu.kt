@@ -14,11 +14,10 @@ import com.badlogic.gdx.Game
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 class MainMenu : AppCompatActivity() {
+
     private val manager : FragmentManager by lazy {this.supportFragmentManager}
     private val menuTu : MenuTutorial by lazy { MenuTutorial()}
     private val menuGame : GameMode by lazy { GameMode()}
-
-
     private var closeFrag : Boolean = false
     private var nSlimes : Int = 20
     private var nSlimesMadness : Int = 5000000

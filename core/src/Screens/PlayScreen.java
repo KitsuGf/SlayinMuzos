@@ -15,7 +15,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
@@ -46,7 +45,6 @@ import Tools.WorldSensorRight;
 public class PlayScreen implements Screen {
 
     //region Private Vars
-
     private static HeroSword hs;
 
     public HeroSword getHs() {
@@ -231,7 +229,6 @@ public class PlayScreen implements Screen {
         //Setter from contactListneer in worldContact.
         world.setContactListener(new WorldContact());
 
-
     }
 
 
@@ -317,9 +314,9 @@ public class PlayScreen implements Screen {
         time += Gdx.graphics.getDeltaTime();
         //Now if time is higher than time_out spawn enemy, if not, stop.
         if (time > timeOut) {
-            //condition to add enemies until 10 enemies.
+            //condition to add enemies until X enemies.
             if (enemies.size() != slimeMode) {
-                enemies.add(new EnemyOne(world, this, enemies.size()));
+                enemies.add(new EnemyOne(world, this));
                 time = 0;
             }
         }
@@ -329,6 +326,8 @@ public class PlayScreen implements Screen {
         world.step(1 / 60f, 6, 2);
         //Update the player
         player.update(dt);
+
+
 
         //region gamecam follow
         //Gamecam.position follow the player.
@@ -368,6 +367,7 @@ public class PlayScreen implements Screen {
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        hud.update(isLeftSlime.getCount());
 
         renderer.render();
         //b2dr.render(world, gamecam.combined); //<- Uncomment to get the debugger collider.
@@ -446,7 +446,6 @@ public class PlayScreen implements Screen {
         img.dispose();
         hud.dispose();
     }
-
 
 
 }

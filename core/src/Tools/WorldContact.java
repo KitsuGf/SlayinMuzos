@@ -1,13 +1,13 @@
 package Tools;
 
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
+import Scenes.Hud;
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
 
@@ -15,6 +15,7 @@ import Sprites.HeroSword;
 public class WorldContact implements ContactListener {
     private int count = 0;
     private boolean bol = false;
+
 
     public boolean isBol() {
         return bol;
@@ -24,9 +25,17 @@ public class WorldContact implements ContactListener {
         this.bol = bol;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     @Override
     public void beginContact(Contact contact) {
-        //Gdx.app.log("Esta colisionando?" , "no");
+
         Fixture fixA = contact.getFixtureA();
         Fixture fixB = contact.getFixtureB();
 
@@ -40,7 +49,7 @@ public class WorldContact implements ContactListener {
             //Declare a new Hero and Enemy
             HeroSword a;
             EnemyOne b;
-
+            Hud hd = new Hud();
             //Instanciate fixture to enemyOne
             //Test if the enemyOne is fixture A or B and get the
             //Fixture user data from it to EnemyOne and Player.
@@ -53,14 +62,41 @@ public class WorldContact implements ContactListener {
             }
 
             //Method in Enemy when the enemy is hitted.
-            b.enemyHitted();
+            count++;
 
+            b.enemyHitted(count);
+
+        }
+
+
+
+        //Detect collide Player and Slime on favour to player.
+        if (isHeroDie(fixA,fixB)){
+            //Declare a new Hero and Enemy
+            HeroSword a;
+            EnemyOne b;
+
+            //Instanciate fixture to enemyOne
+            //Test if the enemyOne is fixture A or B and get the
+            //Fixture user data from it to EnemyOne and Player.
+            if (fixA.getUserData() instanceof HeroSword){
+                b = (EnemyOne) fixB.getUserData();
+                a = (HeroSword) fixA.getUserData();
+            }else{
+                b = (EnemyOne) fixA.getUserData();
+                a = (HeroSword) fixB.getUserData();
+            }
+
+            //Method in Enemy when the enemy is hitted.
+            a.heroHitted();
 
 
         }
 
+
+
         //Detect collide between slime and wall left
-        if (isSlimeLeftt(fixA,fixB)){
+        if (isSlimeLeft(fixA,fixB)){
             WorldSensorLeft a;
             EnemyOne b;
 
@@ -127,8 +163,8 @@ public class WorldContact implements ContactListener {
 
         }
 
-
     }
+
 
     @Override
     public void endContact(Contact contact) {
@@ -158,7 +194,7 @@ public class WorldContact implements ContactListener {
         return false;
     }
 
-    private Boolean isSlimeLeftt(Fixture a, Fixture b){
+    private Boolean isSlimeLeft(Fixture a, Fixture b){
 
         if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
             if (a.getUserData() instanceof WorldSensorLeft || b.getUserData() instanceof WorldSensorLeft){
@@ -190,5 +226,15 @@ public class WorldContact implements ContactListener {
         return false;
     }
 
+    private Boolean isHeroDie(Fixture a, Fixture b){
+
+        if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
+            if (a.getUserData() instanceof HeroSword || b.getUserData() instanceof HeroSword){
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 }
