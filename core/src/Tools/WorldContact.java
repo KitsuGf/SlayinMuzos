@@ -17,14 +17,6 @@ public class WorldContact implements ContactListener {
     private boolean bol = false;
 
 
-    public boolean isBol() {
-        return bol;
-    }
-
-    public void setBol(boolean bol) {
-        this.bol = bol;
-    }
-
     public int getCount() {
         return count;
     }
@@ -62,9 +54,9 @@ public class WorldContact implements ContactListener {
             }
 
             //Method in Enemy when the enemy is hitted.
-            count++;
 
-            b.enemyHitted(count);
+
+            b.enemyHitted(1);
 
         }
 

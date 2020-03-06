@@ -15,7 +15,9 @@ import com.salyin.muzos.Main;
 import java.util.Iterator;
 import java.util.Random;
 
+import Scenes.Hud;
 import Screens.PlayScreen;
+import Tools.WorldContact;
 
 public class EnemyOne extends Sprite{
 
@@ -28,7 +30,7 @@ public class EnemyOne extends Sprite{
     int random = r.nextInt(high-low) + low;
     private TextureRegion enemyStand;
     public boolean direction = false;
-    
+
 
     public EnemyOne(World world, PlayScreen screen) {
         super(screen.getEnemyOneAtlas().findRegion("sl"));
@@ -37,6 +39,7 @@ public class EnemyOne extends Sprite{
         setRegion(enemyStand);
         this.world = world;
         defineEnemy();
+
     }
 
 
@@ -91,8 +94,7 @@ public class EnemyOne extends Sprite{
 
             }
         });
-
-        Gdx.app.log("Cuenta",""+cont);
+        Hud.addScore(cont);
     }
 
     public void enemyLeftCollide(){

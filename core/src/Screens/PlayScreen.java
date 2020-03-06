@@ -84,7 +84,7 @@ public class PlayScreen implements Screen {
     private int slimeMode;
     private WorldSensorLeft sensorLeft;
     private WorldSensorRight sensorRight;
-    private WorldContact isLeftSlime;
+    private WorldContact wrd;
 
 //endregion
 
@@ -223,7 +223,7 @@ public class PlayScreen implements Screen {
         player = new HeroSword(world, this);
         sensorLeft = new WorldSensorLeft(world, this);
         sensorRight = new WorldSensorRight(world, this);
-        isLeftSlime = new WorldContact();
+        wrd = new WorldContact();
 
 
         //Setter from contactListneer in worldContact.
@@ -326,8 +326,7 @@ public class PlayScreen implements Screen {
         world.step(1 / 60f, 6, 2);
         //Update the player
         player.update(dt);
-
-
+        hud.update(dt);
 
         //region gamecam follow
         //Gamecam.position follow the player.
@@ -346,6 +345,7 @@ public class PlayScreen implements Screen {
     @Override
     public void render(float delta) {
         // Update all in the method
+
         update(delta);
         //"Timer" to use in limitjumper.
         time += Gdx.graphics.getDeltaTime();
@@ -367,9 +367,10 @@ public class PlayScreen implements Screen {
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        hud.update(isLeftSlime.getCount());
+
 
         renderer.render();
+
         //b2dr.render(world, gamecam.combined); //<- Uncomment to get the debugger collider.
 
         //Draw IMG interface
@@ -409,8 +410,8 @@ public class PlayScreen implements Screen {
         }
         //Draw the game sprites.
         game.batch.end();
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
 
+        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         //Draw the hud with parameters
         hud.stage.draw();
     }

@@ -31,14 +31,14 @@ public class Hud implements Disposable {
 
     public Stage stage;
     public Viewport viewport;
-    private Integer countEnemy;
+    private static Integer countEnemy;
     private Integer countCombo;
     private static Integer countCoins;
     private static WorldContact wrd;
-
     private Label lbCombo;
-    private Label lbEnemy;
+    private static Label lbEnemy;
     private static Label lbCoins;
+    private static Label scoreLabel;
     private Label lbTxComb;
     private Label lbTxEnemy;
     private Label lbTxCoins;
@@ -49,6 +49,7 @@ public class Hud implements Disposable {
     public Hud(SpriteBatch sb, int nSlimes) {
 
         wrd = new WorldContact();
+
         //Declare countEnemy as parameter nSlime from MainMenu. //TODO PONLE CONTADOR CUANDO CONSIGAS COMPLETRA LAS COLISIONES
         countEnemy = nSlimes;
         countCombo = 0;
@@ -71,7 +72,7 @@ public class Hud implements Disposable {
         lbTxEnemy = new Label(String.format("Enemies:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         lbEnemy = new Label(String.format("%02d", countEnemy), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         lbTxCoins = new Label(String.format("Coins:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
-        lbCoins = new Label(String.format("%05d", countCoins), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        scoreLabel =new Label(String.format("%06d", countCoins), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         lbTxComb = new Label(String.format("Combo:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         lbCombo = new Label(String.format("%03d", countCombo), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
 
@@ -84,18 +85,24 @@ public class Hud implements Disposable {
         tb.add(lbCombo).padLeft(5);
         //add the table to stage as Actor.
         stage.addActor(tb);
+
+    }
+
+    public void update (float dt){
+
     }
 
     @Override
     public void dispose() {
         //Dispose the stage to show the table in PlayScreen.
         stage.dispose();
+
     }
 
-    public void update(int cuenta){
-
-        lbCoins.setText(String.format("%06d", cuenta));
-
+    public static void addScore(int value){
+        countEnemy -= value;
+        Gdx.app.log("val", ""+countEnemy);
+        lbEnemy.setText(String.format("%05d", countEnemy));
     }
 
 }

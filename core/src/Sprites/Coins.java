@@ -6,15 +6,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.World;
 
 
-public class Coins extends ObjectInteract{
+public class Coins {
 
-    public Coins(World world, TiledMap map, Rectangle bounds) {
-        super(world, map, bounds);
-        fixture.setUserData(this);
-    }
 
-    @Override
-    public void swordHit() {
-        Gdx.app.log("Coin", "ha pillao una");
-    }
 }
