@@ -13,4 +13,8 @@
     <string name= "no">No</string>
     <string name= "normalMode">Normal</string>
     <string name= "madnessMode">Madness</string>
+    <string name= "leader">Score</string>
+    <string name= "back">Back Menu</string>
+    <string name= "scoreList">SCORE LIST</string>
+    <string name= "slayinMuzos">SLAYIN MUZOS</string>
 </resources>

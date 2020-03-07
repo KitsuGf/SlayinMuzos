@@ -8,49 +8,36 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import android.widget.FrameLayout
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.*
 import com.badlogic.gdx.Game
 import kotlinx.android.synthetic.main.activity_main_menu.*
+import java.lang.reflect.Array
 
 class MainMenu : AppCompatActivity() {
 
     private val manager : FragmentManager by lazy {this.supportFragmentManager}
     private val menuTu : MenuTutorial by lazy { MenuTutorial()}
     private val menuGame : GameMode by lazy { GameMode()}
+    private val menuScore : ScoreMenu by lazy { ScoreMenu()}
     private var closeFrag : Boolean = false
     private var nSlimes : Int = 20
     private var nSlimesMadness : Int = 5000000
-    private lateinit var btGame : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
-    }
 
-    //This Method is a button function,
-    //what send the user to game normal mode
-    fun goPlay(view: View?) {
-
+        //Fragment of the game buttons.
         var transaction: FragmentTransaction =manager.beginTransaction()
-        //Method with if to open and close the tutorial with the same button.
-        //If closeFrag is flase remove the Fragment.
-        if (closeFrag){
-            transaction.remove(menuGame) // Remove the frag
-        }else{
-            //if closeFrag is true, create fragment again.
-            transaction.replace(R.id.frameGameMode,menuGame,"menu_game")
-            transaction.addToBackStack("menu_game")
-        }
-        //set the boolean again false to clear the boolean and
-        // always get false at the start of the click
-        closeFrag = !closeFrag
-        //Commit the transaction of the fragment to show it
+        transaction.replace(R.id.frameMenuTuto,menuGame,"menu_game")
+        transaction.addToBackStack("menu_game")
         transaction.commit()
-    }
-    //This Method is a button function,
-    //what send the user to game madness mode
 
+
+
+    }
 
     override fun onBackPressed() {
         //Variables to get string from resfile.
@@ -76,19 +63,18 @@ class MainMenu : AppCompatActivity() {
     }
 
     fun goTutorial(view: View?) {
-        //res to GameModeButton
-        btGame = findViewById(R.id.btGameMode)
-        //This make the GameModeButton GONE when
-        //TutorialButton is clicked.
-        btGame.visibility = View.GONE
 
+        var tutAni : Button = findViewById(R.id.btTuto)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
+        tutAni.startAnimation(animation)
 
         var transaction: FragmentTransaction =manager.beginTransaction()
         //Method with if to open and close the tutorial with the same button.
-        //If closeFrag is flase remove the Fragment.
         if (closeFrag){
-            transaction.remove(menuTu) // Remove the frag
-            btGame.visibility = View.VISIBLE // Make the GameModeButton visible again.
+            var transaction: FragmentTransaction =manager.beginTransaction()
+            transaction.replace(R.id.frameMenuTuto,menuGame,"menu_game")
+            transaction.addToBackStack("menu_game")
+            transaction.commit()
         }else{
             //if closeFrag is true, create fragment again.
             transaction.replace(R.id.frameMenuTuto,menuTu,"menu_tutorial")
@@ -103,7 +89,9 @@ class MainMenu : AppCompatActivity() {
 
     //Method what send the nSlimes normal as 20 to the game.
     fun normalMode(view: View) {
-
+        var tutAni : Button = findViewById(R.id.btNormal)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
+        tutAni.startAnimation(animation)
         val i = Intent(this, AndroidLauncher::class.java)
         var bundle: Bundle = Bundle()
         bundle.putInt("nSlime", nSlimes)
@@ -113,12 +101,37 @@ class MainMenu : AppCompatActivity() {
 
     //Method what send the nSlimes normal as  5000000 to the game.
     fun madnessMode(view: View) {
-
+        var tutAni : Button = findViewById(R.id.btMadness)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
+        tutAni.startAnimation(animation)
         val i = Intent(this, AndroidLauncher::class.java)
         var bundle: Bundle = Bundle()
         bundle.putInt("nSlime", nSlimesMadness)
         i.putExtras(bundle)
         this.startActivity(i)
+
+    }
+
+    fun leaderScore(view: View) {
+        var tutAni : Button = findViewById(R.id.btLeader)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
+        tutAni.startAnimation(animation)
+
+        var transaction: FragmentTransaction =manager.beginTransaction()
+        transaction.replace(R.id.frameMenuTuto,menuScore,"menu_score")
+        transaction.addToBackStack("menu_score")
+        transaction.commit()
+    }
+
+    fun backMenu(view: View) {
+        var tutAni : Button = findViewById(R.id.btBack)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
+        tutAni.startAnimation(animation)
+        //Fragment of the game buttons.
+        var transaction: FragmentTransaction =manager.beginTransaction()
+        transaction.replace(R.id.frameMenuTuto,menuGame,"menu_game")
+        transaction.addToBackStack("menu_game")
+        transaction.commit()
 
     }
 

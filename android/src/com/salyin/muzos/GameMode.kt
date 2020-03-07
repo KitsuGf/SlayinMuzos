@@ -13,6 +13,6 @@ class GameMode : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.game_mode,container,false)
+        return inflater.inflate(R.layout.buttons_game,container,false)
     }
 }

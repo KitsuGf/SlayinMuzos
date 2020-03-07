@@ -18,21 +18,18 @@
 
 
     <Button
-        android:id="@+id/btGameMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:onClick="goPlay"
-        android:text="@string/gameMode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gifImageView" />
-
-    <Button
         android:id="@+id/btTuto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/tutolayout"
+        android:fontFamily="@font/retrogaming"
         android:onClick="goTutorial"
+        android:paddingBottom="10dp"
         android:text="@string/tutorial"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameMenuTuto"
@@ -47,20 +44,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameGameMode"
-        android:layout_width="126dp"
-        android:layout_height="117dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="100dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/btTuto"
-        app:layout_constraintEnd_toEndOf="@+id/btGameMode"
-        app:layout_constraintStart_toStartOf="@+id/btGameMode"
-        app:layout_constraintTop_toBottomOf="@+id/btGameMode">
 
     </FrameLayout>
 
