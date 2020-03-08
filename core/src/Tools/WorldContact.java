@@ -8,23 +8,21 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
-import java.util.ArrayList;
-
 import Scenes.Hud;
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
-import bdd.BaseDeDatos;
+import bdd.GameDataBase;
 
 
 public class WorldContact implements ContactListener {
     private int count = 0;
     private boolean bol = false;
-    private int tern = 0;
-    BaseDeDatos bdd;
 
+    GameDataBase bdd;
+    int c = 0;
 
-    public WorldContact(BaseDeDatos baseDeDatos) {
-        bdd = baseDeDatos;
+    public WorldContact(GameDataBase gameDataBase) {
+        bdd = gameDataBase;
     }
 
     public int getCount() {
@@ -47,11 +45,10 @@ public class WorldContact implements ContactListener {
 
 
         //Detect collide Player and Slime on favour to player.
-        if (isSlimeContact(fixA,fixB)){
+       /* if (isSlimeContact(fixA,fixB)){
             //Declare a new Hero and Enemy
             HeroSword a;
-            EnemyOne b;
-            Hud hd = new Hud();
+
             //Instanciate fixture to enemyOne
             //Test if the enemyOne is fixture A or B and get the
             //Fixture user data from it to EnemyOne and Player.
@@ -68,7 +65,7 @@ public class WorldContact implements ContactListener {
             b.enemyHitted(1);
             bdd.guardar(count);
 
-        }
+        }*/
 
 
 
@@ -90,7 +87,13 @@ public class WorldContact implements ContactListener {
             }
 
             //Method in Enemy when the enemy is hitted.
-            a.heroHitted();
+
+            c++;
+            Gdx.app.log("asdsa", ""+c);
+            if (c == 6){
+                a.heroDie();
+            }
+
 
         }
 
@@ -164,6 +167,27 @@ public class WorldContact implements ContactListener {
 
         }
 
+
+        //Detect collide between slime and wall right
+        if (isSword(fixA,fixB)){
+
+            Hud hd = new Hud();
+            EnemyOne b;
+
+           if (fixA.getUserData().equals("Sword")){
+               b = (EnemyOne) fixB.getUserData();
+               fixA.getUserData().equals("Sword");
+           }else{
+               b = (EnemyOne) fixA.getUserData();
+               fixB.getUserData().equals("Sword");
+           }
+            count++;
+            b.enemyHitted(1);
+            bdd.guardar(count);
+
+
+        }
+
     }
 
 
@@ -184,17 +208,7 @@ public class WorldContact implements ContactListener {
     }
 
 
-    private Boolean isSlimeContact(Fixture a, Fixture b){
-
-        if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
-            if (a.getUserData() instanceof HeroSword || b.getUserData() instanceof HeroSword){
-                return true;
-            }
-        }
-
-        return false;
-    }
-
+    //If slime collide with left wall is == True
     private Boolean isSlimeLeft(Fixture a, Fixture b){
 
         if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
@@ -206,7 +220,7 @@ public class WorldContact implements ContactListener {
         return false;
     }
 
-
+    //If slime collide with right wall is == True
     private Boolean isSlimeRight(Fixture a, Fixture b){
 
         if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
@@ -218,6 +232,7 @@ public class WorldContact implements ContactListener {
         return false;
     }
 
+    //if slime collide with another slime == True
     private Boolean isSlimeCollisionSlime(Fixture a, Fixture b){
 
         if(a.getUserData() instanceof EnemyOne && b.getUserData() instanceof EnemyOne){
@@ -227,6 +242,7 @@ public class WorldContact implements ContactListener {
         return false;
     }
 
+    //If hero is is collide with enemy == True
     private Boolean isHeroDie(Fixture a, Fixture b){
 
         if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
@@ -238,4 +254,15 @@ public class WorldContact implements ContactListener {
         return false;
     }
 
+    //If sword collide with enemy == True
+    private Boolean isSword(Fixture a, Fixture b){
+
+        if(a.getUserData() instanceof EnemyOne || b.getUserData() instanceof EnemyOne){
+            if (a.getUserData().equals("Sword") || b.getUserData().equals("Sword")){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

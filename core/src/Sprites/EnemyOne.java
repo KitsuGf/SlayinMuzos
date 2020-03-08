@@ -1,10 +1,8 @@
 package Sprites;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
@@ -12,13 +10,10 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
 
-import java.util.Iterator;
 import java.util.Random;
 
 import Scenes.Hud;
 import Screens.PlayScreen;
-import Tools.WorldContact;
-import bdd.BaseDeDatos;
 
 public class EnemyOne extends Sprite{
 

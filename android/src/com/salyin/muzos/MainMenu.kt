@@ -1,6 +1,5 @@
 package com.salyin.muzos
 
-import android.app.Service
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -11,8 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Button
-import android.widget.Toast
-import bdd.BaseDatos
+import bdd.AndroidDataBase
 import service.MyService
 
 
@@ -23,11 +21,11 @@ class MainMenu : AppCompatActivity() {
     private val menuGame : GameMode by lazy { GameMode()}
     private val menuScore : ScoreMenu by lazy { ScoreMenu()}
     private var closeFrag : Boolean = false
-    private var nSlimes : Int = 20
+    private var nSlimes : Int = 60
     private var nSlimesMadness : Int = 5000000
     private lateinit var mediaPlayer : MediaPlayer
     private lateinit var puntuacion : String
-    private val baseDatos : BaseDatos by lazy { BaseDatos(this)}
+    private val base : AndroidDataBase by lazy { AndroidDataBase(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +37,7 @@ class MainMenu : AppCompatActivity() {
         transaction.replace(R.id.frameMenuTuto,menuGame,"menu_game")
         transaction.addToBackStack("menu_game")
         transaction.commit()
-//        puntuacion = baseDatos.cargar().toString()
+//        puntuacion = base.cargar().toString()
 //
 //        var tv : TextView = findViewById(R.id.tvPrueba)
 //        tv.setText(puntuacion)
@@ -99,7 +97,7 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
     }
 
-    //Method what send the nSlimes normal as 20 to the game.
+    //Method what send the nSlimes normal as 60 to the game.
     fun normalMode(view: View) {
 
         //Little button animation

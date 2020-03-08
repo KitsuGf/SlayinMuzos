@@ -1,6 +1,5 @@
 package com.salyin.muzos
 
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import bdd.BaseDatos
+import bdd.AndroidDataBase
 
 
 class ScoreMenu : Fragment() {
-    private val baseDatos : BaseDatos by lazy { BaseDatos(context) }
+    private val base : AndroidDataBase by lazy { AndroidDataBase(context) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,7 +20,7 @@ class ScoreMenu : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 
-        val list = arrayListOf<String>(baseDatos.allScore().toString().replace("[","Player: ").replace("]",""))
+        val list = arrayListOf<String>(base.allScore().toString().replace("[","Player: ").replace("]",""))
         var view : View =inflater.inflate(R.layout.leader_layout,container,false)
 
         var lista : ListView = view.findViewById(R.id.listScore)

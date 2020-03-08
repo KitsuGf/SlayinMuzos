@@ -19,6 +19,7 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.EdgeShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Bits;
 import com.salyin.muzos.Main;
 
 import javax.xml.soap.Text;
@@ -28,13 +29,15 @@ import Screens.PlayScreen;
 
 public class HeroSword extends Sprite {
 
-    public enum State{RUN, STAND};
     public World world;
     public static Body b2body;
     private static EdgeShape sword;
     private static FixtureDef fdef;
     private static BodyDef bdef;
     private TextureRegion heroStand;
+    private static final short SWORD = 16;
+
+
 
 
 
@@ -77,13 +80,16 @@ public class HeroSword extends Sprite {
 
     }
 
+//    playerFixtureDef.filter.categoryBits = 0x0002;
+//    monsterFixtureDef.filter.categoryBits = 0x0004;
+
     public static boolean changeDirection(boolean bool){
 
         if (bool){
             sword.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(22 / Main.ppm, 0 / Main.ppm));
             fdef.shape = sword;
-            fdef.isSensor = true;
-
+            fdef.isSensor = false;
+            fdef.filter.categoryBits = SWORD;
             for (int i = 1; i < b2body.getFixtureList().size; i++){
                 b2body.destroyFixture(b2body.getFixtureList().get(i));
             }
@@ -94,7 +100,7 @@ public class HeroSword extends Sprite {
         } else {
             sword.set(new Vector2(-22 / Main.ppm, 0 / Main.ppm), new Vector2(0 / Main.ppm, 0 / Main.ppm));
             fdef.shape = sword;
-            fdef.isSensor = true;
+            fdef.isSensor = false;
 
             for (int i = 1; i < b2body.getFixtureList().size; i++){
                 b2body.destroyFixture(b2body.getFixtureList().get(i));
@@ -104,8 +110,32 @@ public class HeroSword extends Sprite {
         return bool;
     }
 
-    public void heroHitted(){
+    public void heroDie(){
+
+        Gdx.app.postRunnable(new Runnable(){
+            public void run(){
+                if (!world.isLocked()){
+
+                    world.destroyBody(b2body);
+                    BodyDef bdef = new BodyDef();
+                    bdef.position.set(32 / Main.ppm, 32 / Main.ppm);
+                    bdef.type = BodyDef.BodyType.DynamicBody;
+                    b2body = world.createBody(bdef);
+
+                    FixtureDef fdef = new FixtureDef();
+                    CircleShape shape = new CircleShape();
+                    shape.setRadius(8 / Main.ppm);
 
 
+                    fdef.shape = shape;
+                    b2body.createFixture(fdef);
+                    b2body.setTransform(0, 0/Main.ppm , 0);
+                    b2body.createFixture(fdef).setUserData(this);
+
+
+                }
+
+            }
+        });
     }
 }

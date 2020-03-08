@@ -26,7 +26,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
 
 import Tools.WorldContact;
-import bdd.BaseDeDatos;
+import bdd.GameDataBase;
 
 public class Hud implements Disposable {
 
@@ -43,13 +43,13 @@ public class Hud implements Disposable {
     private Label lbTxComb;
     private Label lbTxEnemy;
     private Label lbTxCoins;
-    BaseDeDatos bdd;
+    GameDataBase bdd;
     public Hud() {
     }
 
 
-    public Hud(SpriteBatch sb, int nSlimes, BaseDeDatos baseDeDatos ) {
-        bdd = baseDeDatos;
+    public Hud(SpriteBatch sb, int nSlimes, GameDataBase gameDataBase) {
+        bdd = gameDataBase;
 
         //Declare countEnemy as parameter nSlime from MainMenu. //TODO PONLE CONTADOR CUANDO CONSIGAS COMPLETRA LAS COLISIONES
         countEnemy = nSlimes;

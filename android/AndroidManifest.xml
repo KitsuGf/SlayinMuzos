@@ -12,7 +12,6 @@
         <activity android:name=".MainMenu"
                   android:screenOrientation="landscape"
                   android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

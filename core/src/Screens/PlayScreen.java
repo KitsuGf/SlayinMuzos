@@ -11,7 +11,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -45,7 +44,7 @@ import Tools.WorldContact;
 import Tools.WorldCreator;
 import Tools.WorldSensorLeft;
 import Tools.WorldSensorRight;
-import bdd.BaseDeDatos;
+import bdd.GameDataBase;
 
 public class PlayScreen implements Screen {
 
@@ -92,24 +91,24 @@ public class PlayScreen implements Screen {
     private WorldContact wrd;
     private Music music;
     private int puntuacion;
-    BaseDeDatos bdd;
+    GameDataBase bdd;
     private int count = 0;
     private Batch batchTexto;
     BitmapFont textoPuntuacion;
 
 //endregion
 
-    public PlayScreen(Main game, int nSlimes, BaseDeDatos baseDeDatos) {
+    public PlayScreen(Main game, int nSlimes, GameDataBase gameDataBase) {
         //Base de Datos
-        bdd = baseDeDatos;
+        bdd = gameDataBase;
 
         //Atlas searcher
         heroSwordAtlas = new TextureAtlas("sprites/hero_sword/viking.pack");
         enemyOneAtlas = new TextureAtlas("sprites/enemy_one/enemyOne.pack");
-       // Gdx.app.log("asdasd", ""+puntuacion);
+
         //SlimeMode is a variable geting the game mode between normal mode or madness mode.
         slimeMode = nSlimes;
-        //puntuacion = bdd.cargar();
+
         //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
@@ -125,11 +124,11 @@ public class PlayScreen implements Screen {
         img = new Texture(Gdx.files.internal("skin/back_ui_2.png"));
 
 
+
         //region ImageButtons and Status in listener.
         //Here i declare the buttonStyle and call the skin to use drawables from
         //the atlas pack.
         //Inside the listener we have the events we can make in the game passed from status.
-
         //RightButton
         ImageButton.ImageButtonStyle rightStyle = new ImageButton.ImageButtonStyle();
         rightStyle.up = btSkin.getDrawable("right_off");
@@ -203,9 +202,9 @@ public class PlayScreen implements Screen {
         //tb.debug(); //Table debugger de-comment if is needed.
         tb.setFillParent(true);
         //Added the buttons to cells in the Table.
-        tb.add(leftButton).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7).padBottom(Gdx.graphics.getWidth() / 44);
-        tb.add(rightButton).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7).padBottom(Gdx.graphics.getWidth() / 44).padRight(Gdx.graphics.getWidth() / 2.7f);
-        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7).padBottom(Gdx.graphics.getWidth() / 38).padRight(Gdx.graphics.getWidth() / 10);
+        tb.add(leftButton).height(Gdx.graphics.getHeight() / 5).width(Gdx.graphics.getWidth() / 6).padBottom(Gdx.graphics.getWidth() / 25);
+        tb.add(rightButton).height(Gdx.graphics.getHeight() / 5).width(Gdx.graphics.getWidth() / 6).padBottom(Gdx.graphics.getWidth() / 25).padRight(Gdx.graphics.getWidth() / 3.4f);
+        tb.add(jumpButton).height(Gdx.graphics.getHeight() / 5).width(Gdx.graphics.getWidth() / 6).padBottom(Gdx.graphics.getWidth() / 25).padRight(Gdx.graphics.getWidth() / 12);
 
         //Add the tb to Actor make the table interactive.
         stage.addActor(tb);
@@ -251,11 +250,10 @@ public class PlayScreen implements Screen {
 
     }
 
-
+    //Getters from heroAtlas and EnemyAtlas to get the sprite
     public TextureAtlas getHeroSwordAtlas() {
         return heroSwordAtlas;
     }
-
     public TextureAtlas getEnemyOneAtlas() {
         return enemyOneAtlas;
     }
@@ -397,7 +395,7 @@ public class PlayScreen implements Screen {
 
         //Draw IMG interface
         b.begin();
-        b.draw(img,0,0,  Gdx.graphics.getWidth() , Gdx.graphics.getHeight() / 4);
+        b.draw(img,0,0,  Gdx.graphics.getWidth() , Gdx.graphics.getHeight() / 3.2f);
         b.end();
 
         //Draw the table with buttons
@@ -472,7 +470,6 @@ public class PlayScreen implements Screen {
         world.dispose();
         b2dr.dispose();
         img.dispose();
-
         hud.dispose();
     }
 
