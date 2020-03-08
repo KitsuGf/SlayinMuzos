@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
 MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:2:1-11:12
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
@@ -33,25 +33,25 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\kitsu\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:3:5-31
 		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:5:5-27:19
+ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:5:5-31:19
 MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:5-94
@@ -91,7 +91,7 @@ ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:19:1
 	android:name
 		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:19:27-74
 activity#com.salyin.muzos.AndroidLauncher
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:9-26:62
+ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:9-27:20
 	android:screenOrientation
 		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:26:13-50
 	android:label
@@ -100,6 +100,12 @@ ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:9
 		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:24:13-107
 	android:name
 		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:23:13-44
+service#service.MyService
+ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:28:9-30:19
+	android:label
+		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:29:13-33
+	android:name
+		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:28:18-50
 uses-sdk
 INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml

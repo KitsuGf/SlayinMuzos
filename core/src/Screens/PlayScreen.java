@@ -10,9 +10,13 @@ package Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -41,6 +45,7 @@ import Tools.WorldContact;
 import Tools.WorldCreator;
 import Tools.WorldSensorLeft;
 import Tools.WorldSensorRight;
+import bdd.BaseDeDatos;
 
 public class PlayScreen implements Screen {
 
@@ -85,17 +90,26 @@ public class PlayScreen implements Screen {
     private WorldSensorLeft sensorLeft;
     private WorldSensorRight sensorRight;
     private WorldContact wrd;
+    private Music music;
+    private int puntuacion;
+    BaseDeDatos bdd;
+    private int count = 0;
+    private Batch batchTexto;
+    BitmapFont textoPuntuacion;
 
 //endregion
 
-    public PlayScreen(Main game, int nSlimes) {
+    public PlayScreen(Main game, int nSlimes, BaseDeDatos baseDeDatos) {
+        //Base de Datos
+        bdd = baseDeDatos;
+
         //Atlas searcher
         heroSwordAtlas = new TextureAtlas("sprites/hero_sword/viking.pack");
         enemyOneAtlas = new TextureAtlas("sprites/enemy_one/enemyOne.pack");
-
+       // Gdx.app.log("asdasd", ""+puntuacion);
         //SlimeMode is a variable geting the game mode between normal mode or madness mode.
         slimeMode = nSlimes;
-
+        //puntuacion = bdd.cargar();
         //Screen and stages.
         this.game = game;
         b = new SpriteBatch();
@@ -176,6 +190,7 @@ public class PlayScreen implements Screen {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 Gdx.app.log("Accion:", "Salto!");
                 motionState = MotionState.UP;
+
                 return true;
             }
         });
@@ -196,12 +211,11 @@ public class PlayScreen implements Screen {
         stage.addActor(tb);
 
 
-
         //Declare the orthographic camera.
         gamecam = new OrthographicCamera();
         //Declare a New viewPort with calcs in ppm
         //Call hud class
-        hud = new Hud(game.batch, nSlimes);
+        hud = new Hud(game.batch, nSlimes, bdd);
 
 
         //Load the tmxMap
@@ -220,14 +234,20 @@ public class PlayScreen implements Screen {
         //Call class WorldCreator to create collisions and etc.
         new WorldCreator(world, map);
 
+        //Create new objects
         player = new HeroSword(world, this);
         sensorLeft = new WorldSensorLeft(world, this);
         sensorRight = new WorldSensorRight(world, this);
-        wrd = new WorldContact();
+        wrd = new WorldContact(bdd);
 
+        //Music ingame
+        music = Gdx.audio.newMusic(Gdx.files.internal("music/ingame.mp3"));
+        music.setLooping(true);
+        music.setVolume(50f);
+        music.play();
 
         //Setter from contactListneer in worldContact.
-        world.setContactListener(new WorldContact());
+        world.setContactListener(new WorldContact(bdd));
 
     }
 
@@ -259,6 +279,8 @@ public class PlayScreen implements Screen {
 
                 player.b2body.applyLinearImpulse(new Vector2(0, 2.5f), player.b2body.getWorldCenter(), true);
                 jumps++;
+
+
                 return true;
 
             }
@@ -411,9 +433,14 @@ public class PlayScreen implements Screen {
         //Draw the game sprites.
         game.batch.end();
 
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
+
+
         //Draw the hud with parameters
         hud.stage.draw();
+
+
+
+
     }
 
     @Override
@@ -445,6 +472,7 @@ public class PlayScreen implements Screen {
         world.dispose();
         b2dr.dispose();
         img.dispose();
+
         hud.dispose();
     }
 

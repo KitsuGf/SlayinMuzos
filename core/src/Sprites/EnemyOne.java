@@ -18,6 +18,7 @@ import java.util.Random;
 import Scenes.Hud;
 import Screens.PlayScreen;
 import Tools.WorldContact;
+import bdd.BaseDeDatos;
 
 public class EnemyOne extends Sprite{
 
@@ -95,6 +96,7 @@ public class EnemyOne extends Sprite{
             }
         });
         Hud.addScore(cont);
+
     }
 
     public void enemyLeftCollide(){

@@ -12,9 +12,12 @@ package com.salyin.muzos;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 
 import Scenes.Hud;
 import Screens.PlayScreen;
+import Tools.WorldContact;
+import bdd.BaseDeDatos;
 
 
 public class Main extends Game {
@@ -24,17 +27,21 @@ public class Main extends Game {
     public SpriteBatch batch;
     public int nSlimes;
     public Hud hud;
+    public WorldContact wrd;
+    private BaseDeDatos baseDeDatos;
 
-    public Main(int slimesMode) {
+    public Main(int slimesMode, BaseDeDatos baseDeDatos) {
         this.nSlimes = slimesMode;
+        this.baseDeDatos = baseDeDatos;
     }
 
 
     @Override
     public void create() {
         batch = new SpriteBatch();
-        setScreen(new PlayScreen(this, nSlimes));
-        hud = new Hud(batch, nSlimes);
+        setScreen(new PlayScreen(this, nSlimes, baseDeDatos));
+        hud = new Hud(batch, nSlimes, baseDeDatos);
+        wrd = new WorldContact(baseDeDatos);
     }
 
     @Override

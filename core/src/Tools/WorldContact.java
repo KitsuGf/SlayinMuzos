@@ -1,21 +1,31 @@
 package Tools;
 
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
+import java.util.ArrayList;
+
 import Scenes.Hud;
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
+import bdd.BaseDeDatos;
 
 
 public class WorldContact implements ContactListener {
     private int count = 0;
     private boolean bol = false;
+    private int tern = 0;
+    BaseDeDatos bdd;
 
+
+    public WorldContact(BaseDeDatos baseDeDatos) {
+        bdd = baseDeDatos;
+    }
 
     public int getCount() {
         return count;
@@ -54,9 +64,9 @@ public class WorldContact implements ContactListener {
             }
 
             //Method in Enemy when the enemy is hitted.
-
-
+            count++;
             b.enemyHitted(1);
+            bdd.guardar(count);
 
         }
 
@@ -81,7 +91,6 @@ public class WorldContact implements ContactListener {
 
             //Method in Enemy when the enemy is hitted.
             a.heroHitted();
-
 
         }
 

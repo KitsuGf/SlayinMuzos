@@ -1,19 +1,20 @@
 package com.salyin.muzos
 
+import android.app.Service
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.Process
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.*
-import com.badlogic.gdx.Game
-import kotlinx.android.synthetic.main.activity_main_menu.*
-import java.lang.reflect.Array
+import android.widget.Button
+import android.widget.Toast
+import bdd.BaseDatos
+import service.MyService
+
 
 class MainMenu : AppCompatActivity() {
 
@@ -24,16 +25,28 @@ class MainMenu : AppCompatActivity() {
     private var closeFrag : Boolean = false
     private var nSlimes : Int = 20
     private var nSlimesMadness : Int = 5000000
+    private lateinit var mediaPlayer : MediaPlayer
+    private lateinit var puntuacion : String
+    private val baseDatos : BaseDatos by lazy { BaseDatos(this)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
         //Fragment of the game buttons.
+
         var transaction: FragmentTransaction =manager.beginTransaction()
         transaction.replace(R.id.frameMenuTuto,menuGame,"menu_game")
         transaction.addToBackStack("menu_game")
         transaction.commit()
+//        puntuacion = baseDatos.cargar().toString()
+//
+//        var tv : TextView = findViewById(R.id.tvPrueba)
+//        tv.setText(puntuacion)
+
+        var intent : Intent = Intent(this, MyService::class.java)
+        startService(intent)
+        stopService(intent)
 
 
 
@@ -63,7 +76,6 @@ class MainMenu : AppCompatActivity() {
     }
 
     fun goTutorial(view: View?) {
-
         var tutAni : Button = findViewById(R.id.btTuto)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
         tutAni.startAnimation(animation)
@@ -89,9 +101,12 @@ class MainMenu : AppCompatActivity() {
 
     //Method what send the nSlimes normal as 20 to the game.
     fun normalMode(view: View) {
+
+        //Little button animation
         var tutAni : Button = findViewById(R.id.btNormal)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
         tutAni.startAnimation(animation)
+        //Send the intent with the extras to the launcher
         val i = Intent(this, AndroidLauncher::class.java)
         var bundle: Bundle = Bundle()
         bundle.putInt("nSlime", nSlimes)
@@ -101,9 +116,12 @@ class MainMenu : AppCompatActivity() {
 
     //Method what send the nSlimes normal as  5000000 to the game.
     fun madnessMode(view: View) {
+
+        //Little button animation
         var tutAni : Button = findViewById(R.id.btMadness)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
         tutAni.startAnimation(animation)
+        //Send the intent with the extras to the launcher
         val i = Intent(this, AndroidLauncher::class.java)
         var bundle: Bundle = Bundle()
         bundle.putInt("nSlime", nSlimesMadness)
@@ -112,6 +130,7 @@ class MainMenu : AppCompatActivity() {
 
     }
 
+    //OnClick to go ScoreFragment
     fun leaderScore(view: View) {
         var tutAni : Button = findViewById(R.id.btLeader)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
@@ -123,6 +142,7 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
     }
 
+    //OnClick to back to menu
     fun backMenu(view: View) {
         var tutAni : Button = findViewById(R.id.btBack)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
@@ -134,6 +154,21 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
 
     }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer.stop()
+        mediaPlayer.release()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlayer = MediaPlayer.create(this, R.raw.title)
+        mediaPlayer.start()
+        mediaPlayer.setVolume(50f, 50f)
+    }
+
 
 
 }
