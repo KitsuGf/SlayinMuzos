@@ -89,9 +89,7 @@ public class Hud implements Disposable {
 
     }
 
-    public void update (float dt){
-
-    }
+    public void update (float dt){ }
 
     @Override
     public void dispose() {

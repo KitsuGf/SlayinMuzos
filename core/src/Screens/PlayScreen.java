@@ -1,12 +1,5 @@
 package Screens;
 
-
-/**
- * @Author Kitsu ( Juan Miguel )
- * <p>
- * PlayScreen is class to implements methods in Main(game)
- */
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -14,8 +7,6 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -34,9 +25,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.salyin.muzos.Main;
-
 import java.util.LinkedList;
-
 import Scenes.Hud;
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
@@ -46,15 +35,21 @@ import Tools.WorldSensorLeft;
 import Tools.WorldSensorRight;
 import bdd.GameDataBase;
 
+
+/**
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * PlayScreen is class to implements methods in Main(game)
+ */
+
 public class PlayScreen implements Screen {
 
     //region Private Vars
     private static HeroSword hs;
-
+    //Getter & Setter from HeroSword
     public HeroSword getHs() {
         return hs;
     }
-
     public void setHs(HeroSword hs) {
         this.hs = hs;
     }
@@ -91,12 +86,12 @@ public class PlayScreen implements Screen {
     private WorldContact wrd;
     private Music music;
     GameDataBase bdd;
-
-
 //endregion
 
+
+    //Constructor for PlayScreen getting parameters from Main
     public PlayScreen(Main game, int nSlimes, GameDataBase gameDataBase) {
-        //Base de Datos
+        //DataBase
         bdd = gameDataBase;
 
         //Atlas searcher
@@ -127,19 +122,19 @@ public class PlayScreen implements Screen {
         //Inside the listener we have the events we can make in the game passed from status.
         //RightButton
         ImageButton.ImageButtonStyle rightStyle = new ImageButton.ImageButtonStyle();
-        rightStyle.up = btSkin.getDrawable("right_off");
-        rightStyle.down = btSkin.getDrawable("right_on");
-        rightButton = new ImageButton(rightStyle);
+        rightStyle.up = btSkin.getDrawable("right_off");//this texture when button is not pressed.
+        rightStyle.down = btSkin.getDrawable("right_on");//this texture when button is pressed
+        rightButton = new ImageButton(rightStyle); //get the style button from the atlas.
         rightButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-
+                //If the player releas the button, make none to stop linearvelocity.
                 motionState = MotionState.NONE;
             }
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                Gdx.app.log("Me muevo a:", "Derecha");
+                //get the motionstate from the enum
                 motionState = MotionState.RIGHT;
 
                 return true;
@@ -147,33 +142,36 @@ public class PlayScreen implements Screen {
         });
 
         //LeftButton
-        ImageButton.ImageButtonStyle leftStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
-        leftStyle.up = btSkin.getDrawable("left_off");
-        leftStyle.down = btSkin.getDrawable("left_on");
-        leftButton = new ImageButton(leftStyle);
+        //Here i declare the buttonStyle and call the skin to use drawables from
+        //the atlas pack.
+        //Inside the listener we have the events we can make in the game passed from status.
+        ImageButton.ImageButtonStyle leftStyle = new ImageButton.ImageButtonStyle();
+        leftStyle.up = btSkin.getDrawable("left_off"); //this texture when button is not pressed.
+        leftStyle.down = btSkin.getDrawable("left_on"); //this texture when button is pressed
+        leftButton = new ImageButton(leftStyle);//get the style button from the atlas.
         leftButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-
+                //If the player releas the button, make none to stop linearvelocity.
                 motionState = MotionState.NONE;
             }
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-
-                Gdx.app.log("Me muevo a:", "Izquierda");
-
+                //get the motionstate from the enum
                 motionState = MotionState.LEFT;
-
                 return true;
             }
         });
 
         //JumpButton
-        ImageButton.ImageButtonStyle jumpStyle = new ImageButton.ImageButtonStyle(); //** Button properties **//
-        jumpStyle.up = btSkin.getDrawable("jump_off");
-        jumpStyle.down = btSkin.getDrawable("jump_on");
-        jumpButton = new ImageButton(jumpStyle);
+        //Here i declare the buttonStyle and call the skin to use drawables from
+        //the atlas pack.
+        //Inside the listener we have the events we can make in the game passed from status.
+        ImageButton.ImageButtonStyle jumpStyle = new ImageButton.ImageButtonStyle();
+        jumpStyle.up = btSkin.getDrawable("jump_off"); //this texture when button is not pressed.
+        jumpStyle.down = btSkin.getDrawable("jump_on"); //this texture when button is pressed.
+        jumpButton = new ImageButton(jumpStyle);//get the style button from the atlas.
         jumpButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
@@ -195,7 +193,7 @@ public class PlayScreen implements Screen {
         //Make a table to add buttons in better order.
         Table tb = new Table();
         tb.bottom();
-        //tb.debug(); //Table debugger de-comment if is needed.
+        //tb.debug(); //Table debugger uncomment if is needed.
         tb.setFillParent(true);
         //Added the buttons to cells in the Table.
         tb.add(leftButton).height(Gdx.graphics.getHeight() / 5).width(Gdx.graphics.getWidth() / 6).padBottom(Gdx.graphics.getWidth() / 25);
@@ -255,8 +253,9 @@ public class PlayScreen implements Screen {
     }
 
 
-    //
-    //region ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
+
+    //region Enum of MotionState to get status binding to
+    //actions in ui-buttons
     private enum MotionState {
 
         NONE {
@@ -267,27 +266,27 @@ public class PlayScreen implements Screen {
         UP {
             @Override
             public boolean update(HeroSword player) {
-                // the limit is reached
+                //Method to get a limit jumps in the game to the Hero
                 if (jumps == maxJumps)
                     return true;
-
+                //Hero will jump but no more than one time.
                 player.b2body.applyLinearImpulse(new Vector2(0, 2.5f), player.b2body.getWorldCenter(), true);
                 jumps++;
-
-
                 return true;
-
             }
         },
 
         LEFT {
             @Override
             public boolean update(HeroSword player) {
+                //Method to move the Hero to Left
                 if (player.b2body.getLinearVelocity().x >= -2) {
                     player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
+
+                    //this is a boolean getting from HeroSword to change the direction of the Fixture Sword
                     hs.changeDirection(false);
                 }
-                //method to flip sprite
+                //Nethod to flip sprite
                 if (player.b2body.getLinearVelocity().x <= 0 && !player.isFlipX()) {
                     player.flip(true, false);
                 }
@@ -298,8 +297,10 @@ public class PlayScreen implements Screen {
         RIGHT {
             @Override
             public boolean update(HeroSword player) {
+                //Method to move the Hero to Right
                 if (player.b2body.getLinearVelocity().x <= 2) {
                     player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
+                    //this is a boolean getting from HeroSword to change the direction of the Fixture Sword
                     hs.changeDirection(true);
                 }
                 //method to flip sprite
@@ -311,6 +312,7 @@ public class PlayScreen implements Screen {
             }
         };
 
+        //Update the player to have a good movement.
         public abstract boolean update(HeroSword player);
     }
     //endregion ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
@@ -319,9 +321,8 @@ public class PlayScreen implements Screen {
 
     //endregion
     @Override
-    public void show() {
+    public void show() { }
 
-    }
 
     //This method is for encapsule all updates and send it to Render.
     public void update(float dt) {
@@ -344,7 +345,7 @@ public class PlayScreen implements Screen {
         player.update(dt);
         hud.update(dt);
 
-        //region gamecam follow
+        //region gamecam follow <- Uncomment if is needed.
         //Gamecam.position follow the player.
         //gamecam.position.x = player.b2body.getPosition().x;
         //gamecam.position.y = player.b2body.getPosition().y;
@@ -355,7 +356,6 @@ public class PlayScreen implements Screen {
         //render the view.
         renderer.setView(gamecam);
     }
-
 
 
     @Override
@@ -398,42 +398,47 @@ public class PlayScreen implements Screen {
         stage.act();
         stage.draw();
 
-
+        //Combine the gamebatch with gamecam
         game.batch.setProjectionMatrix(gamecam.combined);
+        //Start the drawing with batchs
         game.batch.begin();
+        //Draw the player
         player.draw(game.batch);
 
         try {
+            //Comparision between enemyNo and Enemies List
+            //If is less than the size, then start a loop to draw enemies texture
+            //bounds the enenmy body.
            if (enemyNo <= enemies.size()){
                for (int i = 0; i < enemies.size(); i ++) {
                    EnemyOne currentEnemy = enemies.get(i);
                    currentEnemy.draw(game.batch);
+                   //direction is a boolean from EnemyOne that indicate if the
+                   //Slime change direction or not.
                    if (currentEnemy.direction) {
+                       //Some litle try to mmake an ia of move slimes
                        if (currentEnemy.b2body.getLinearVelocity().x <= 1) {
                            currentEnemy.b2body.applyLinearImpulse(new Vector2(0.1f, 0), currentEnemy.b2body.getWorldCenter(), true);
                        }
-                   } else {
+                   }else{
                        if (currentEnemy.b2body.getLinearVelocity().x >= -1) {
                            currentEnemy.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), currentEnemy.b2body.getWorldCenter(), true);
                        }
                    }
-
+                   //update the enemy with delta to get the movement constant.
                    currentEnemy.update(delta);
                }
-           } // I'm a teapot
-       } catch (IndexOutOfBoundsException e){
+           } //I'm a teapot <-- yes, iam a teapot,
+            //a litle teapot who stay here throw codelines trying if works or not.
+            //Sometimes works, sometimes i want to kill my self.
+            //If you are Miguel and read this, please Miguel, dont say nothing, just
+            //Write in your Twitter: "Im a Teapot too". We will know.
+       } catch (IndexOutOfBoundsException e){ }
 
-        }
         //Draw the game sprites.
         game.batch.end();
-
-
-
         //Draw the hud with parameters
         hud.stage.draw();
-
-
-
 
     }
 

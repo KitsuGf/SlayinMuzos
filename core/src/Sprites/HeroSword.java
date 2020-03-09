@@ -35,10 +35,6 @@ public class HeroSword extends Sprite {
     private static FixtureDef fdef;
     private static BodyDef bdef;
     private TextureRegion heroStand;
-    private static final short SWORD = 16;
-
-
-
 
 
     public HeroSword(World world, PlayScreen screen) {
