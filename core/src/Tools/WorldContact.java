@@ -3,6 +3,7 @@ package Tools;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -18,7 +19,16 @@ import bdd.GameDataBase;
 public class WorldContact implements ContactListener {
     private int count = 0;
     private boolean bol = false;
-    private Music music;
+    private Sound enemyHitted = Gdx.audio.newSound(Gdx.files.internal("sounds/effects/slimehitted.wav"));
+    private Sound heroHitted = Gdx.audio.newSound(Gdx.files.internal("sounds/effects/herohitted.wav"));
+
+    private Sound comboOne = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/MultiKill.wav"));
+    private Sound comboTwo = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/MegaKill.wav"));
+    private Sound comboThree = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/KillingSpree.wav"));
+    private Sound comboFour = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/Rampage.wav"));
+    private Sound comboFive = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/MonsterKill.wav"));
+    private Sound comboSix = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/Godlike.wav"));
+    private Sound comboSeven = Gdx.audio.newSound(Gdx.files.internal("sounds/combo/HolyShit.wav"));
 
     GameDataBase bdd;
     int c = 0;
@@ -37,6 +47,7 @@ public class WorldContact implements ContactListener {
 
     @Override
     public void beginContact(Contact contact) {
+
 
         Fixture fixA = contact.getFixtureA();
         Fixture fixB = contact.getFixtureB();
@@ -63,6 +74,7 @@ public class WorldContact implements ContactListener {
                 b = (EnemyOne) fixA.getUserData();
                 a = (HeroSword) fixB.getUserData();
             }
+            heroHitted.play();
             c++;
             if (c == 6){
 
@@ -146,9 +158,8 @@ public class WorldContact implements ContactListener {
 
         //Detect collide between slime and wall right
         if (isSword(fixA,fixB)){
-            music = Gdx.audio.newMusic(Gdx.files.internal("sounds/slimedeath.mp3"));
-            music.setVolume(100);
-            music.play();
+
+
             Hud hd = new Hud();
             EnemyOne b;
 
@@ -159,10 +170,30 @@ public class WorldContact implements ContactListener {
                b = (EnemyOne) fixA.getUserData();
                fixB.getUserData().equals("Sword");
            }
+
+
+            enemyHitted.play();
             count++;
             b.enemyHitted(1);
-            bdd.saveScore(count);
 
+            if (count == 10 || count >= 250){
+                comboOne.play();
+            }if (count == 15 || count >= 350 ){
+                comboTwo.play();
+            }if (count == 20 || count >= 450){
+                comboThree.play();
+            }if (count == 25 || count >= 550){
+                comboFour.play();
+            }if (count == 30 || count >= 650){
+                comboFive.play();
+            }if (count == 35 || count >= 750){
+                comboSix.play();
+            }if (count == 40 || count >= 950) {
+                comboSeven.play();
+
+
+                bdd.saveScore(count);
+            }
 
         }
 

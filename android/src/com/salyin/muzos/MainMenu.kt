@@ -21,7 +21,7 @@ class MainMenu : AppCompatActivity() {
     private val menuGame : GameMode by lazy { GameMode()}
     private val menuScore : ScoreMenu by lazy { ScoreMenu()}
     private var closeFrag : Boolean = false
-    private var nSlimes : Int = 10
+    private var nSlimes : Int = 100
     private var nSlimesMadness : Int = 5000000
     private lateinit var mediaPlayer : MediaPlayer
     private val base : AndroidDataBase by lazy { AndroidDataBase(this) }
