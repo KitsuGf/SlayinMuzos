@@ -22,7 +22,7 @@ class MainMenu : AppCompatActivity() {
     private val menuScore : ScoreMenu by lazy { ScoreMenu()}
     private var closeFrag : Boolean = false
     private var nSlimes : Int = 100
-    private var nSlimesMadness : Int = 5000000
+    private var nSlimesMadness : Int = 1000
     private lateinit var mediaPlayer : MediaPlayer
     private val base : AndroidDataBase by lazy { AndroidDataBase(this) }
 
@@ -36,6 +36,7 @@ class MainMenu : AppCompatActivity() {
         transaction.addToBackStack("menu_game")
         transaction.commit()
 
+        //Intent for the Service
         var intent : Intent = Intent(this, MyService::class.java)
         startService(intent)
         stopService(intent)

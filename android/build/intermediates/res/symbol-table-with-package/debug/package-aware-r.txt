@@ -998,12 +998,15 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView10
+id textView11
 id textView2
 id textView3
 id textView4
 id textView5
 id textView6
 id textView7
+id textView8
 id time
 id title
 id titleDividerNoCustom
@@ -1113,6 +1116,8 @@ string alertMsg
 string alertTitle
 string app_name
 string back
+string buttonDesc
+string buttonsJumpDesc
 string gameMode
 string jumpTutorial
 string leader
@@ -1123,9 +1128,11 @@ string normalMode
 string scoreList
 string search_menu_title
 string slayinMuzos
+string slimeDesc
 string slimeTutorial
 string status_bar_notification_info_overflow
 string tutorial
+string vikingDesc
 string vikingTutorial
 string yes
 style AlertDialog_AppCompat

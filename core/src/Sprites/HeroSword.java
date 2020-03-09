@@ -1,14 +1,5 @@
 package Sprites;
 
-/**
- *
- * @Author Kitsu ( Juan Miguel )
- *
- * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
- *
- *
- */
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -26,9 +17,16 @@ import javax.xml.soap.Text;
 
 import Screens.PlayScreen;
 
-
+/**
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * HeroSword is class extending the Sprite to create parameters,
+ * texture, collision filter, methods from each enemy the game create.
+ *
+ */
 public class HeroSword extends Sprite {
 
+    //variables
     public World world;
     public static Body b2body;
     private static EdgeShape sword;
@@ -36,25 +34,36 @@ public class HeroSword extends Sprite {
     private static BodyDef bdef;
     private TextureRegion heroStand;
 
-
+    //Cosntructor getting world and playscreen
     public HeroSword(World world, PlayScreen screen) {
+        //this supper get the Hero atlas region.
         super(screen.getHeroSwordAtlas().findRegion("viking"));
+        //set the texture region to set it in body
         this.world = world;
+        //call to the define enemy method.
         defineHero();
         heroStand = new TextureRegion(getTexture(), -19,31,128,128);
+        //bounds to body of the enemy.
         setBounds(0,0,70/Main.ppm, 64/Main.ppm);
         setRegion(heroStand);
-
-
     }
 
-    public void defineHero(){
 
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     * defineHero is a Method to create Hero shape, texture, position
+     * collision filter.
+     *
+     */
+
+    public void defineHero(){
+        //define the body and set the position
         bdef = new BodyDef();
         bdef.position.set(32 / Main.ppm, 32 / Main.ppm);
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
-
+        //def the type of fixture and the radius
         fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
         shape.setRadius(8 / Main.ppm);
@@ -62,11 +71,10 @@ public class HeroSword extends Sprite {
         b2body.createFixture(fdef).setUserData(this);
 
 
-        //Sword
+        //Create a SwordShape to be a part of the Hero Body
         sword = new EdgeShape();
 
     }
-
 
 
     //Update with deltatime the position of the sprite.
@@ -75,9 +83,18 @@ public class HeroSword extends Sprite {
 
     }
 
-
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     * changeDirection is a Method to create Enemy shape, texture, position
+     * collision filter.
+     *
+     * @return boolean
+     */
     public static boolean changeDirection(boolean bool){
 
+        //if bool is true change the direction of the edgeShape Sword
+        //this destroy and recreate the sword to another position
         if (bool){
             sword.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(22 / Main.ppm, 0 / Main.ppm));
             fdef.shape = sword;
@@ -86,8 +103,6 @@ public class HeroSword extends Sprite {
                 b2body.destroyFixture(b2body.getFixtureList().get(i));
             }
             b2body.createFixture(fdef).setUserData("Sword");
-
-
 
         } else {
             sword.set(new Vector2(-22 / Main.ppm, 0 / Main.ppm), new Vector2(0 / Main.ppm, 0 / Main.ppm));
@@ -102,13 +117,29 @@ public class HeroSword extends Sprite {
         return bool;
     }
 
+
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     * enemyHitted is a method to simulate the destroy of the enemy.
+     * in fact is not destroy any fixture or body, is just destroy and recreate.
+     * because i can´t control good the destroy bodies
+     *
+     */
     public void heroDie(){
 
+        //with runnable i can destroy bodies but some weird
+        //things happens if i dont create again other body,
+        //so my solution at this is simulate the destroy body crete again other in
+        //different location not appearing in screen.
         Gdx.app.postRunnable(new Runnable(){
             public void run(){
+               //if the world is not locked, destroy the body an create again
+                //other
                 if (!world.isLocked()){
-
+                    //Here is the destroy body i can´t controll.
                     world.destroyBody(b2body);
+                    //recreate the body out of the map.
                     BodyDef bdef = new BodyDef();
                     bdef.position.set(32 / Main.ppm, 32 / Main.ppm);
                     bdef.type = BodyDef.BodyType.DynamicBody;
@@ -126,6 +157,8 @@ public class HeroSword extends Sprite {
                 }
             }
         });
+
+
     }
 
 

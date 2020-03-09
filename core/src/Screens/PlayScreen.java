@@ -46,6 +46,11 @@ public class PlayScreen implements Screen {
 
     //region Private Vars
     private static HeroSword hs;
+
+    public PlayScreen() {
+
+    }
+
     //Getter & Setter from HeroSword
     public HeroSword getHs() {
         return hs;
@@ -53,7 +58,6 @@ public class PlayScreen implements Screen {
     public void setHs(HeroSword hs) {
         this.hs = hs;
     }
-
     private World world;
     private Box2DDebugRenderer b2dr;
     private OrthographicCamera gamecam;
@@ -85,9 +89,20 @@ public class PlayScreen implements Screen {
     private WorldSensorRight sensorRight;
     private WorldContact wrd;
     private Music music;
+    public static boolean gameOver = false;
+    public static boolean winner = false;
     GameDataBase bdd;
+
 //endregion
 
+
+    public static void setWinner(boolean winner) {
+        PlayScreen.winner = winner;
+    }
+
+    public static void setGameOver(boolean gameOver) {
+        PlayScreen.gameOver = gameOver;
+    }
 
     //Constructor for PlayScreen getting parameters from Main
     public PlayScreen(Main game, int nSlimes, GameDataBase gameDataBase) {
@@ -439,8 +454,18 @@ public class PlayScreen implements Screen {
         game.batch.end();
         //Draw the hud with parameters
         hud.stage.draw();
+        if (gameOver){
+            game.setScreen(new GameOverScreen(game));
+            music.stop();
+        }
+        if (winner){
+            game.setScreen(new WinnerScreen(game));
+            music.stop();
+        }
+
 
     }
+
 
     @Override
     public void resize(int width, int height) {

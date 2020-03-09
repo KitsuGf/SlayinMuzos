@@ -24,7 +24,6 @@ class ScoreMenu : Fragment() {
         var view : View =inflater.inflate(R.layout.leader_layout,container,false)
 
         var lista : ListView = view.findViewById(R.id.listScore)
-        var score = arrayOf("Nosencuantos","Nosencuantos","Nosencuantos","Nosencuantos","Nosencuantos")
         var ad: ArrayAdapter<String> = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1, list)
         lista.adapter = ad
 

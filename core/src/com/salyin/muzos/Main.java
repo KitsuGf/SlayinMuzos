@@ -1,14 +1,6 @@
 package com.salyin.muzos;
 
 
-/**
- *
- * @Author Kitsu ( Juan Miguel )
- *
- * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
- *
- */
-
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,6 +11,14 @@ import Tools.WorldContact;
 import bdd.GameDataBase;
 
 
+/**
+ *
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
+ *
+ */
+
 public class Main extends Game {
     public static final int V_WIDTH = 512;
     public static final int V_HEIGHT = 240;
@@ -28,6 +28,7 @@ public class Main extends Game {
     public Hud hud;
     public WorldContact wrd;
     private GameDataBase gameDataBase;
+
 
     public Main(int slimesMode, GameDataBase gameDataBase) {
         this.nSlimes = slimesMode;

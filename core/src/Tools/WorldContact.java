@@ -7,7 +7,10 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
+import com.salyin.muzos.Main;
+
 import Scenes.Hud;
+import Screens.PlayScreen;
 import Sprites.EnemyOne;
 import Sprites.HeroSword;
 import bdd.GameDataBase;
@@ -22,7 +25,7 @@ import bdd.GameDataBase;
  */
 public class WorldContact implements ContactListener {
     private int count = 0;
-    private boolean bol = false;
+    public boolean bol;
     //Hit soundeffects
     private Sound enemyHitted = Gdx.audio.newSound(Gdx.files.internal("sounds/effects/slimehitted.wav"));
     private Sound heroHitted = Gdx.audio.newSound(Gdx.files.internal("sounds/effects/herohitted.wav"));
@@ -38,9 +41,12 @@ public class WorldContact implements ContactListener {
     GameDataBase bdd;
     int c = 0;
 
+
     //Constructors to get DataBase info.
     public WorldContact(GameDataBase gameDataBase) {
+
         bdd = gameDataBase;
+        this.bol = bol;
     }
 
     //Getter and setter for count
@@ -68,7 +74,7 @@ public class WorldContact implements ContactListener {
             //Declare a new Hero and Enemy
             HeroSword a;
             EnemyOne b;
-
+            PlayScreen ps = new PlayScreen();
             //Instanciate fixture to enemyOne
             //Test if the enemyOne is fixture A or B and get the
             //Fixture user data from it to EnemyOne and Player.
@@ -88,6 +94,7 @@ public class WorldContact implements ContactListener {
             //If the player get 6 hits, die.
             if (c == 6){
                 a.heroDie();
+                PlayScreen.setGameOver(true);
             }
 
             //If the slime collide to hit the Hero,
@@ -188,23 +195,29 @@ public class WorldContact implements ContactListener {
 
             //Comparison to get the ComboSoundEffects
             //Depends how much slimes kills the user, differents sounds will play.
-            if (count == 10 || count >= 250){
+            if (count == 15 || count == 100 || count == 150){
                 comboOne.play();
-            }if (count == 15 || count >= 350 ){
+            }if (count == 30 || count == 300 || count == 350 ){
                 comboTwo.play();
-            }if (count == 20 || count >= 450){
+            }if (count == 45 || count == 400 || count == 450){
                 comboThree.play();
-            }if (count == 25 || count >= 550){
+            }if (count == 60 || count == 500 || count == 550){
                 comboFour.play();
-            }if (count == 30 || count >= 650){
+            }if (count == 75 || count == 600 || count == 650){
                 comboFive.play();
-            }if (count == 35 || count >= 750){
+            }if (count == 90 || count == 700 || count == 750){
                 comboSix.play();
-            }if (count == 40 || count >= 950) {
+            }if (count == 100 || count == 900 || count == 989) {
                 comboSeven.play();
             }
+
+            if (count == 100 || count == 1000){
+                PlayScreen.setWinner(true);
+            }
+
             //Database save the count of the slimes
             bdd.saveScore(count);
+
         }
 
     }

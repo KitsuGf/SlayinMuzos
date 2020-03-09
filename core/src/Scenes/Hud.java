@@ -1,16 +1,5 @@
 package Scenes;
 
-/**
- *
- * @Author Kitsu ( Juan Miguel )
- *
- * @param Sb from Main
- * @param nSlimes from Main
- *
- * Hud Class is made to manage the HudPoints from the game.
- * Implements Disposable is needed to dispose the Hud in PlayScreen.
- *
- */
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -28,6 +17,17 @@ import com.salyin.muzos.Main;
 import Tools.WorldContact;
 import bdd.GameDataBase;
 
+
+/**
+ *
+ * @Author Kitsu ( Juan Miguel )
+ *
+ *
+ * Hud Class is made to manage the HudPoints from the game.
+ * Implements Disposable is needed to dispose the Hud in PlayScreen.
+ *
+ */
+
 public class Hud implements Disposable {
 
     public Stage stage;
@@ -44,6 +44,8 @@ public class Hud implements Disposable {
     private Label lbTxEnemy;
     private Label lbTxCoins;
     static GameDataBase bdd;
+
+
     public Hud() {
     }
 
