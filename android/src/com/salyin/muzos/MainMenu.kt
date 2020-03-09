@@ -21,10 +21,9 @@ class MainMenu : AppCompatActivity() {
     private val menuGame : GameMode by lazy { GameMode()}
     private val menuScore : ScoreMenu by lazy { ScoreMenu()}
     private var closeFrag : Boolean = false
-    private var nSlimes : Int = 60
+    private var nSlimes : Int = 10
     private var nSlimesMadness : Int = 5000000
     private lateinit var mediaPlayer : MediaPlayer
-    private lateinit var puntuacion : String
     private val base : AndroidDataBase by lazy { AndroidDataBase(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,15 +31,10 @@ class MainMenu : AppCompatActivity() {
         setContentView(R.layout.activity_main_menu)
 
         //Fragment of the game buttons.
-
         var transaction: FragmentTransaction =manager.beginTransaction()
         transaction.replace(R.id.frameMenuTuto,menuGame,"menu_game")
         transaction.addToBackStack("menu_game")
         transaction.commit()
-//        puntuacion = base.cargar().toString()
-//
-//        var tv : TextView = findViewById(R.id.tvPrueba)
-//        tv.setText(puntuacion)
 
         var intent : Intent = Intent(this, MyService::class.java)
         startService(intent)
@@ -164,7 +158,7 @@ class MainMenu : AppCompatActivity() {
         super.onResume()
         mediaPlayer = MediaPlayer.create(this, R.raw.title)
         mediaPlayer.start()
-        mediaPlayer.setVolume(50f, 50f)
+
     }
 
 

@@ -90,11 +90,8 @@ public class PlayScreen implements Screen {
     private WorldSensorRight sensorRight;
     private WorldContact wrd;
     private Music music;
-    private int puntuacion;
     GameDataBase bdd;
-    private int count = 0;
-    private Batch batchTexto;
-    BitmapFont textoPuntuacion;
+
 
 //endregion
 
@@ -122,7 +119,6 @@ public class PlayScreen implements Screen {
 
         //Skin buttons ui
         img = new Texture(Gdx.files.internal("skin/back_ui_2.png"));
-
 
 
         //region ImageButtons and Status in listener.
@@ -242,7 +238,7 @@ public class PlayScreen implements Screen {
         //Music ingame
         music = Gdx.audio.newMusic(Gdx.files.internal("music/ingame.mp3"));
         music.setLooping(true);
-        music.setVolume(50f);
+        music.setVolume(20f);
         music.play();
 
         //Setter from contactListneer in worldContact.

@@ -41,7 +41,6 @@ public class HeroSword extends Sprite {
 
 
 
-
     public HeroSword(World world, PlayScreen screen) {
         super(screen.getHeroSwordAtlas().findRegion("viking"));
         this.world = world;
@@ -80,8 +79,6 @@ public class HeroSword extends Sprite {
 
     }
 
-//    playerFixtureDef.filter.categoryBits = 0x0002;
-//    monsterFixtureDef.filter.categoryBits = 0x0004;
 
     public static boolean changeDirection(boolean bool){
 
@@ -89,7 +86,6 @@ public class HeroSword extends Sprite {
             sword.set(new Vector2(0 / Main.ppm, 0 / Main.ppm), new Vector2(22 / Main.ppm, 0 / Main.ppm));
             fdef.shape = sword;
             fdef.isSensor = false;
-            fdef.filter.categoryBits = SWORD;
             for (int i = 1; i < b2body.getFixtureList().size; i++){
                 b2body.destroyFixture(b2body.getFixtureList().get(i));
             }
@@ -131,11 +127,10 @@ public class HeroSword extends Sprite {
                     b2body.createFixture(fdef);
                     b2body.setTransform(0, 0/Main.ppm , 0);
                     b2body.createFixture(fdef).setUserData(this);
-
-
                 }
-
             }
         });
     }
+
+
 }

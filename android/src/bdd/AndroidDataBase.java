@@ -26,7 +26,7 @@ public class AndroidDataBase implements GameDataBase {
     }
 
     @Override
-    public void guardar(int newScore) {
+    public void saveScore(int newScore) {
         SQLiteDatabase db=openHelper.getWritableDatabase();
         Cursor c=db.query("userScore", null,null,null, null,null,null);
 

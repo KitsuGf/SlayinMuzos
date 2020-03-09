@@ -2,6 +2,7 @@ package Tools;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -17,6 +18,7 @@ import bdd.GameDataBase;
 public class WorldContact implements ContactListener {
     private int count = 0;
     private boolean bol = false;
+    private Music music;
 
     GameDataBase bdd;
     int c = 0;
@@ -45,32 +47,8 @@ public class WorldContact implements ContactListener {
 
 
         //Detect collide Player and Slime on favour to player.
-       /* if (isSlimeContact(fixA,fixB)){
-            //Declare a new Hero and Enemy
-            HeroSword a;
-
-            //Instanciate fixture to enemyOne
-            //Test if the enemyOne is fixture A or B and get the
-            //Fixture user data from it to EnemyOne and Player.
-            if (fixA.getUserData() instanceof EnemyOne){
-                b = (EnemyOne) fixA.getUserData();
-                a = (HeroSword) fixB.getUserData();
-            }else{
-                b = (EnemyOne) fixB.getUserData();
-                a = (HeroSword) fixA.getUserData();
-            }
-
-            //Method in Enemy when the enemy is hitted.
-            count++;
-            b.enemyHitted(1);
-            bdd.guardar(count);
-
-        }*/
-
-
-
-        //Detect collide Player and Slime on favour to player.
         if (isHeroDie(fixA,fixB)){
+
             //Declare a new Hero and Enemy
             HeroSword a;
             EnemyOne b;
@@ -85,16 +63,14 @@ public class WorldContact implements ContactListener {
                 b = (EnemyOne) fixA.getUserData();
                 a = (HeroSword) fixB.getUserData();
             }
-
-            //Method in Enemy when the enemy is hitted.
-
             c++;
-            Gdx.app.log("asdsa", ""+c);
             if (c == 6){
+
                 a.heroDie();
             }
 
-
+            b.direction = !b.direction;
+            b.flip(true, false);
         }
 
 
@@ -170,7 +146,9 @@ public class WorldContact implements ContactListener {
 
         //Detect collide between slime and wall right
         if (isSword(fixA,fixB)){
-
+            music = Gdx.audio.newMusic(Gdx.files.internal("sounds/slimedeath.mp3"));
+            music.setVolume(100);
+            music.play();
             Hud hd = new Hud();
             EnemyOne b;
 
@@ -183,7 +161,7 @@ public class WorldContact implements ContactListener {
            }
             count++;
             b.enemyHitted(1);
-            bdd.guardar(count);
+            bdd.saveScore(count);
 
 
         }

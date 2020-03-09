@@ -43,7 +43,7 @@ public class Hud implements Disposable {
     private Label lbTxComb;
     private Label lbTxEnemy;
     private Label lbTxCoins;
-    GameDataBase bdd;
+    static GameDataBase bdd;
     public Hud() {
     }
 
@@ -105,6 +105,7 @@ public class Hud implements Disposable {
         countEnemy -= value;
         Gdx.app.log("val", ""+countEnemy);
         lbEnemy.setText(String.format("%05d", countEnemy));
+
     }
 
 }

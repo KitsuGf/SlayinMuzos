@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import Scenes.Hud;
@@ -26,6 +27,7 @@ public class EnemyOne extends Sprite{
     int random = r.nextInt(high-low) + low;
     private TextureRegion enemyStand;
     public boolean direction = false;
+    public boolean isHeroDie = false;
 
 
     public EnemyOne(World world, PlayScreen screen) {
@@ -90,7 +92,8 @@ public class EnemyOne extends Sprite{
 
             }
         });
-        Hud.addScore(cont);
+
+        Hud.addScore(cont); //TODO INTENTAR HACERLO MISMO CON BOOLEANA
 
     }
 
@@ -98,6 +101,7 @@ public class EnemyOne extends Sprite{
         flip(true,false);
         b2body.applyLinearImpulse(1,1,1,1,false);
         b2body.setLinearVelocity(0, b2body.getLinearVelocity().y);
+
         if (isFlipX()){
             direction = true;
         }
@@ -111,5 +115,6 @@ public class EnemyOne extends Sprite{
             direction = false;
         }
     }
+
 
 }

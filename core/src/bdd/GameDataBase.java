@@ -2,5 +2,5 @@ package bdd;
 
 public interface GameDataBase {
     public int cargar();
-    public void guardar(int newScore);
+    public void saveScore(int newScore);
 }
