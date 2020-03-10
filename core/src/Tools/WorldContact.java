@@ -20,11 +20,11 @@ import bdd.GameDataBase;
  *
  * @Author Kitsu ( Juan Miguel )
  *
- * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
+ * WoldContact is a class to check collisions betweent objects/bodys in game.
  *
  */
 public class WorldContact implements ContactListener {
-    private int count = 0;
+    public static int count = 0;
     public boolean bol;
     //Hit soundeffects
     private Sound enemyHitted = Gdx.audio.newSound(Gdx.files.internal("sounds/effects/slimehitted.wav"));
@@ -94,7 +94,9 @@ public class WorldContact implements ContactListener {
             //If the player get 6 hits, die.
             if (c == 6){
                 a.heroDie();
-                PlayScreen.setGameOver(true);
+                PlayScreen.setGameOver(true); //set true to set the GameOverScreen
+                c = 0; //set the counter again to 0
+                count = 0; //reset the counter of the enemy hitted
             }
 
             //If the slime collide to hit the Hero,
@@ -190,7 +192,7 @@ public class WorldContact implements ContactListener {
             //if slime is hitted play this effect.
             enemyHitted.play();
            //get the number of hits from the sword to slime
-            count++;
+            this.count++;
             b.enemyHitted(1);
 
             //Comparison to get the ComboSoundEffects
@@ -209,14 +211,24 @@ public class WorldContact implements ContactListener {
                 comboSix.play();
             }if (count == 100 || count == 900 || count == 989) {
                 comboSeven.play();
+
+            }
+            //if count equals 100 then save the score 100 to database
+            if (count == 1){
+                PlayScreen.setWinner(true); //set the winner screent
+                bdd.saveScore(11); //set the final score
+                count = 0; //reset the counter
+                c = 0; //reset the counter of the hero hitted
+            }
+            //if count equals 1000 in madness mode save the score to 1000 to database
+            if (count == 1000){
+                PlayScreen.setWinner(true);//set the winner screent
+                bdd.saveScore(1000);//set the final score
+                count = 0;//reset the counter of the slimes hitted
+                c = 0;//reset the counter of the hero hitted
             }
 
-            if (count == 100 || count == 1000){
-                PlayScreen.setWinner(true);
-            }
 
-            //Database save the count of the slimes
-            bdd.saveScore(count);
 
         }
 

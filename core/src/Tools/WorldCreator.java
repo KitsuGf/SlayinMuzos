@@ -1,12 +1,5 @@
 package Tools;
 
-/**
- *
- * @Author Kitsu ( Juan Miguel )
- *
- * //TODO RECUERDA COMENTAR LA CLASE Y SUS METODOS
- *
- */
 
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -19,7 +12,13 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
 
-
+/**
+ *
+ * @Author Kitsu ( Juan Miguel )
+ *
+ *  WorldCreator create the collisions from the TileMap
+ *
+ */
 public class WorldCreator {
 
     public WorldCreator(World world, TiledMap map){

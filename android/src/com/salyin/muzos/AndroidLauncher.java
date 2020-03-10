@@ -7,6 +7,14 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
 import bdd.AndroidDataBase;
 
+
+/**
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * This class is responsible to connect android
+ * activities and core from Libgdx.
+ * In this case i get some parameters from bundle.
+ */
 public class AndroidLauncher extends AndroidApplication {
 
 

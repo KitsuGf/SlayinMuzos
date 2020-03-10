@@ -5,8 +5,14 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.widget.Toast;
 
+/**
+ * @Author Kitsu ( Juan Miguel )
+ *
+ *Service what say "Welcome to slayinmuzos" at the start
+ * of the app.
+ *
+ */
 public class MyService extends Service {
-
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {

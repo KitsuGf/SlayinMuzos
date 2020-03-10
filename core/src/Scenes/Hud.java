@@ -22,27 +22,25 @@ import bdd.GameDataBase;
  *
  * @Author Kitsu ( Juan Miguel )
  *
+ * This one is not really needed, can´t fix it.
+ *
  *
  * Hud Class is made to manage the HudPoints from the game.
  * Implements Disposable is needed to dispose the Hud in PlayScreen.
  *
  */
-
 public class Hud implements Disposable {
 
     public Stage stage;
     public Viewport viewport;
     private static Integer countEnemy;
-    private Integer countCombo;
+    private Integer life;
     private static Integer countCoins;
     private static WorldContact wrd;
-    private Label lbCombo;
+    private Label lbLife;
     private static Label lbEnemy;
-    private static Label lbCoins;
-    private static Label scoreLabel;
-    private Label lbTxComb;
+    private Label lblLife;
     private Label lbTxEnemy;
-    private Label lbTxCoins;
     static GameDataBase bdd;
 
 
@@ -53,11 +51,9 @@ public class Hud implements Disposable {
     public Hud(SpriteBatch sb, int nSlimes, GameDataBase gameDataBase) {
         bdd = gameDataBase;
 
-        //Declare countEnemy as parameter nSlime from MainMenu. //TODO PONLE CONTADOR CUANDO CONSIGAS COMPLETRA LAS COLISIONES
+        //Declare countEnemy as parameter nSlime from MainMenu.
         countEnemy = nSlimes;
-        countCombo = 0;
-        countCoins = 0;
-
+        life = 6;
 
         //Declare new StretchViewport to fit in the screen with the PPM and the new OCamera.
         viewport = new StretchViewport(Main.V_WIDTH, Main.V_HEIGHT, new OrthographicCamera());
@@ -74,18 +70,14 @@ public class Hud implements Disposable {
         //Making the labels with the info we want to show in the table.
         lbTxEnemy = new Label(String.format("Enemies:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         lbEnemy = new Label(String.format("%02d", countEnemy), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
-        lbTxCoins = new Label(String.format("Coins:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
-        scoreLabel =new Label(String.format("%06d", countCoins), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
-        lbTxComb = new Label(String.format("Combo:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
-        lbCombo = new Label(String.format("%03d", countCombo), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        lblLife = new Label(String.format("Health:"), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        lbLife = new Label(String.format("%01d", life), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
 
         //Add labels to a table in order and with the padding we want.
         tb.add(lbTxEnemy);
         tb.add(lbEnemy).padLeft(5);
-        tb.add(lbTxCoins).padLeft(100);
-        tb.add(lbCoins).padLeft(5);
-        tb.add(lbTxComb).padLeft(100);
-        tb.add(lbCombo).padLeft(5);
+        tb.add(lblLife).padLeft(250);
+        tb.add(lbLife).padLeft(5);
         //add the table to stage as Actor.
         stage.addActor(tb);
 
@@ -101,7 +93,7 @@ public class Hud implements Disposable {
     }
 
     public static void addScore(int value){
-
+        //TODO FIX THIS
         countEnemy -= value;
         Gdx.app.log("val", ""+countEnemy);
         lbEnemy.setText(String.format("%05d", countEnemy));

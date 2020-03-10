@@ -1,6 +1,12 @@
 package bdd;
-
+/**
+ *
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * Interface with methods from Android
+ *
+ */
 public interface GameDataBase {
-    public int cargar();
-    public void saveScore(int newScore);
+
+    public void saveScore(int newScore); //Save the score to DataBase
 }

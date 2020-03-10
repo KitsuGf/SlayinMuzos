@@ -41,7 +41,6 @@ import bdd.GameDataBase;
  *
  * PlayScreen is class to implements methods in Main(game)
  */
-
 public class PlayScreen implements Screen {
 
     //region Private Vars
@@ -54,52 +53,54 @@ public class PlayScreen implements Screen {
     //Getter & Setter from HeroSword
     public HeroSword getHs() {
         return hs;
-    }
+    } //Getter from heroSword
     public void setHs(HeroSword hs) {
         this.hs = hs;
-    }
-    private World world;
-    private Box2DDebugRenderer b2dr;
-    private OrthographicCamera gamecam;
-    private Main game;
-    private Viewport gamePort;
-    private Hud hud;
-    private HeroSword player;
-    private TmxMapLoader mapLoader;
-    private TiledMap map;
-    private OrthogonalTiledMapRenderer renderer;
-    private LinkedList<EnemyOne> enemies = new LinkedList<EnemyOne>();
-    private final static float timeOut = 3;
-    private float time = 0;
-    private MotionState motionState = MotionState.NONE;
-    private Stage stage;
-    private static int jumps = 0;
-    private static int maxJumps = 1;
-    private ImageButton rightButton;
-    private ImageButton leftButton;
-    private ImageButton jumpButton;
-    private Texture img;
-    private SpriteBatch b;
-    private TextureAtlas tAtlasButtons;
-    private TextureAtlas heroSwordAtlas;
-    private TextureAtlas enemyOneAtlas;
-    private int enemyNo = 0;
-    private int slimeMode;
-    private WorldSensorLeft sensorLeft;
-    private WorldSensorRight sensorRight;
-    private WorldContact wrd;
-    private Music music;
-    public static boolean gameOver = false;
-    public static boolean winner = false;
-    GameDataBase bdd;
+    } //Setter from HeroSword
+    private World world; //Object World
+    private Box2DDebugRenderer b2dr; //Debugger to see the collision lines
+    private OrthographicCamera gamecam; //Camera of the game
+    private Main game; //Class Main called in this class
+    private Viewport gamePort; //Viewport to combine with camera
+    private Hud hud; //Hud from hud class
+    private HeroSword player; //Create a new Hero from HeroSword
+    private TmxMapLoader mapLoader; //This load the map
+    private TiledMap map; //Initialice the map
+    private OrthogonalTiledMapRenderer renderer; //Renderice the map
+    private LinkedList<EnemyOne> enemies = new LinkedList<EnemyOne>(); //List of objects EnemyOne
+    private final static float timeOut = 3; //Float timeOut its for make delay betweent spawn enemies.
+    private float time = 0; //Time 0 is to reset the timer from spawn enemies
+    private MotionState motionState = MotionState.NONE; //Make a Status to player binding to Buttons in Screen
+    private Stage stage; // Stage declaration
+    private static int jumps = 0; //Num to limit the jumps
+    private static int maxJumps = 1; //Num max of jumps
+    private ImageButton rightButton; //Declaration of imagebutton for Right
+    private ImageButton leftButton; //Declaration of imagebutton for left
+    private ImageButton jumpButton; //Declaration of imagebutton for jump
+    private Texture img; //Texture to make a image simulating a UI
+    private SpriteBatch b; //SpriteBatch declaration
+    private TextureAtlas tAtlasButtons; //TextureAtlas for buttons
+    private TextureAtlas heroSwordAtlas;//TextureAtlas for hero
+    private TextureAtlas enemyOneAtlas; //TextureAtlas for enemyOne
+    private int enemyNo = 0; //Count of enemies
+    private int slimeMode; //Get the mode of the game depends of the slimeMode
+    private WorldSensorLeft sensorLeft; //Define WorldSensorLeft
+    private WorldSensorRight sensorRight; //Define WorldsensorRight
+    private WorldContact wrd; //Define WorldContact
+    private Music music; //Define the music
+    public static boolean gameOver = false; //Boolean gameOver to set the screen to gameOver
+    public static boolean winner = false; //Boolean gameOver to set the screen to gameOver
+    GameDataBase bdd; //Define the Database
 
 //endregion
 
 
+
+    //Setter from PlayScreen winner boolean
     public static void setWinner(boolean winner) {
         PlayScreen.winner = winner;
     }
-
+    //Setter from PlayScreen gameOver boolean
     public static void setGameOver(boolean gameOver) {
         PlayScreen.gameOver = gameOver;
     }
@@ -454,6 +455,8 @@ public class PlayScreen implements Screen {
         hud.stage.draw();
         //If gameOver is true set the screen to GameOverScreen
         if (gameOver){
+            //save the score to db from worldContact
+            bdd.saveScore(WorldContact.count);
             //set the screen to GameOverScreen
             game.setScreen(new GameOverScreen(game));
             //Stop the music
@@ -463,8 +466,13 @@ public class PlayScreen implements Screen {
         }
 
         if (winner){
+            //set the screen to WinnerScreen
             game.setScreen(new WinnerScreen(game));
+            //Stop the music
             music.stop();
+            //put the boolean false again to go back.
+            winner = !winner;
+
         }
 
 

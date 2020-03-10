@@ -13,18 +13,23 @@ import android.widget.Button
 import bdd.AndroidDataBase
 import service.MyService
 
-
+/**
+ * @Author Kitsu ( Juan Miguel )
+ *
+ * Main Menu from Android what have all the methods to communicate with Core
+ *
+ */
 class MainMenu : AppCompatActivity() {
 
-    private val manager : FragmentManager by lazy {this.supportFragmentManager}
-    private val menuTu : MenuTutorial by lazy { MenuTutorial()}
-    private val menuGame : GameMode by lazy { GameMode()}
-    private val menuScore : ScoreMenu by lazy { ScoreMenu()}
-    private var closeFrag : Boolean = false
-    private var nSlimes : Int = 100
-    private var nSlimesMadness : Int = 1000
-    private lateinit var mediaPlayer : MediaPlayer
-    private val base : AndroidDataBase by lazy { AndroidDataBase(this) }
+    private val manager : FragmentManager by lazy {this.supportFragmentManager} //Define FragmentManager
+    private val menuTu : MenuTutorial by lazy { MenuTutorial()} //Define MenuTutorial
+    private val menuGame : GameMode by lazy { GameMode()}  //Define MenuGame
+    private val menuScore : ScoreMenu by lazy { ScoreMenu()} //Define ScoreMenu
+    private var closeFrag : Boolean = false //Define ClooseFragment a boolean to close the fragment Tutorial
+    private var nSlimes : Int = 100 //Define the gameMode to normal and put 100 slimes on it
+    private var nSlimesMadness : Int = 1000 //Define the gameMode to Madness and put 1000 slimes on it
+    private lateinit var mediaPlayer : MediaPlayer //Define the mediaPlayer to music game
+    private val base : AndroidDataBase by lazy { AndroidDataBase(this) } //Define database
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +49,12 @@ class MainMenu : AppCompatActivity() {
 
 
     }
-
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     *Overray the onBackPressed to get alert
+     *
+     */
     override fun onBackPressed() {
         //Variables to get string from resfile.
         var title : String = this.getString(R.string.alertTitle)
@@ -68,6 +78,15 @@ class MainMenu : AppCompatActivity() {
         builder.show()
     }
 
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     * this fun get the onClick of layout tutorial and
+     * go to tutorial fragment.
+     *
+     * If you click again you, the fragment is closed.
+     *
+     */
     fun goTutorial(view: View?) {
         var tutAni : Button = findViewById(R.id.btTuto)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
@@ -92,7 +111,16 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
     }
 
-    //Method what send the nSlimes normal as 60 to the game.
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     *
+     * Set the mode with a intent and bundle with extras
+     * to the game.
+     *
+     * in this case is 100
+     *
+     */
     fun normalMode(view: View) {
 
         //Little button animation
@@ -107,7 +135,16 @@ class MainMenu : AppCompatActivity() {
         this.startActivity(i)
     }
 
-    //Method what send the nSlimes normal as  5000000 to the game.
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     *
+     * Set the mode with a intent and bundle with extras
+     * to the game.
+     *
+     * in this case is 1000
+     *
+     */
     fun madnessMode(view: View) {
 
         //Little button animation
@@ -123,7 +160,13 @@ class MainMenu : AppCompatActivity() {
 
     }
 
-    //OnClick to go ScoreFragment
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     *
+     * On click to the fragment leaderScore
+     *
+     */
     fun leaderScore(view: View) {
         var tutAni : Button = findViewById(R.id.btLeader)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
@@ -135,7 +178,13 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
     }
 
-    //OnClick to back to menu
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     *
+     * Button back if you open the leaderscore in the fragment.
+     *
+     */
     fun backMenu(view: View) {
         var tutAni : Button = findViewById(R.id.btBack)
         val animation = AnimationUtils.loadAnimation(this, R.anim.anim)
@@ -148,13 +197,26 @@ class MainMenu : AppCompatActivity() {
 
     }
 
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     * I added here music stop and release to
+     * stop it when app is not on second plane
+     *
+     */
     override fun onPause() {
         super.onPause()
         mediaPlayer.stop()
         mediaPlayer.release()
     }
 
-
+    /**
+     * @Author Kitsu ( Juan Miguel )
+     *
+     * And here restart the song
+     * if the app go to second plane and comeback.
+     *
+     */
     override fun onResume() {
         super.onResume()
         mediaPlayer = MediaPlayer.create(this, R.raw.title)
