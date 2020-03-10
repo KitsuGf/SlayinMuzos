@@ -56,7 +56,6 @@ public class HeroSword extends Sprite {
      * collision filter.
      *
      */
-
     public void defineHero(){
         //define the body and set the position
         bdef = new BodyDef();

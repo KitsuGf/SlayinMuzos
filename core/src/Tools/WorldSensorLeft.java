@@ -6,8 +6,11 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.salyin.muzos.Main;
-
 import Screens.PlayScreen;
+
+
+
+//TODO COMENTALO BIEN
 
 public class WorldSensorLeft {
 

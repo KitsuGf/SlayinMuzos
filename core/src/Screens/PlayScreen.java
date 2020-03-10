@@ -143,7 +143,7 @@ public class PlayScreen implements Screen {
         rightButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                //If the player releas the button, make none to stop linearvelocity.
+                //If the player release the button, make none to stop linearvelocity.
                 motionState = MotionState.NONE;
             }
 
@@ -151,7 +151,6 @@ public class PlayScreen implements Screen {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 //get the motionstate from the enum
                 motionState = MotionState.RIGHT;
-
                 return true;
             }
         });
@@ -167,7 +166,7 @@ public class PlayScreen implements Screen {
         leftButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                //If the player releas the button, make none to stop linearvelocity.
+                //If the player release the button, make none to stop linearvelocity.
                 motionState = MotionState.NONE;
             }
 
@@ -190,15 +189,14 @@ public class PlayScreen implements Screen {
         jumpButton.addListener(new InputListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-
+                //If the player release the button, make none to stop linearvelocity.
                 motionState = MotionState.NONE;
             }
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                Gdx.app.log("Accion:", "Salto!");
+                //get the motionstate from the enum
                 motionState = MotionState.UP;
-
                 return true;
             }
         });
@@ -330,7 +328,7 @@ public class PlayScreen implements Screen {
         //Update the player to have a good movement.
         public abstract boolean update(HeroSword player);
     }
-    //endregion ENUM TO  BUTTON BINDING IN TOUCHSCREEN.
+    //endregion
 
 
 
@@ -395,11 +393,11 @@ public class PlayScreen implements Screen {
             jumps = 0;
         //endregion
 
-
+        //Clear colors to the screen
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-
+        //renderer all in render.
         renderer.render();
 
         //b2dr.render(world, gamecam.combined); //<- Uncomment to get the debugger collider.
@@ -454,10 +452,16 @@ public class PlayScreen implements Screen {
         game.batch.end();
         //Draw the hud with parameters
         hud.stage.draw();
+        //If gameOver is true set the screen to GameOverScreen
         if (gameOver){
+            //set the screen to GameOverScreen
             game.setScreen(new GameOverScreen(game));
+            //Stop the music
             music.stop();
+            //put the boolean false again to go back.
+            gameOver = !gameOver;
         }
+
         if (winner){
             game.setScreen(new WinnerScreen(game));
             music.stop();
@@ -469,6 +473,7 @@ public class PlayScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
+        //Update the gameport with the width and height
         gamePort.update(width, height);
 
     }

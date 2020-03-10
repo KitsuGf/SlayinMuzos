@@ -1,180 +1,180 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:2:1-11:12
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\2a031ef88cdd312bfb0668630d05f444\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\987f68b2a77753862263b93e54cb654d\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c43b33f791f9a5baff7507968b8c9d70\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\d154a2b75472e64e0e1f83992d6f6a6e\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\f29a7859213659859eb263117b216e3f\support-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\03110da62a541417847f2c2af2228629\loader-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\38a59b290b868f2832b1adc47f6949d7\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\66131a11cca59c594e273cc95320cb47\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\ec4e7d3f68676dddfb49a9de74af3147\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\d12d7fd83cb2c7f4b9f77751ccd2a087\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\176d5e6200f0a9cf9bd3c79bee7189ed\customview-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\8cb2dda0f63915d00c049f68443a34db\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\03c44a9d77b60711e0cd2d72d254beb5\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\7714249cb575ba608c26fe40e396930d\relinker-1.3.1\AndroidManifest.xml:2:1-7:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\7a5756ac95b6e3109397da241db0097a\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\36db795cacd697e87dd02ad1bc5fbd58\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\35ce81472aa0be1d8642ff15667b4b12\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\0298443505be7b0398611dda6f8e468f\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c83801b7d7963d656a7d8155e7547227\print-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\5c08c047884acb54c49ce6ff7f1c7cba\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\1b4da21a59f42133f72b23ebcfb6f93d\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:2:1-11:12
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\2a031ef88cdd312bfb0668630d05f444\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\987f68b2a77753862263b93e54cb654d\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c43b33f791f9a5baff7507968b8c9d70\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\d154a2b75472e64e0e1f83992d6f6a6e\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\f29a7859213659859eb263117b216e3f\support-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\03110da62a541417847f2c2af2228629\loader-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\38a59b290b868f2832b1adc47f6949d7\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\66131a11cca59c594e273cc95320cb47\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\ec4e7d3f68676dddfb49a9de74af3147\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\d12d7fd83cb2c7f4b9f77751ccd2a087\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\176d5e6200f0a9cf9bd3c79bee7189ed\customview-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\8cb2dda0f63915d00c049f68443a34db\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\03c44a9d77b60711e0cd2d72d254beb5\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\7714249cb575ba608c26fe40e396930d\relinker-1.3.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\7a5756ac95b6e3109397da241db0097a\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\36db795cacd697e87dd02ad1bc5fbd58\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\35ce81472aa0be1d8642ff15667b4b12\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\0298443505be7b0398611dda6f8e468f\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c83801b7d7963d656a7d8155e7547227\print-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\5c08c047884acb54c49ce6ff7f1c7cba\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\1b4da21a59f42133f72b23ebcfb6f93d\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:3:5-31
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:3:5-31
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:1-32:12
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:5:5-30:19
-MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:5:5-30:19
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:10:9-41
 	android:appCategory
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:7:9-35
 	android:icon
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:8:9-45
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:8:9-45
 	android:allowBackup
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:11:9-68
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:11:9-68
 	android:isGame
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:9:9-30
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:9:9-30
 activity#com.salyin.muzos.MainMenu
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:9-20:20
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:9-20:20
 	android:screenOrientation
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:13:19-56
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:13:19-56
 	android:theme
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:14:19-69
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:14:19-69
 	android:name
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:19-43
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:12:19-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:18:27-74
 activity#com.salyin.muzos.AndroidLauncher
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:21:9-26:20
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:21:9-26:20
 	android:screenOrientation
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:25:13-50
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:25:13-50
 	android:label
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:24:13-45
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:24:13-45
 	android:configChanges
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:23:13-107
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:23:13-107
 	android:name
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:13-44
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:22:13-44
 service#service.MyService
-ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:27:9-29:19
+ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:27:9-29:19
 	android:label
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:28:13-33
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:28:13-33
 	android:name
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:27:18-50
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml:27:18-50
 uses-sdk
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:5:5-7:41
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:5:5-7:41
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\2a031ef88cdd312bfb0668630d05f444\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\2a031ef88cdd312bfb0668630d05f444\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\987f68b2a77753862263b93e54cb654d\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\987f68b2a77753862263b93e54cb654d\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c43b33f791f9a5baff7507968b8c9d70\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c43b33f791f9a5baff7507968b8c9d70\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\d154a2b75472e64e0e1f83992d6f6a6e\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\d154a2b75472e64e0e1f83992d6f6a6e\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\f29a7859213659859eb263117b216e3f\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\f29a7859213659859eb263117b216e3f\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\03110da62a541417847f2c2af2228629\loader-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\03110da62a541417847f2c2af2228629\loader-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\38a59b290b868f2832b1adc47f6949d7\viewpager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\38a59b290b868f2832b1adc47f6949d7\viewpager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\66131a11cca59c594e273cc95320cb47\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\66131a11cca59c594e273cc95320cb47\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\ec4e7d3f68676dddfb49a9de74af3147\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\ec4e7d3f68676dddfb49a9de74af3147\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\d12d7fd83cb2c7f4b9f77751ccd2a087\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\d12d7fd83cb2c7f4b9f77751ccd2a087\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\176d5e6200f0a9cf9bd3c79bee7189ed\customview-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\176d5e6200f0a9cf9bd3c79bee7189ed\customview-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\8cb2dda0f63915d00c049f68443a34db\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\8cb2dda0f63915d00c049f68443a34db\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\03c44a9d77b60711e0cd2d72d254beb5\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\03c44a9d77b60711e0cd2d72d254beb5\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\7714249cb575ba608c26fe40e396930d\relinker-1.3.1\AndroidManifest.xml:5:5-43
-MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\7714249cb575ba608c26fe40e396930d\relinker-1.3.1\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\7a5756ac95b6e3109397da241db0097a\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\7a5756ac95b6e3109397da241db0097a\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\36db795cacd697e87dd02ad1bc5fbd58\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\36db795cacd697e87dd02ad1bc5fbd58\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\35ce81472aa0be1d8642ff15667b4b12\documentfile-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\35ce81472aa0be1d8642ff15667b4b12\documentfile-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\0298443505be7b0398611dda6f8e468f\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\0298443505be7b0398611dda6f8e468f\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c83801b7d7963d656a7d8155e7547227\print-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c83801b7d7963d656a7d8155e7547227\print-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\5c08c047884acb54c49ce6ff7f1c7cba\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\5c08c047884acb54c49ce6ff7f1c7cba\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\1b4da21a59f42133f72b23ebcfb6f93d\livedata-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\1b4da21a59f42133f72b23ebcfb6f93d\livedata-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\9fdb4de0463f83a2153dceccdfbf8f41\constraint-layout-2.0.0-beta4\AndroidManifest.xml:5:5-7:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:5:5-7:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.19] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\60dad04b0ef9898a9970053f411a8a05\android-gif-drawable-1.2.19\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\172f7ecf4cc69ad09acf3058d5ef3f3b\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\2a031ef88cdd312bfb0668630d05f444\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\2a031ef88cdd312bfb0668630d05f444\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\987f68b2a77753862263b93e54cb654d\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\987f68b2a77753862263b93e54cb654d\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c43b33f791f9a5baff7507968b8c9d70\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c43b33f791f9a5baff7507968b8c9d70\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\d154a2b75472e64e0e1f83992d6f6a6e\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\d154a2b75472e64e0e1f83992d6f6a6e\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\f29a7859213659859eb263117b216e3f\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\f29a7859213659859eb263117b216e3f\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\03110da62a541417847f2c2af2228629\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\03110da62a541417847f2c2af2228629\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\38a59b290b868f2832b1adc47f6949d7\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\38a59b290b868f2832b1adc47f6949d7\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\66131a11cca59c594e273cc95320cb47\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\66131a11cca59c594e273cc95320cb47\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\ec4e7d3f68676dddfb49a9de74af3147\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\ec4e7d3f68676dddfb49a9de74af3147\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\d12d7fd83cb2c7f4b9f77751ccd2a087\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\d12d7fd83cb2c7f4b9f77751ccd2a087\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\176d5e6200f0a9cf9bd3c79bee7189ed\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\176d5e6200f0a9cf9bd3c79bee7189ed\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\8cb2dda0f63915d00c049f68443a34db\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\8cb2dda0f63915d00c049f68443a34db\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\03c44a9d77b60711e0cd2d72d254beb5\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\03c44a9d77b60711e0cd2d72d254beb5\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\73fb82cefbfefc160c122bde10e3aad5\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\7714249cb575ba608c26fe40e396930d\relinker-1.3.1\AndroidManifest.xml:5:5-43
+MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\7714249cb575ba608c26fe40e396930d\relinker-1.3.1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\641bebb1ab1877962c635090e5d10cc7\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\7a5756ac95b6e3109397da241db0097a\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\7a5756ac95b6e3109397da241db0097a\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\36db795cacd697e87dd02ad1bc5fbd58\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\36db795cacd697e87dd02ad1bc5fbd58\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\35ce81472aa0be1d8642ff15667b4b12\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\35ce81472aa0be1d8642ff15667b4b12\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\0298443505be7b0398611dda6f8e468f\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\0298443505be7b0398611dda6f8e468f\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c83801b7d7963d656a7d8155e7547227\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c83801b7d7963d656a7d8155e7547227\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\5c08c047884acb54c49ce6ff7f1c7cba\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\5c08c047884acb54c49ce6ff7f1c7cba\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\1b4da21a59f42133f72b23ebcfb6f93d\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\1b4da21a59f42133f72b23ebcfb6f93d\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\c3a81ad37c094677171f6d0b27e88815\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\000099c0d40c11040ba0ff826d679759\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Kitsu\.gradle\caches\transforms-2\files-2.1\70ccc66ecf690acd4d260ad255e5ca38\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		ADDED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
-		INJECTED from C:\Users\kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		ADDED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
+		INJECTED from C:\Users\Kitsu\Documents\SlayinMuzos\android\AndroidManifest.xml
