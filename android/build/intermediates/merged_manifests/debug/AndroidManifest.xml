@@ -16,7 +16,6 @@
         android:icon="@drawable/logo_slayin"
         android:isGame="true"
         android:label="@string/app_name"
-        android:testOnly="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
         <activity
             android:name="com.salyin.muzos.MainMenu"

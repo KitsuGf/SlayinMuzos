@@ -214,9 +214,9 @@ public class WorldContact implements ContactListener {
 
             }
             //if count equals 100 then save the score 100 to database
-            if (count == 1){
+            if (count == 100){
                 PlayScreen.setWinner(true); //set the winner screent
-                bdd.saveScore(11); //set the final score
+                bdd.saveScore(100); //set the final score
                 count = 0; //reset the counter
                 c = 0; //reset the counter of the hero hitted
             }
