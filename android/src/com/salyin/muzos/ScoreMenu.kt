@@ -26,10 +26,6 @@ class ScoreMenu : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         //list getting arraystring from database.
-        //En un martes como hoy, haciendo codigo estaba borracho,
-        //En ese momento solo estabamos Dios y yo, asi que sabiamos como funcionaba el codigo.
-        //Ahora solo dios lo sabe.
-
         //ArrayList of ints
         val list: ArrayList<Int> = ArrayList()
         //List of Strings

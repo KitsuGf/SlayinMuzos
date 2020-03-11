@@ -442,11 +442,7 @@ public class PlayScreen implements Screen {
                    //update the enemy with delta to get the movement constant.
                    currentEnemy.update(delta);
                }
-           } //I'm a teapot <-- yes, iam a teapot,
-            //a litle teapot who stay here throw codelines trying if works or not.
-            //Sometimes works, sometimes i want to kill my self.
-            //If you are Miguel and read this, please Miguel, dont say nothing, just
-            //Write in your Twitter: "Im a Teapot too". We will know.
+           } //I'm a teapot
        } catch (IndexOutOfBoundsException e){ }
 
         //Draw the game sprites.
