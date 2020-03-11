@@ -462,6 +462,7 @@ public class PlayScreen implements Screen {
             //Stop the music
             music.stop();
             //put the boolean false again to go back.
+            WorldContact.setCount(0);
             gameOver = !gameOver;
         }
 

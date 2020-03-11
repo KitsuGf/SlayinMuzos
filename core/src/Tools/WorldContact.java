@@ -42,6 +42,10 @@ public class WorldContact implements ContactListener {
     int c = 0;
 
 
+    public static void setCount(int count) {
+        WorldContact.count = count;
+    }
+
     //Constructors to get DataBase info.
     public WorldContact(GameDataBase gameDataBase) {
 
@@ -49,13 +53,9 @@ public class WorldContact implements ContactListener {
         this.bol = bol;
     }
 
-    //Getter and setter for count
-    public int getCount() {
-        return count;
-    }
-    public void setCount(int count) {
-        this.count = count;
-    }
+
+
+
 
     @Override
     public void beginContact(Contact contact) {
@@ -96,7 +96,7 @@ public class WorldContact implements ContactListener {
                 a.heroDie();
                 PlayScreen.setGameOver(true); //set true to set the GameOverScreen
                 c = 0; //set the counter again to 0
-                count = 0; //reset the counter of the enemy hitted
+                //count = 0; //reset the counter of the enemy hitted
             }
 
             //If the slime collide to hit the Hero,
